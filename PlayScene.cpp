@@ -11,8 +11,8 @@ PlayScene::PlayScene(GameObject * parent)
 //èâä˙âª
 void PlayScene::Initialize()
 {
-	Camera::SetPosition(XMFLOAT3(0, 3, -8));
-	Camera::SetTarget(XMFLOAT3(0, 2, 0));
+	Camera::SetPosition(XMFLOAT3(15, 3, -25));
+	Camera::SetTarget(XMFLOAT3(15, 0, 10));
 	
 	Instantiate<Player>(this);
 }

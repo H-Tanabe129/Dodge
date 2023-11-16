@@ -18,6 +18,20 @@ void Player::Initialize()
 
 void Player::Update()
 {
+    //スペースキーが押されていたらジャンプ
+	static float velocity = 0.0f;
+	if (Input::IsKey(DIK_SPACE))
+    {
+		velocity = 0.15f;
+	}
+	if (velocity != 0.0f)
+	{
+		// ここが重力で徐々に下げる
+		velocity -= 0.02f;
+
+		//キャラクターの場所に値を渡す
+		transform_.position_.y += velocity;
+    }
 }
 
 void Player::Draw()
