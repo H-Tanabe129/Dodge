@@ -4,7 +4,10 @@
 class Stage : public GameObject
 {
 private:
-    int hModel_;    //モデル番号
+    int hModelU_;    //モデル番号
+    int hModelL_;    //モデル番号
+    Transform StaUpper;
+    Transform StaLower;
 public:
     //コンストラクタ
     Stage(GameObject* parent);
