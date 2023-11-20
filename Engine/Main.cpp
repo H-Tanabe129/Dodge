@@ -142,6 +142,11 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 
 				//エフェクトの描画
 				VFX::Draw();
+				
+				if (Input::IsKey(DIK_ESCAPE))
+				{
+					PostQuitMessage(0);
+				}
 
 				//描画終了
 				Direct3D::EndDraw();

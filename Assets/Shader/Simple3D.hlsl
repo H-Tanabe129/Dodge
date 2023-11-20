@@ -32,6 +32,7 @@ struct VS_OUT
 	float4 normal : TEXCOORD2;		//法線
 	float2 uv	  : TEXCOORD0;		//UV座標
 	float4 eye	  : TEXCOORD1;		//視線
+	float4 color	: COLOR;	//色（明るさ）
 };
 
 //───────────────────────────────────────
@@ -50,6 +51,10 @@ VS_OUT VS(float4 pos : POSITION, float4 Normal : NORMAL, float2 Uv : TEXCOORD)
 	Normal.w = 0;					//4次元目は使わないので0
 	Normal = mul(Normal, g_matNormalTrans);		//オブジェクトが変形すれば法線も変形
 	outData.normal = Normal;		//これをピクセルシェーダーへ
+
+	float4 light = float4(1, 0.5, -0.7, 0);
+	light = normalize(light);
+	outData.color = clamp(dot(Normal, light), 0, 1);
 
 	//視線ベクトル（ハイライトの計算に必要
 	float4 worldPos = mul(pos, g_matWorld);					//ローカル座標にワールド行列をかけてワールド座標へ

@@ -1,4 +1,5 @@
 #include "Player.h"
+#include "Engine/Model.h"
 
 Player::Player(GameObject* parent)
     :GameObject(parent, "Player"), hModel_(-1)
@@ -12,7 +13,7 @@ Player::~Player()
 void Player::Initialize()
 {
     //モデルデータのロード
-    hModel_ = Model::Load("Player.fbx");
+    hModel_ = Model::Load("Model/Player.fbx");
     assert(hModel_ >= 0);
 }
 

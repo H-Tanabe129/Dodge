@@ -1,6 +1,7 @@
 #include "Engine/Camera.h"
 #include "PlayScene.h"
 #include "Player.h"
+#include "Stage.h"
 
 //コンストラクタ
 PlayScene::PlayScene(GameObject * parent)
@@ -15,6 +16,7 @@ void PlayScene::Initialize()
 	Camera::SetTarget(XMFLOAT3(15, 0, 10));
 	
 	Instantiate<Player>(this);
+	Instantiate<Stage>(this);
 }
 
 //更新

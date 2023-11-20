@@ -1,18 +1,16 @@
 #pragma once
 #include "Engine/GameObject.h"
-#include "Engine/Input.h"
 
-class Player : public GameObject
+class Stage : public GameObject
 {
 private:
     int hModel_;    //モデル番号
-
 public:
     //コンストラクタ
-    Player(GameObject* parent);
+    Stage(GameObject* parent);
 
     //デストラクタ
-    ~Player();
+    ~Stage();
 
     //初期化
     void Initialize() override;
@@ -26,4 +24,3 @@ public:
     //開放
     void Release() override;
 };
-
