@@ -1,5 +1,6 @@
 #include "Player.h"
 #include "Engine/Model.h"
+#include "Engine/SphereCollider.h"
 
 Player::Player(GameObject* parent)
     :GameObject(parent, "Player"), hModel_(-1)
@@ -15,6 +16,10 @@ void Player::Initialize()
     //モデルデータのロード
     hModel_ = Model::Load("Model/Player.fbx");
     assert(hModel_ >= 0);
+	transform_.position_.z = -1;
+
+	SphereCollider* collision = new SphereCollider(XMFLOAT3(1.0f, 1.0f, 1.0f), 1.05f);
+	AddCollider(collision);
 }
 
 void Player::Update()

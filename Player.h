@@ -6,6 +6,7 @@ class Player : public GameObject
 {
 private:
     int hModel_;    //モデル番号
+    //Transform Player_;
 
 public:
     //コンストラクタ

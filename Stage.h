@@ -4,8 +4,7 @@
 class Stage : public GameObject
 {
 private:
-    int hModelU_;    //ƒ‚ƒfƒ‹”Ô†
-    int hModelL_;    //ƒ‚ƒfƒ‹”Ô†
+    int hModel_;    //ƒ‚ƒfƒ‹”Ô†
     Transform StaUpper;
     Transform StaLower;
 public:
