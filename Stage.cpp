@@ -19,8 +19,10 @@ void Stage::Initialize()
     StaUpper.position_ = XMFLOAT3(20, 6.8f, 0);
     StaLower.position_ = XMFLOAT3(20, -5.7f, 0);
 
-    BoxCollider* collision = new BoxCollider(XMFLOAT3(0, 0, 0), XMFLOAT3(1, 12, 1));
-    AddCollider(collision);
+    BoxCollider* collisionU = new BoxCollider(StaUpper.position_, XMFLOAT3(1, 8, 1));
+    AddCollider(collisionU);
+    BoxCollider* collisionL = new BoxCollider(StaLower.position_, XMFLOAT3(1, 8, 1));
+    AddCollider(collisionL);
 }
 
 void Stage::Update()
