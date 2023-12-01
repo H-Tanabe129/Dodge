@@ -13,11 +13,12 @@ Stage::~Stage()
 
 void Stage::Initialize()
 {
+    StaUpper.position_ = XMFLOAT3(20, 6.8f, 0);
+    StaLower.position_ = XMFLOAT3(20, -5.7f, 0);
+
     //モデルデータのロード
     hModel_ = Model::Load("Model/Stage.fbx");
     assert(hModel_ >= 0);
-    StaUpper.position_ = XMFLOAT3(20, 6.8f, 0);
-    StaLower.position_ = XMFLOAT3(20, -5.7f, 0);
 
     BoxCollider* collisionU = new BoxCollider(StaUpper.position_, XMFLOAT3(1, 8, 1));
     AddCollider(collisionU);
@@ -29,6 +30,10 @@ void Stage::Update()
 {
     StaUpper.position_.x -= 0.1f;
     StaLower.position_.x -= 0.1f;
+
+    // コライダーの位置も更新
+    GetCollider(0)->SetPosition(StaUpper.position_);
+    GetCollider(1)->SetPosition(StaLower.position_);
 }
 
 void Stage::Draw()
