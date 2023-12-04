@@ -1,6 +1,5 @@
 #include "Stage.h"
 #include "Engine/Model.h"
-#include "Engine/BoxCollider.h"
 
 Stage::Stage(GameObject* parent)
     :GameObject(parent, "Stage"), hModel_(-1)
@@ -46,4 +45,14 @@ void Stage::Draw()
 
 void Stage::Release()
 {
+}
+
+Collider* Stage::GetCollider(size_t index) const
+{
+    if (index < colliders_.size()) {
+        return colliders_[index];
+    } else {
+        // インデックスが範囲外の場合はnullptrを返すか、エラー処理を行う
+        return nullptr;
+    }
 }

@@ -95,3 +95,13 @@ void Collider::Draw(XMFLOAT3 position)
 	Model::SetTransform(hDebugModel_, transform);
 	Model::Draw(hDebugModel_);
 }
+
+void Collider::SetPosition(const DirectX::XMFLOAT3& newPosition)
+{
+    position_ = newPosition;
+}
+
+DirectX::XMFLOAT3 Collider::GetPosition() const
+{
+    return position_;
+}
