@@ -1,5 +1,6 @@
 #include "Stage.h"
 #include "Engine/Model.h"
+#include "Engine/BoxCollider.h"
 
 Stage::Stage(GameObject* parent)
     :GameObject(parent, "Stage"), hModel_(-1)
