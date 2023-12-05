@@ -3,7 +3,7 @@
 #include "Engine/SphereCollider.h"
 
 Player::Player(GameObject* parent)
-    :GameObject(parent, "Player"), hModel_(-1)
+    :GameObject(parent, "Player"), hModel_(-1), pText(nullptr)
 {
 }
 
@@ -17,6 +17,9 @@ void Player::Initialize()
     hModel_ = Model::Load("Model/Player.fbx");
     assert(hModel_ >= 0);
 	transform_.position_.z = -1;
+
+	pText = new Text;
+	pText->Initialize();
 
 	SphereCollider* collision = new SphereCollider(XMFLOAT3(1.0f, 1.0f, 1.0f), 1.05f);
 	AddCollider(collision);
@@ -44,8 +47,19 @@ void Player::Draw()
 {
     Model::SetTransform(hModel_, transform_);
     Model::Draw(hModel_);
+	pText->Draw(30, 30, transform_.position_.y);
 }
 
 void Player::Release()
 {
+	pText->Release();
+}
+
+//‰½‚©‚É“–‚½‚Á‚½
+void Player::OnCollision(GameObject * pTarget)
+{
+	if (pTarget->GetObjectName() == "StageUp" || pTarget->GetObjectName() == "StageLo")
+    {
+		this->KillMe();
+    }
 }

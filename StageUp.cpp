@@ -1,0 +1,40 @@
+#include "StageUp.h"
+#include "Engine/Model.h"
+#include "Engine/BoxCollider.h"
+
+StageUp::StageUp(GameObject* parent)
+    :GameObject(parent, "StageUp"), hModel_(-1)
+{
+}
+
+StageUp::~StageUp()
+{
+}
+
+void StageUp::Initialize()
+{
+    transform_.position_ = XMFLOAT3(20, 6.8f, 0);
+
+    //モデルデータのロード
+    hModel_ = Model::Load("Model/Stage.fbx");
+    assert(hModel_ >= 0);
+
+    BoxCollider* collisionU = new BoxCollider(XMFLOAT3(0, 0, 0), XMFLOAT3(1.5f, 8, 1));
+    AddCollider(collisionU);
+}
+
+void StageUp::Update()
+{
+    transform_.position_.x -= 0.1f;
+
+}
+
+void StageUp::Draw()
+{
+    Model::SetTransform(hModel_, transform_);
+    Model::Draw(hModel_);
+}
+
+void StageUp::Release()
+{
+}

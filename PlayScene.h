@@ -4,6 +4,9 @@
 //テストシーンを管理するクラス
 class PlayScene : public GameObject
 {
+private:
+	static const int FPS = 60;
+	int frame = 0;
 public:
 	//コンストラクタ
 	//引数：parent  親オブジェクト（SceneManager）

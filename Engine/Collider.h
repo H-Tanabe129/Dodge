@@ -26,8 +26,8 @@ class Collider
 	friend class SphereCollider;
 
 private:
-    // コライダーの位置を保持するメンバ変数
-    DirectX::XMFLOAT3 position_;
+    //// コライダーの位置を保持するメンバ変数
+    //DirectX::XMFLOAT3 position_;
 
 protected:
 	GameObject*		pGameObject_;	//この判定をつけたゲームオブジェクト
@@ -72,12 +72,5 @@ public:
 
 	//セッター
 	void SetGameObject(GameObject* gameObject) { pGameObject_ = gameObject; }
-
-    // 位置を設定するメソッド
-    void SetPosition(const DirectX::XMFLOAT3& newPosition);
-
-    // 位置を取得するメソッド
-    DirectX::XMFLOAT3 GetPosition() const;
-
 };
 

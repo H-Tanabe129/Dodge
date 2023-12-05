@@ -2,22 +2,16 @@
 #include <vector>
 #include "Engine/GameObject.h"
 #include "Engine/BoxCollider.h"
-
-class Stage : public GameObject
+class StageLo : public GameObject
 {
 private:
     int hModel_;    //モデル番号
-    Transform StaUpper;
-    Transform StaLower;
-
-    // コライダーを格納するstd::vector
-    std::vector<Collider*> colliders_;
 public:
     //コンストラクタ
-    Stage(GameObject* parent);
+    StageLo(GameObject* parent);
 
     //デストラクタ
-    ~Stage();
+    ~StageLo();
 
     //初期化
     void Initialize() override;
@@ -30,7 +24,4 @@ public:
 
     //開放
     void Release() override;
-
-    // コライダーへのアクセスを提供するメソッド
-    Collider* GetCollider(size_t index) const;
 };

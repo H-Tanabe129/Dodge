@@ -7,7 +7,7 @@
 
 //コンストラクタ
 Collider::Collider():
-	pGameObject_(nullptr), position_(DirectX::XMFLOAT3(0.0f, 0.0f, 0.0f))
+	pGameObject_(nullptr)//, position_(DirectX::XMFLOAT3(0.0f, 0.0f, 0.0f))
 {
 }
 
@@ -95,20 +95,4 @@ void Collider::Draw(XMFLOAT3 position)
 	transform.Calclation();
 	Model::SetTransform(hDebugModel_, transform);
 	Model::Draw(hDebugModel_);
-}
-
-void Collider::SetPosition(const DirectX::XMFLOAT3& newPosition)
-{
-    position_.x = newPosition.x;
-    position_.y = newPosition.y;
-    position_.z = newPosition.z;
-
-	Debug::Log(position_.x);
-	Debug::Log(position_.y);
-	Debug::Log(position_.z);
-}
-
-DirectX::XMFLOAT3 Collider::GetPosition() const
-{
-    return position_;
 }
