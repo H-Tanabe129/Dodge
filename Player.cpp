@@ -61,5 +61,6 @@ void Player::OnCollision(GameObject * pTarget)
 	if (pTarget->GetObjectName() == "StageUp" || pTarget->GetObjectName() == "StageLo")
     {
 		this->KillMe();
+		pTarget->KillMe();
     }
 }

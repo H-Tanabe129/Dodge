@@ -19,8 +19,8 @@ void StageLo::Initialize()
     hModel_ = Model::Load("Model/Stage.fbx");
     assert(hModel_ >= 0);
 
-    BoxCollider* collisionL = new BoxCollider(XMFLOAT3(0, 0, 0), XMFLOAT3(1.5f, 8, 1));
-    AddCollider(collisionL);
+    BoxCollider* collision = new BoxCollider(XMFLOAT3(-0.1f, 0, 0), XMFLOAT3(1, 4, 1));
+    AddCollider(collision);
 }
 
 void StageLo::Update()
