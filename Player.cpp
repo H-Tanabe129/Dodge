@@ -21,7 +21,7 @@ void Player::Initialize()
 	pText = new Text;
 	pText->Initialize();
 
-	SphereCollider* collision = new SphereCollider(XMFLOAT3(1.0f, 1.0f, 1.0f), 1.05f);
+	SphereCollider* collision = new SphereCollider(XMFLOAT3(1.0f, 1.0f, 1.0f), 1.02f);
 	AddCollider(collision);
 }
 
@@ -41,6 +41,11 @@ void Player::Update()
 		//キャラクターの場所に値を渡す
 		transform_.position_.y += velocity;
     }
+
+	if (transform_.position_.y == 5)
+	{
+		this->KillMe();
+	}
 }
 
 void Player::Draw()
