@@ -1,8 +1,7 @@
 #include "Engine/Camera.h"
 #include "PlayScene.h"
 #include "Player.h"
-#include "StageUp.h"
-#include "StageLo.h"
+#include "Stage.h"
 
 //コンストラクタ
 PlayScene::PlayScene(GameObject * parent)
@@ -13,28 +12,16 @@ PlayScene::PlayScene(GameObject * parent)
 //初期化
 void PlayScene::Initialize()
 {
-	Camera::SetPosition(XMFLOAT3(15, 3, -45));  //35, 3, 0
+	Camera::SetPosition(XMFLOAT3(15, 3, -100));  //test == 35, 3, 0
 	Camera::SetTarget(XMFLOAT3(15, 0, 10));
 	
 	Instantiate<Player>(this);
-
-	//Instantiate<StageUp>(this);
-	Instantiate<StageLo>(this);
+	Instantiate<Stage>(this);
 }
 
 //更新
 void PlayScene::Update()
 {
-	frame += 1;
-
-	/*if (frame % 150 == 0)
-	{
-		Instantiate<StageUp>(this);
-	}*/
-	if (frame % 150 == 0)
-	{
-		Instantiate<StageLo>(this);
-	}
 }
 
 //描画
