@@ -29,7 +29,7 @@ void Stage::Update()
 	}
 
 	if (transform_.position_.x == -20) {
-		this->OnCollision(pTarget);
+		pTarget->Player::OnCollision(this);
 	}
 }
 
