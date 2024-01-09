@@ -2,6 +2,7 @@
 #include "Engine/GameObject.h"
 #include "StageUp.h"
 #include "StageLo.h"
+#include "Player.h"
 
 class Stage : public GameObject
 {
