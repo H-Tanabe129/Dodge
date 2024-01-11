@@ -26,6 +26,10 @@ void StageUp::Initialize()
 void StageUp::Update()
 {
     transform_.position_.x -= 0.1f;
+
+    if (transform_.position_.x == -10) {
+        KillMe();
+    }
 }
 
 void StageUp::Draw()

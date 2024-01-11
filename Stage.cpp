@@ -27,10 +27,6 @@ void Stage::Update()
 	{
 		Instantiate<StageLo>(this);
 	}
-
-	if (transform_.position_.x == -20) {
-		pTarget->Player::OnCollision(this);
-	}
 }
 
 void Stage::Draw()
