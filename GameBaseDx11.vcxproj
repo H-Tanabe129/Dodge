@@ -129,7 +129,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Abyss.cpp" />
     <ClCompile Include="BackGround.cpp" />
+    <ClCompile Include="Ceiling.cpp" />
     <ClCompile Include="Engine\Audio.cpp" />
     <ClCompile Include="Engine\BillBoard.cpp" />
     <ClCompile Include="Engine\BoxCollider.cpp" />
@@ -160,7 +162,9 @@
     <ClCompile Include="StageLo.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Abyss.h" />
     <ClInclude Include="BackGround.h" />
+    <ClInclude Include="Ceiling.h" />
     <ClInclude Include="Engine\Audio.h" />
     <ClInclude Include="Engine\BillBoard.h" />
     <ClInclude Include="Engine\BoxCollider.h" />

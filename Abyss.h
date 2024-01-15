@@ -1,24 +1,17 @@
 #pragma once
 #include "Engine/GameObject.h"
-#include "StageUp.h"
-#include "StageLo.h"
-#include "Abyss.h"
-#include "Ceiling.h"
-#include "Player.h"
+#include "Engine/BoxCollider.h"
 
-class Stage : public GameObject
+class Abyss : public GameObject
 {
 private:
     int hModel_;    //モデル番号
-
-    static const int FPS = 60;
-    int frame = 0;
 public:
     //コンストラクタ
-    Stage(GameObject* parent);
+    Abyss(GameObject* parent);
 
     //デストラクタ
-    ~Stage();
+    ~Abyss();
 
     //初期化
     void Initialize() override;
@@ -32,3 +25,4 @@ public:
     //開放
     void Release() override;
 };
+

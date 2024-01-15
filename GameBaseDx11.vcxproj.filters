@@ -101,6 +101,8 @@
     <ClCompile Include="StageUp.cpp" />
     <ClCompile Include="StageLo.cpp" />
     <ClCompile Include="Stage.cpp" />
+    <ClCompile Include="Ceiling.cpp" />
+    <ClCompile Include="Abyss.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Engine\BoxCollider.h">
@@ -178,6 +180,8 @@
     <ClInclude Include="StageUp.h" />
     <ClInclude Include="StageLo.h" />
     <ClInclude Include="Stage.h" />
+    <ClInclude Include="Ceiling.h" />
+    <ClInclude Include="Abyss.h" />
   </ItemGroup>
   <ItemGroup>
     <FxCompile Include="Assets\Shader\Simple2D.hlsl">

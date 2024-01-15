@@ -11,8 +11,10 @@ Stage::~Stage()
 
 void Stage::Initialize()
 {
-	Instantiate<StageUp>(this);
+	//Instantiate<StageUp>(this);
 	Instantiate<StageLo>(this);
+	Instantiate<Abyss>(this);
+	Instantiate<Ceiling>(this);
 }
 
 void Stage::Update()
