@@ -1,5 +1,6 @@
 #include "Ceiling.h"
 #include "Engine/Model.h"
+#include "Engine/BoxCollider.h"
 
 Ceiling::Ceiling(GameObject* parent)
     :GameObject(parent, "Ceiling"), hModel_(-1)
@@ -16,11 +17,11 @@ void Ceiling::Initialize()
     hModel_ = Model::Load("Model/Stage.fbx");
     assert(hModel_ >= 0);
 
-    transform_.position_ = XMFLOAT3(10, -14, 0);
+    transform_.position_ = XMFLOAT3(0, -14, 0);
     transform_.rotate_.z = 90;
-    transform_.scale_ = XMFLOAT3(2.5f, 1.0f, 1.0f);
+    transform_.scale_ = XMFLOAT3(1.0f, 1.0f, 1.0f);
 
-    BoxCollider* collision = new BoxCollider(XMFLOAT3(0, 0, 0), XMFLOAT3(20, 2, 1));
+    BoxCollider* collision = new BoxCollider(XMFLOAT3(0, 0, 0), XMFLOAT3(10, 2, 1));
     AddCollider(collision);
 }
 

@@ -1,6 +1,5 @@
 #pragma once
 #include "Engine/GameObject.h"
-#include "Engine/BoxCollider.h"
 class StageLo : public GameObject
 {
 private:

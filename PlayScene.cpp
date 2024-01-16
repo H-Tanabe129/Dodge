@@ -12,7 +12,7 @@ PlayScene::PlayScene(GameObject * parent)
 //èâä˙âª
 void PlayScene::Initialize()
 {
-	Camera::SetPosition(XMFLOAT3(15, 3, -50));  //test == 35, 3, 0    -25
+	Camera::SetPosition(XMFLOAT3(15, 3, -25));  //test == 35, 3, 0    -25
 	Camera::SetTarget(XMFLOAT3(15, 0, 10));
 	
 	Instantiate<Player>(this);

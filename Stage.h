@@ -1,10 +1,14 @@
 #pragma once
 #include "Engine/GameObject.h"
-#include "StageUp.h"
-#include "StageLo.h"
-#include "Abyss.h"
-#include "Ceiling.h"
-#include "Player.h"
+
+enum Obstacle {
+    TOGETHER = 0,
+    UPPERFRONT,
+    LOWERFRONT,
+    UPPER,
+    LOWER,
+    MAX
+};
 
 class Stage : public GameObject
 {
@@ -13,6 +17,7 @@ private:
 
     static const int FPS = 60;
     int frame = 0;
+    int rd = 0;
 public:
     //コンストラクタ
     Stage(GameObject* parent);
