@@ -1,5 +1,6 @@
 #pragma once
 #include "Engine/GameObject.h"
+#include "Engine/Text.h"
 
 class Player : public GameObject
 {

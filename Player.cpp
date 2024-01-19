@@ -1,7 +1,6 @@
 #include "Player.h"
 #include "Engine/Model.h"
 #include "Engine/Input.h"
-#include "Engine/Text.h"
 #include "Engine/SphereCollider.h"
 
 Player::Player(GameObject* parent)
