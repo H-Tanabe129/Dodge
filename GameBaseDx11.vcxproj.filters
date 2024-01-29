@@ -103,6 +103,9 @@
     <ClCompile Include="Stage.cpp" />
     <ClCompile Include="Ceiling.cpp" />
     <ClCompile Include="Abyss.cpp" />
+    <ClCompile Include="Timer.cpp">
+      <Filter>01Engine\ResourceManager</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Engine\BoxCollider.h">
@@ -182,6 +185,9 @@
     <ClInclude Include="Stage.h" />
     <ClInclude Include="Ceiling.h" />
     <ClInclude Include="Abyss.h" />
+    <ClInclude Include="Timer.h">
+      <Filter>01Engine\ResourceManager</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <FxCompile Include="Assets\Shader\Simple2D.hlsl">
