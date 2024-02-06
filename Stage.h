@@ -1,5 +1,6 @@
 #pragma once
 #include "Engine/GameObject.h"
+#include "Engine/Transform.h"
 
 enum Obstacle {
     TOGETHER = 0,
@@ -18,6 +19,10 @@ private:
     static const int FPS = 60;
     int frame = 0;
     int rd = 0;
+
+    Transform Upper;
+    Transform Lower;
+
 public:
     //コンストラクタ
     Stage(GameObject* parent);

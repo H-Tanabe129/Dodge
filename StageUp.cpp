@@ -13,7 +13,7 @@ StageUp::~StageUp()
 
 void StageUp::Initialize()
 {
-    transform_.position_ = XMFLOAT3(35, 7.0f, 0);
+    //transform_.position_ = XMFLOAT3(35, 7.0f, 0);
 
     //モデルデータのロード
     hModel_ = Model::Load("Model/Stage.fbx");
@@ -25,11 +25,11 @@ void StageUp::Initialize()
 
 void StageUp::Update()
 {
-    transform_.position_.x -= 0.1f;
+    /*transform_.position_.x -= 0.1f;
 
     if (transform_.position_.x == -10) {
         KillMe();
-    }
+    }*/
 }
 
 void StageUp::Draw()
@@ -40,4 +40,9 @@ void StageUp::Draw()
 
 void StageUp::Release()
 {
+}
+
+void StageUp::GetTransform(Transform& transform)
+{
+    return transform.Calclation();
 }

@@ -18,7 +18,8 @@ Stage::~Stage()
 
 void Stage::Initialize()
 {
-	Instantiate<StageUp>(this);
+	StageUp* newStageUp = Instantiate<StageUp>(this);
+	newStageUp->GetTransform(Upper);
 	Instantiate<StageLo>(this);
 	Instantiate<Abyss>(this);
 	Instantiate<Ceiling>(this);
@@ -33,11 +34,12 @@ void Stage::Update()
 
 	if (frame % (FPS * 3) == 0)
 	{
-		rd = rand() % MAX;
+		rd = 0;
 
 		switch(rd) {
 		case TOGETHER:
-
+			Upper.position_.x = 30;
+			Lower.position_.x = 30;
 			break;
 		case UPPERFRONT:
 
@@ -52,9 +54,6 @@ void Stage::Update()
 
 			break;
 		}
-
-		Instantiate<StageUp>(this);
-		Instantiate<StageLo>(this);
 	}
 }
 

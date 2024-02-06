@@ -64,7 +64,7 @@ void Player::Release()
 //‰½‚©‚É“–‚½‚Á‚½
 void Player::OnCollision(GameObject * pTarget)
 {
-	if (pTarget->GetObjectName() == "StageUp" || "StageLo" || "Abyss")
+	if (pTarget->GetObjectName() == "StageUp" || "StageLo" || "Abyss" || "Ceiling")
     {
 		this->KillMe();
 		pTarget->KillMe();
