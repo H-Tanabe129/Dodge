@@ -2,8 +2,6 @@
 #include <time.h>
 #include "StageUp.h"
 #include "StageLo.h"
-#include "Abyss.h"
-#include "Ceiling.h"
 #include "Player.h"
 
 
@@ -18,11 +16,8 @@ Stage::~Stage()
 
 void Stage::Initialize()
 {
-	StageUp* newStageUp = Instantiate<StageUp>(this);
-	newStageUp->GetTransform(Upper);
+	Instantiate<StageUp>(this);
 	Instantiate<StageLo>(this);
-	Instantiate<Abyss>(this);
-	Instantiate<Ceiling>(this);
 
 	srand((unsigned int)time(nullptr));
 }
@@ -34,24 +29,27 @@ void Stage::Update()
 
 	if (frame % (FPS * 3) == 0)
 	{
+		//rd = rand() % MAX;
 		rd = 0;
 
 		switch(rd) {
 		case TOGETHER:
-			Upper.position_.x = 30;
-			Lower.position_.x = 30;
+			Instantiate<StageUp>(this);
+			Instantiate<StageLo>(this);
 			break;
 		case UPPERFRONT:
+			Instantiate<StageUp>(this);
 
 			break;
 		case LOWERFRONT:
+			Instantiate<StageLo>(this);
 
 			break;
 		case UPPER:
-
+			Instantiate<StageUp>(this);
 			break;
 		case LOWER:
-
+			Instantiate<StageLo>(this);
 			break;
 		}
 	}

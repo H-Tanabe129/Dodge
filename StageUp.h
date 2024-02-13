@@ -24,5 +24,7 @@ public:
     //ŠJ•ú
     void Release() override;
 
-    void GetTransform(Transform& transform);
+    Transform GetTransform() const {
+        return transform_;
+    }
 };

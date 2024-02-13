@@ -101,8 +101,6 @@
     <ClCompile Include="StageUp.cpp" />
     <ClCompile Include="StageLo.cpp" />
     <ClCompile Include="Stage.cpp" />
-    <ClCompile Include="Ceiling.cpp" />
-    <ClCompile Include="Abyss.cpp" />
     <ClCompile Include="Timer.cpp">
       <Filter>01Engine\ResourceManager</Filter>
     </ClCompile>
@@ -183,8 +181,6 @@
     <ClInclude Include="StageUp.h" />
     <ClInclude Include="StageLo.h" />
     <ClInclude Include="Stage.h" />
-    <ClInclude Include="Ceiling.h" />
-    <ClInclude Include="Abyss.h" />
     <ClInclude Include="Timer.h">
       <Filter>01Engine\ResourceManager</Filter>
     </ClInclude>

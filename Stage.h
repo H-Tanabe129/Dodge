@@ -20,8 +20,8 @@ private:
     int frame = 0;
     int rd = 0;
 
-    Transform Upper;
-    Transform Lower;
+    //Transform Upper;
+    //Transform Lower;
 
 public:
     //コンストラクタ

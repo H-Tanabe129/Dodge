@@ -43,7 +43,7 @@ void Player::Update()
 		transform_.position_.y += velocity;
     }
 
-	if (transform_.position_.y == 5)
+	if (transform_.position_.y >= 14 || transform_.position_.y <= -14)
 	{
 		this->KillMe();
 	}
@@ -64,7 +64,7 @@ void Player::Release()
 //‰½‚©‚É“–‚½‚Á‚½
 void Player::OnCollision(GameObject * pTarget)
 {
-	if (pTarget->GetObjectName() == "StageUp" || "StageLo" || "Abyss" || "Ceiling")
+	if (pTarget->GetObjectName() == "StageUp" || "StageLo")
     {
 		this->KillMe();
 		pTarget->KillMe();
