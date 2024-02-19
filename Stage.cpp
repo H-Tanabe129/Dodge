@@ -29,26 +29,28 @@ void Stage::Update()
 
 	if (frame % (FPS * 3) == 0)
 	{
-		//rd = rand() % MAX;
-		rd = 0;
+		rd = rand() % MAX;
+		//rd = 2;
 
 		switch(rd) {
-		case TOGETHER:
+		case TOGETHER:		//ˆê
 			Instantiate<StageUp>(this);
 			Instantiate<StageLo>(this);
 			break;
-		case UPPERFRONT:
+		case UPPERFRONT:	//ã‚ªè‘O‰º‚ª‰œ
 			Instantiate<StageUp>(this);
+			Instantiate<StageLo>(this) -> SetPosition(41, -6.0f, 0);
 
 			break;
-		case LOWERFRONT:
+		case LOWERFRONT:	//‰º‚ªè‘Oã‚ª‰œ
 			Instantiate<StageLo>(this);
+			Instantiate<StageUp>(this) -> SetPosition(41, 7.0f, 0);
 
 			break;
-		case UPPER:
+		case UPPER:			//ã‚¾‚¯
 			Instantiate<StageUp>(this);
 			break;
-		case LOWER:
+		case LOWER:			//‰º‚¾‚¯
 			Instantiate<StageLo>(this);
 			break;
 		}
