@@ -8,6 +8,8 @@ enum Obstacle {
     LOWERFRONT,
     UPPER,
     LOWER,
+    UPPERLONG,
+    LOWERLONG,
     MAX
 };
 

@@ -29,8 +29,8 @@ void Stage::Update()
 
 	if (frame % (FPS * 3) == 0)
 	{
-		rd = rand() % MAX;
-		//rd = 2;
+		//rd = rand() % MAX;
+		rd = 6;
 
 		switch(rd) {
 		case TOGETHER:		//ˆê
@@ -38,20 +38,24 @@ void Stage::Update()
 			Instantiate<StageLo>(this);
 			break;
 		case UPPERFRONT:	//ã‚ªè‘O‰º‚ª‰œ
-			Instantiate<StageUp>(this);
-			Instantiate<StageLo>(this) -> SetPosition(41, -6.0f, 0);
-
+			Instantiate<StageUp>(this) -> SetPosition(32.5f, 7.5f, 0);
+			Instantiate<StageLo>(this) -> SetPosition(38.5f, -6.5f, 0);
 			break;
 		case LOWERFRONT:	//‰º‚ªè‘Oã‚ª‰œ
-			Instantiate<StageLo>(this);
-			Instantiate<StageUp>(this) -> SetPosition(41, 7.0f, 0);
-
+			Instantiate<StageLo>(this) -> SetPosition(32.5f, -6.5f, 0);
+			Instantiate<StageUp>(this) -> SetPosition(38.5f, 7.5f, 0);
 			break;
 		case UPPER:			//ã‚¾‚¯
 			Instantiate<StageUp>(this);
 			break;
 		case LOWER:			//‰º‚¾‚¯
 			Instantiate<StageLo>(this);
+			break;
+		case UPPERLONG:		//ã’·‚ß
+			Instantiate<StageUp>(this)->SetScale(1, 2.5f, 1);
+			break;
+		case LOWERLONG:		//‰º’·‚ß
+			Instantiate<StageLo>(this)->SetScale(1, 2.5f, 1);
 			break;
 		}
 	}

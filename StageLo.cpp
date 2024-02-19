@@ -13,7 +13,7 @@ StageLo::~StageLo()
 
 void StageLo::Initialize()
 {
-    transform_.position_ = XMFLOAT3(35, -6.0f, 0);
+    transform_.position_ = XMFLOAT3(35, -6.5f, 0);
 
     //モデルデータのロード
     hModel_ = Model::Load("Model/Stage.fbx");
