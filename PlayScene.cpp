@@ -2,6 +2,8 @@
 #include "PlayScene.h"
 #include "Player.h"
 #include "Stage.h"
+#include "Obstacle.h"
+#include "BackGround.h"
 
 //コンストラクタ
 PlayScene::PlayScene(GameObject * parent)
@@ -12,11 +14,13 @@ PlayScene::PlayScene(GameObject * parent)
 //初期化
 void PlayScene::Initialize()
 {
-	Camera::SetPosition(XMFLOAT3(15, 3, -55));  //test == 35, 3, 0    -25
+	Camera::SetPosition(XMFLOAT3(15, 3, -45));  //test == 35, 3, 0    -25
 	Camera::SetTarget(XMFLOAT3(15, 0, 10));
 	
 	Instantiate<Player>(this);
 	Instantiate<Stage>(this);
+	Instantiate<Obstacle>(this);
+	Instantiate<BackGround>(this);
 }
 
 //更新

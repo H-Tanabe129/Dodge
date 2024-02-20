@@ -42,8 +42,8 @@ void Stage::Update()
 			Instantiate<StageLo>(this) -> SetPosition(38.5f, -6.5f, 0);
 			break;
 		case LOWERFRONT:	//‰º‚ªè‘Oã‚ª‰œ
-			Instantiate<StageLo>(this) -> SetPosition(32.5f, -6.5f, 0);
 			Instantiate<StageUp>(this) -> SetPosition(38.5f, 7.5f, 0);
+			Instantiate<StageLo>(this) -> SetPosition(32.5f, -6.5f, 0);
 			break;
 		case UPPER:			//ã‚¾‚¯
 			Instantiate<StageUp>(this);

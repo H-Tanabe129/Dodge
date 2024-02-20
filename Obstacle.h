@@ -1,16 +1,14 @@
 #pragma once
 #include "Engine/GameObject.h"
 
-class StageUp : public GameObject
+class Obstacle : public GameObject
 {
-private:
-    int hModel_;    //モデル番号
 public:
     //コンストラクタ
-    StageUp(GameObject* parent);
+    Obstacle(GameObject* parent);
 
     //デストラクタ
-    ~StageUp();
+    ~Obstacle();
 
     //初期化
     void Initialize() override;
