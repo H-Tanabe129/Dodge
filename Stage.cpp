@@ -30,7 +30,7 @@ void Stage::Update()
 	if (frame % (FPS * 3) == 0)
 	{
 		//rd = rand() % MAX;
-		rd = 6;
+		rd = 5;
 
 		switch(rd) {
 		case TOGETHER:		//àÍèè
@@ -53,6 +53,7 @@ void Stage::Update()
 			break;
 		case UPPERLONG:		//è„í∑Çﬂ
 			Instantiate<StageUp>(this)->SetScale(1, 2.5f, 1);
+			GetScale();
 			break;
 		case LOWERLONG:		//â∫í∑Çﬂ
 			Instantiate<StageLo>(this)->SetScale(1, 2.5f, 1);

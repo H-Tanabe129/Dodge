@@ -5,6 +5,9 @@ class StageUp : public GameObject
 {
 private:
     int hModel_;    //モデル番号
+    int width;
+    int height;
+    int depth;
 public:
     //コンストラクタ
     StageUp(GameObject* parent);
@@ -23,4 +26,6 @@ public:
 
     //開放
     void Release() override;
+
+    DirectX::XMFLOAT3 GetScale() const override { return GameObject::GetScale(); }
 };

@@ -2,7 +2,7 @@
 #include "Engine/GameObject.h"
 #include "Engine/Transform.h"
 
-enum Obstacle {
+enum Wall {
     TOGETHER = 0,
     UPPERFRONT,
     LOWERFRONT,

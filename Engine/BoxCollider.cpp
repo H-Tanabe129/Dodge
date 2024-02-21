@@ -19,7 +19,7 @@ BoxCollider::BoxCollider(XMFLOAT3 basePos, XMFLOAT3 size)
 #endif
 }
 
-void BoxCollider::SetSize(float newSize)
+void BoxCollider::SetSize(XMFLOAT3 newSize)
 {
     size_ = newSize;
 }

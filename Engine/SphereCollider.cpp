@@ -18,6 +18,11 @@ SphereCollider::SphereCollider(XMFLOAT3 center, float radius)
 #endif
 }
 
+void SphereCollider::SetSize(XMFLOAT3 newSize)
+{
+	size_ = newSize;
+}
+
 //ÚG”»’è
 //ˆø”Ftarget	‘Šè‚Ì“–‚½‚è”»’è
 //–ß’lFÚG‚µ‚Ä‚ê‚Îtrue
