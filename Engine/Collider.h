@@ -72,5 +72,7 @@ public:
 
 	//セッター
 	void SetGameObject(GameObject* gameObject) { pGameObject_ = gameObject; }
+
+	virtual void SetSize(float newSize) = 0;
 };
 

@@ -16,7 +16,7 @@ public:
 	//引数：size	当たり判定のサイズ（幅、高さ、奥行き）
 	BoxCollider(XMFLOAT3 basePos, XMFLOAT3 size);
 
-	virtual void SetSize(float newSize) = 0;
+	void SetSize(float newSize) override;
 
 private:
 	//接触判定
