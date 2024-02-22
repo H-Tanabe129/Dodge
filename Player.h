@@ -1,12 +1,10 @@
 #pragma once
 #include "Engine/GameObject.h"
-#include "Engine/Text.h"
 
 class Player : public GameObject
 {
 private:
     int hModel_;    //モデル番号
-    Text* pText;
 
 public:
     //コンストラクタ
