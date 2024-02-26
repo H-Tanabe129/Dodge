@@ -160,6 +160,7 @@
     <ClCompile Include="StageUp.cpp" />
     <ClCompile Include="StageLo.cpp" />
     <ClCompile Include="Timer.cpp" />
+    <ClCompile Include="TitleScene.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BackGround.h" />
@@ -193,6 +194,7 @@
     <ClInclude Include="StageUp.h" />
     <ClInclude Include="StageLo.h" />
     <ClInclude Include="Timer.h" />
+    <ClInclude Include="TitleScene.h" />
   </ItemGroup>
   <ItemGroup>
     <FxCompile Include="Assets\Shader\BillBoard.hlsl">

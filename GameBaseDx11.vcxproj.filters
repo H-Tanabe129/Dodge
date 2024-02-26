@@ -116,6 +116,7 @@
     <ClCompile Include="Obstacle.cpp">
       <Filter>Gimmick</Filter>
     </ClCompile>
+    <ClCompile Include="TitleScene.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Engine\BoxCollider.h">
@@ -205,6 +206,7 @@
     <ClInclude Include="Obstacle.h">
       <Filter>Gimmick</Filter>
     </ClInclude>
+    <ClInclude Include="TitleScene.h" />
   </ItemGroup>
   <ItemGroup>
     <FxCompile Include="Assets\Shader\Simple2D.hlsl">
