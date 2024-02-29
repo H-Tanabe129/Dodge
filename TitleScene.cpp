@@ -9,7 +9,7 @@ TitleScene::TitleScene(GameObject* parent)
 void TitleScene::Initialize()
 {
     //画像データのロード
-    hPict_ = Image::Load("ファイル名");
+    //hPict_ = Image::Load("ファイル名");
     assert(hPict_ >= 0);
 }
 

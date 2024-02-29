@@ -8,8 +8,8 @@ enum Wall {
     LOWERFRONT,
     UPPER,
     LOWER,
-    UPPERLONG,
-    LOWERLONG,
+    //UPPERLONG,
+    //LOWERLONG,
     MAX
 };
 

@@ -14,13 +14,13 @@ PlayScene::PlayScene(GameObject * parent)
 //‰Šú‰»
 void PlayScene::Initialize()
 {
-	Camera::SetPosition(XMFLOAT3(15, 3, -45));  //test == 35, 3, 0    -25
+	Camera::SetPosition(XMFLOAT3(15, 3, -25));  //test == 35, 3, 0    -25
 	Camera::SetTarget(XMFLOAT3(15, 0, 10));
 	
 	Instantiate<Player>(this);
 	Instantiate<Stage>(this);
 	Instantiate<Obstacle>(this);
-	Instantiate<BackGround>(this);
+	//Instantiate<BackGround>(this);
 }
 
 //XV
