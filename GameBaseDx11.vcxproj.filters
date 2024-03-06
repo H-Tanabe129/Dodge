@@ -117,7 +117,6 @@
       <Filter>Gimmick</Filter>
     </ClCompile>
     <ClCompile Include="TitleScene.cpp" />
-    <ClCompile Include="ClearScene.cpp" />
     <ClCompile Include="GameOverScene.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -209,7 +208,6 @@
       <Filter>Gimmick</Filter>
     </ClInclude>
     <ClInclude Include="TitleScene.h" />
-    <ClInclude Include="ClearScene.h" />
     <ClInclude Include="GameOverScene.h" />
   </ItemGroup>
   <ItemGroup>

@@ -3,6 +3,8 @@
 
 class Obstacle : public GameObject
 {
+private:
+    int hModel_;    //モデル番号
 public:
     //コンストラクタ
     Obstacle(GameObject* parent);

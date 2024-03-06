@@ -23,7 +23,7 @@ void TitleScene::Initialize()
 
 void TitleScene::Update()
 {
-    //マウスの左ボタンを放した
+    //キーを放した
     if(Input::IsKeyUp(DIK_SPACE))
     {
         SceneManager* pSceneManager = (SceneManager*)FindObject("SceneManager");
