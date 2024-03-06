@@ -24,7 +24,7 @@ void TitleScene::Initialize()
 void TitleScene::Update()
 {
     //マウスの左ボタンを放した
-    if(Input::IsMouseButtonUp(0))
+    if(Input::IsKeyUp(DIK_SPACE))
     {
         SceneManager* pSceneManager = (SceneManager*)FindObject("SceneManager");
         pSceneManager->ChangeScene(SCENE_ID_PLAY);
