@@ -74,16 +74,14 @@ D:.
 ｜
 ｜ .gitattributes 
 ｜ .gitignore 
-｜ Abyss.cpp 
-｜ Abyss.h 
 ｜ BackGround.cpp 
 ｜ BackGround.h 
-｜ Ceiling.cpp 
-｜ Ceiling.h 
 ｜ Dodge.sln 
 ｜ GameBaseDx11.vcxproj 
 ｜ GameBaseDx11.vcxproj.filters 
 ｜ GameBaseDx11.vcxproj.user 
+｜ Obstacle.cpp
+｜ Obstacle.h
 ｜ Player.cpp 
 ｜ Player.h 
 ｜ PlayScene.cpp 
@@ -93,7 +91,11 @@ D:.
 ｜ StageLo.cpp 
 ｜ StageLo.h 
 ｜ StageUp.cpp 
-└ StageUp.h 
+｜ StageUp.h 
+｜ Timer.cpp
+｜ Timer.h
+｜ TitleScene.cpp
+ └ TitleScene.h
 
 
 ◯ゲーム概要
@@ -101,5 +103,6 @@ D:.
 
 ◯操作方法
 Spaceキー　→　ジャンプ
+(ESC →　強制終了)
 
 https://github.com/H-Tanabe129/Dodge/tree/f565fdb55872e257c197d648b4ddcd13a96c003b
