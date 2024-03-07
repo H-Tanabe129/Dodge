@@ -1,16 +1,14 @@
 #pragma once
 #include "Engine/GameObject.h"
 
-class Obstacle : public GameObject
+class GameOverScene : public GameObject
 {
 private:
-    int hModel_;    //モデル番号
+    int hPict_;    //画像番号
 public:
     //コンストラクタ
-    Obstacle(GameObject* parent);
-
-    //デストラクタ
-    ~Obstacle();
+    //引数：parent  親オブジェクト（SceneManager）
+    GameOverScene(GameObject* parent);
 
     //初期化
     void Initialize() override;
