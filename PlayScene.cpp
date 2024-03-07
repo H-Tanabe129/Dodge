@@ -19,7 +19,8 @@ void PlayScene::Initialize()
 	
 	Instantiate<Player>(this);
 	Instantiate<Stage>(this);
-	Instantiate<Obstacle>(this);
+	//Instantiate<Obstacle>(this);
+
 	//Instantiate<BackGround>(this);
 }
 
