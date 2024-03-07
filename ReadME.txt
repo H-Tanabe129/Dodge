@@ -8,6 +8,7 @@ D:.
 ｜　｜  └SphereCollider.fbx
 ｜　｜
 ｜　├ Model
+｜　｜  ├Obstacle.fbx
 ｜　｜  ├Player.fbx
 ｜　｜  └Stage.fbx
 ｜　｜
@@ -19,7 +20,10 @@ D:.
 ｜　｜
 ｜　｜char.png
 ｜　｜defaultParticle.png
-｜　└setup.ini
+｜　├Dodge.png
+｜　├gameover.png
+｜　├setup.ini
+｜　└Start.png
 ｜
 ├ Engine
 ｜　｜Audio.cpp
@@ -37,7 +41,7 @@ D:.
 ｜　｜Debug.cpp
 ｜　｜Debug.h
 ｜　｜Direct3D.cpp
-｜　｜ Direct3D.h  
+｜　｜Direct3D.h  
 ｜　｜Fbx.cpp  
 ｜　｜Fbx.h  
 ｜　｜FbxParts.cpp  
@@ -80,6 +84,8 @@ D:.
 ｜ GameBaseDx11.vcxproj 
 ｜ GameBaseDx11.vcxproj.filters 
 ｜ GameBaseDx11.vcxproj.user 
+｜ GameOverScene.cpp
+｜ GameOverScene.h
 ｜ Obstacle.cpp
 ｜ Obstacle.h
 ｜ Player.cpp 
@@ -103,6 +109,7 @@ D:.
 
 ◯操作方法
 Spaceキー　→　ジャンプ
+T →　（ゲームオーバーシーン）タイトルに戻る
 (ESC →　強制終了)
 
 https://github.com/H-Tanabe129/Dodge/tree/f565fdb55872e257c197d648b4ddcd13a96c003b
