@@ -1,5 +1,13 @@
 https://github.com/H-Tanabe129/Dodge
 
+◯ゲーム概要
+障害物をジャンプでよける横スクロールゲーム
+
+◯操作方法
+Spaceキー　→　ジャンプ
+T →　（ゲームオーバーシーン）タイトルに戻る
+(ESC →　強制終了)
+
 ◯フォルダ構成
 D:.
 ├ Assets
@@ -102,14 +110,5 @@ D:.
 ├ Timer.h
 ├ TitleScene.cpp
 └ TitleScene.h
-
-
-◯ゲーム概要
-障害物をジャンプでよける横スクロールゲーム
-
-◯操作方法
-Spaceキー　→　ジャンプ
-T →　（ゲームオーバーシーン）タイトルに戻る
-(ESC →　強制終了)
 
 https://github.com/H-Tanabe129/Dodge/tree/f565fdb55872e257c197d648b4ddcd13a96c003b
