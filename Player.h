@@ -5,6 +5,7 @@ class Player : public GameObject
 {
 private:
     int hModel_;    //モデル番号
+    int hSound_;    //サウンド番号
 
 public:
     //コンストラクタ

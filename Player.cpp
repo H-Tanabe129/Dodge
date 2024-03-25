@@ -1,11 +1,12 @@
 #include "Player.h"
 #include "Engine/Model.h"
 #include "Engine/Input.h"
+#include "Engine/Audio.h"
 #include "Engine/SphereCollider.h"
 #include "Engine/SceneManager.h"
 
 Player::Player(GameObject* parent)
-    :GameObject(parent, "Player"), hModel_(-1)
+    :GameObject(parent, "Player"), hModel_(-1), hSound_(-1)
 {
 }
 
@@ -15,6 +16,10 @@ Player::~Player()
 
 void Player::Initialize()
 {
+    //サウンドデータのロード
+    hSound_ = Audio::Load("A1_18278.WAV");
+    assert(hSound_ >= 0);
+
     //モデルデータのロード
     hModel_ = Model::Load("Model/Player.fbx");
     assert(hModel_ >= 0);
@@ -31,6 +36,7 @@ void Player::Update()
 	if (Input::IsKey(DIK_SPACE))
     {
 		velocity = 0.15f;
+		Audio::Play(hSound_);
 	}
 	if (velocity != 0.0f)
 	{
