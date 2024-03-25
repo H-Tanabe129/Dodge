@@ -19,7 +19,7 @@ void GameOverScene::Initialize()
 void GameOverScene::Update()
 {
     //キーを放した→タイトル
-    if (Input::IsKeyUp(DIK_T))
+    if (Input::IsKeyUp(DIK_SPACE))
     {
         SceneManager* pSceneManager = (SceneManager*)FindObject("SceneManager");
         pSceneManager->ChangeScene(SCENE_ID_TITLE);
