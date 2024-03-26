@@ -129,7 +129,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="BackGround.cpp" />
     <ClCompile Include="Engine\Audio.cpp" />
     <ClCompile Include="Engine\BillBoard.cpp" />
     <ClCompile Include="Engine\BoxCollider.cpp" />
@@ -165,7 +164,6 @@
     <ClCompile Include="ValueManager.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="BackGround.h" />
     <ClInclude Include="Engine\Audio.h" />
     <ClInclude Include="Engine\BillBoard.h" />
     <ClInclude Include="Engine\BoxCollider.h" />

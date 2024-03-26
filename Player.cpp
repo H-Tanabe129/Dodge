@@ -2,13 +2,12 @@
 #include "ValueManager.h"
 #include "Engine/Model.h"
 #include "Engine/Input.h"
-#include "Engine/Text.h"
 #include "Engine/Audio.h"
 #include "Engine/SphereCollider.h"
 #include "Engine/SceneManager.h"
 
 Player::Player(GameObject* parent)
-    :GameObject(parent, "Player"), hModel_(-1), hSound_(-1)
+    :GameObject(parent, "Player"), hModel_(-1), hSound_(-1), pText(nullptr)
 {
 }
 
@@ -19,8 +18,8 @@ Player::~Player()
 void Player::Initialize()
 {
     //サウンドデータのロード
-    //hSound_ = Audio::Load("A1_18278.WAV");
-    //assert(hSound_ >= 0);
+    hSound_ = Audio::Load("A1_18278.WAV");
+    assert(hSound_ >= 0);
 
     //モデルデータのロード
     hModel_ = Model::Load("Model/Player.fbx");
@@ -29,6 +28,9 @@ void Player::Initialize()
 
 	SphereCollider* collision = new SphereCollider(XMFLOAT3(1.0f, 1.0f, 1.0f), 1.02f);
 	AddCollider(collision);
+
+	pText = new Text;
+	pText->Initialize();
 }
 
 void Player::Update()
@@ -38,7 +40,7 @@ void Player::Update()
 	if (Input::IsKey(DIK_SPACE))
     {
 		velocity = 0.15f;
-		//Audio::Play(hSound_);
+		Audio::Play(hSound_);
 	}
 	if (velocity != 0.0f)
 	{
@@ -57,17 +59,20 @@ void Player::Update()
 		pSceneManager->ChangeScene(SCENE_ID_GAMEOVER);
 	}
 
-	ValueManager::GetInstance().GetTime();
+	ValueManager::GetInstance().AddScore(score);
 }
 
 void Player::Draw()
 {
     Model::SetTransform(hModel_, transform_);
     Model::Draw(hModel_);
+
+	pText->Draw(30, 30, ValueManager::GetInstance().GetScore());
 }
 
 void Player::Release()
 {
+	pText->Release();
 }
 
 //何かに当たった
