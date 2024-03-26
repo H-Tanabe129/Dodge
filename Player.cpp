@@ -2,6 +2,7 @@
 #include "ValueManager.h"
 #include "Engine/Model.h"
 #include "Engine/Input.h"
+#include "Engine/Text.h"
 #include "Engine/Audio.h"
 #include "Engine/SphereCollider.h"
 #include "Engine/SceneManager.h"
@@ -18,13 +19,13 @@ Player::~Player()
 void Player::Initialize()
 {
     //サウンドデータのロード
-    hSound_ = Audio::Load("A1_18278.WAV");
-    assert(hSound_ >= 0);
+    //hSound_ = Audio::Load("A1_18278.WAV");
+    //assert(hSound_ >= 0);
 
     //モデルデータのロード
     hModel_ = Model::Load("Model/Player.fbx");
     assert(hModel_ >= 0);
-	transform_.position_.z = -1;
+	transform_.position_.z = posiZ;
 
 	SphereCollider* collision = new SphereCollider(XMFLOAT3(1.0f, 1.0f, 1.0f), 1.02f);
 	AddCollider(collision);
@@ -37,7 +38,7 @@ void Player::Update()
 	if (Input::IsKey(DIK_SPACE))
     {
 		velocity = 0.15f;
-		Audio::Play(hSound_);
+		//Audio::Play(hSound_);
 	}
 	if (velocity != 0.0f)
 	{
@@ -48,7 +49,7 @@ void Player::Update()
 		transform_.position_.y += velocity;
     }
 
-	if (transform_.position_.y >= 14 || transform_.position_.y <= -14)
+	if (transform_.position_.y >= END || transform_.position_.y <= -END)
 	{
 		this->KillMe();
 

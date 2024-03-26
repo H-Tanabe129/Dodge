@@ -6,6 +6,8 @@ class Player : public GameObject
 private:
     int hModel_;    //モデル番号
     int hSound_;    //サウンド番号
+    const int END = 12;
+    static const int posiZ = -1;
 
 public:
     //コンストラクタ

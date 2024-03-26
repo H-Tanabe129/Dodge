@@ -6,6 +6,7 @@ ValueManager& ValueManager::GetInstance() {
 	return instance;
 }
 
+//ŠÔ
 void ValueManager::AddTime(int _amount) {
 	time_ += _amount;
 }
@@ -18,7 +19,7 @@ void ValueManager::ResetTime() {
 	time_ = 0;
 }
 
-
+//ƒXƒRƒA
 void ValueManager::AddScore(int _amount) {
 	score_ += _amount;
 }

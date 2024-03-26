@@ -16,8 +16,8 @@ PlayScene::PlayScene(GameObject * parent)
 void PlayScene::Initialize()
 {
 	//サウンドデータのロード
-	hSound_ = Audio::Load("A2_01003.WAV");
-	assert(hSound_ >= 0);
+	//hSound_ = Audio::Load("A2_01003.WAV");
+	//assert(hSound_ >= 0);
 
 	Camera::SetPosition(XMFLOAT3(15, 3, -25));  //test == 35, 3, 0    -25
 	Camera::SetTarget(XMFLOAT3(15, 0, 10));
@@ -25,9 +25,9 @@ void PlayScene::Initialize()
 	Instantiate<Player>(this);
 	Instantiate<Stage>(this);
 	//Instantiate<Obstacle>(this);
-
 	//Instantiate<BackGround>(this);
-	Audio::Play(hSound_);
+
+	//Audio::Play(hSound_);
 }
 
 //更新

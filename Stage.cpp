@@ -1,8 +1,8 @@
 #include "Stage.h"
-#include <time.h>
 #include "StageUp.h"
 #include "StageLo.h"
 #include "Player.h"
+#include <time.h>
 
 
 Stage::Stage(GameObject* parent)
@@ -37,14 +37,14 @@ void Stage::Update()
 			Instantiate<StageUp>(this);
 			Instantiate<StageLo>(this);
 			break;
-		case UPPERFRONT:	//上が手前下が奥
-			Instantiate<StageUp>(this) -> SetPosition(33.5f, 7.5f, 0);
-			Instantiate<StageLo>(this) -> SetPosition(38.5f, -6.5f, 0);
-			break;
-		case LOWERFRONT:	//下が手前上が奥
-			Instantiate<StageUp>(this) -> SetPosition(38.5f, 7.5f, 0);
-			Instantiate<StageLo>(this) -> SetPosition(33.5f, -6.5f, 0);
-			break;
+		//case UPPERFRONT:	//上が手前下が奥
+		//	Instantiate<StageUp>(this) -> SetPosition(33.5f, 7.5f, 0);
+		//	Instantiate<StageLo>(this) -> SetPosition(38.5f, -6.5f, 0);
+		//	break;
+		//case LOWERFRONT:	//下が手前上が奥
+		//	Instantiate<StageUp>(this) -> SetPosition(38.5f, 7.5f, 0);
+		//	Instantiate<StageLo>(this) -> SetPosition(33.5f, -6.5f, 0);
+		//	break;
 		case UPPER:			//上だけ
 			Instantiate<StageUp>(this);
 			break;

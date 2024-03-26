@@ -4,8 +4,8 @@
 
 enum Wall {
     TOGETHER = 0,
-    UPPERFRONT,
-    LOWERFRONT,
+    //UPPERFRONT,
+    //LOWERFRONT,
     UPPER,
     LOWER,
     //UPPERLONG,
