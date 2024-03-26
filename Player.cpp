@@ -1,4 +1,5 @@
 #include "Player.h"
+#include "ValueManager.h"
 #include "Engine/Model.h"
 #include "Engine/Input.h"
 #include "Engine/Audio.h"
@@ -54,6 +55,8 @@ void Player::Update()
 		SceneManager* pSceneManager = (SceneManager*)FindObject("SceneManager");
 		pSceneManager->ChangeScene(SCENE_ID_GAMEOVER);
 	}
+
+	ValueManager::GetInstance().GetTime();
 }
 
 void Player::Draw()

@@ -33,6 +33,7 @@ void PlayScene::Initialize()
 //XV
 void PlayScene::Update()
 {
+
 }
 
 //•`‰æ
