@@ -26,12 +26,13 @@ void Stage::Update()
 {
 	frame += 1;
 
-
+	//ステージをランダムで表示する
 	if (frame % (FPS * 2) == 0)
 	{
 		rd = rand() % MAX;
 		//rd = 5;
 
+		//ステージパターン
 		switch(rd) {
 		case TOGETHER:		//一緒
 			Instantiate<StageUp>(this);
