@@ -26,7 +26,8 @@ void Player::Initialize()
     assert(hModel_ >= 0);
 	transform_.position_.z = posiZ;
 
-	SphereCollider* collision = new SphereCollider(XMFLOAT3(1.0f, 1.0f, 1.0f), 1.02f);
+	SphereCollider* collision = 
+		new SphereCollider(XMFLOAT3(SphereColliderX, SphereColliderY, SphereColliderZ), radius);
 	AddCollider(collision);
 
 	pText = new Text;
@@ -36,22 +37,22 @@ void Player::Initialize()
 void Player::Update()
 {
     //スペースキーが押されていたらジャンプ
-	static float velocity = 0.0f;
+	static float velocity = veloIni;
 	if (Input::IsKey(DIK_SPACE))
     {
-		velocity = 0.15f;
+		velocity = veloIncre;
 		Audio::Play(hSound_);
 	}
-	if (velocity != 0.0f)
+	if (velocity != veloIni)
 	{
 		// ここが重力で徐々に下げる
-		velocity -= 0.02f;
+		velocity -= veloDecre;
 
 		//キャラクターの場所に値を渡す
 		transform_.position_.y += velocity;
     }
 
-	if (transform_.position_.y >= END || transform_.position_.y <= -END)
+	if (transform_.position_.y >= edge || transform_.position_.y <= -edge)
 	{
 		this->KillMe();
 
@@ -67,7 +68,7 @@ void Player::Draw()
     Model::SetTransform(hModel_, transform_);
     Model::Draw(hModel_);
 
-	pText->Draw(30, 30, ValueManager::GetInstance().GetScore());
+	pText->Draw(textX, textY, ValueManager::GetInstance().GetScore());
 }
 
 void Player::Release()
