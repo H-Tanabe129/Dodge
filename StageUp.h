@@ -5,9 +5,19 @@ class StageUp : public GameObject
 {
 private:
     int hModel_;    //モデル番号
-    //int width;
-    //int height;
-    //int depth;
+
+    static const int trPosiX = 35;      //モデルポジションX
+    static const int trPosiY = 7.5f;    //モデルポジションY
+    static const int trPosiZ = 0;       //モデルポジションZ
+    static const int BColliderPosiX = -0.1f;    //コライダーポジションX
+    static const int BColliderPosiY = 0;        //コライダーポジションY
+    static const int BColliderPosiZ = 0;        //コライダーポジションZ
+    static const int BColliderSizeX = 1;    //コライダーサイズX
+    static const int BColliderSizeY = 8;    //コライダーサイズY
+    static const int BColliderSizeZ = 1;    //コライダーサイズZ
+
+    float trPosiChangeX = 0.1;
+
 public:
     //コンストラクタ
     StageUp(GameObject* parent);

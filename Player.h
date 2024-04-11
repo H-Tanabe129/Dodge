@@ -9,9 +9,9 @@ private:
     int hSound_;    //サウンド番号
     Text* pText;
 
-    static const int SphereColliderX = 1.0f;    //コライダーX軸
-    static const int SphereColliderY = 1.0f;    //コライダーY軸
-    static const int SphereColliderZ = 1.0f;    //コライダーZ軸
+    static const int SColliderX = 1.0f;    //コライダーX軸
+    static const int SColliderY = 1.0f;    //コライダーY軸
+    static const int SColliderZ = 1.0f;    //コライダーZ軸
     static const int radius = 1.02f;            //コライダー半径
     float veloIni = 0.0f;       //重力初期値
     float veloIncre = 0.15f;    //重力増加量

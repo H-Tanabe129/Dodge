@@ -27,7 +27,7 @@ void Player::Initialize()
 	transform_.position_.z = posiZ;
 
 	SphereCollider* collision = 
-		new SphereCollider(XMFLOAT3(SphereColliderX, SphereColliderY, SphereColliderZ), radius);
+		new SphereCollider(XMFLOAT3(SColliderX, SColliderY, SColliderZ), radius);
 	AddCollider(collision);
 
 	pText = new Text;

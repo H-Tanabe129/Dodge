@@ -7,6 +7,10 @@ private:
     int hPict_;    //画像番号
     int hStart_;    //画像番号
     Transform Title;
+
+    static const int titlePicturePosiY = 0;
+    float startPicturePosiY = -0.5;
+
 public:
  //コンストラクタ
  //引数：parent  親オブジェクト（SceneManager）

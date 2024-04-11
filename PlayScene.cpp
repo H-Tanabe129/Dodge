@@ -18,8 +18,8 @@ void PlayScene::Initialize()
 	hSound_ = Audio::Load("A2_01003.WAV");
 	assert(hSound_ >= 0);
 
-	Camera::SetPosition(XMFLOAT3(15, 3, -25));  //test == 35, 3, 0    -25
-	Camera::SetTarget(XMFLOAT3(15, 0, 10));
+	Camera::SetPosition(XMFLOAT3(CPosiX, CPosiY, CPosiZ));  //test == 35, 3, 0    -25
+	Camera::SetTarget(XMFLOAT3(CTarX, CTarY, CTarZ));
 	
 	Instantiate<Player>(this);
 	Instantiate<Stage>(this);

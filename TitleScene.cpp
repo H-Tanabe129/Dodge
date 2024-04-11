@@ -17,8 +17,8 @@ void TitleScene::Initialize()
     hStart_ = Image::Load("Start.png");
     assert(hStart_ >= 0);
 
-    Title.position_.y = 0;
-    transform_.position_.y = -0.5;
+    Title.position_.y = titlePicturePosiY;
+    transform_.position_.y = startPicturePosiY;
 }
 
 void TitleScene::Update()
