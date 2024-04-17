@@ -13,20 +13,22 @@ StageUp::~StageUp()
 
 void StageUp::Initialize()
 {
-    transform_.position_ = XMFLOAT3(35, 7.5f, 0);
+    transform_.position_ = XMFLOAT3(trPosiX, trPosiY, trPosiZ);
 
     //モデルデータのロード
     hModel_ = Model::Load("Model/Stage.fbx");
     assert(hModel_ >= 0);
 
-    BoxCollider* collision = new BoxCollider(XMFLOAT3(-0.1f, 0, 0), XMFLOAT3(1, 8, 1));
+    BoxCollider* collision =
+        new BoxCollider(XMFLOAT3(BColliderPosiX, BColliderPosiY, BColliderPosiZ),
+            XMFLOAT3(BColliderSizeX, BColliderSizeY, BColliderSizeZ));
     //collision -> SetSize(GetScale());
     AddCollider(collision);
 }
 
 void StageUp::Update()
 {
-    transform_.position_.x -= 0.1f;
+    transform_.position_.x -= trPosiChangeX;
 
     if (transform_.position_.x <= -10) {
         this->KillMe();
