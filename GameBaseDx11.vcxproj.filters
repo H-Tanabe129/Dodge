@@ -101,7 +101,6 @@
     <ClCompile Include="Engine\VFX.cpp">
       <Filter>01Engine\ResourceManager</Filter>
     </ClCompile>
-    <ClCompile Include="BackGround.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="Timer.cpp">
       <Filter>01Engine\ResourceManager</Filter>
@@ -128,6 +127,7 @@
       <Filter>Scene</Filter>
     </ClCompile>
     <ClCompile Include="ValueManager.cpp" />
+    <ClCompile Include="Ready.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Engine\BoxCollider.h">
@@ -199,7 +199,6 @@
     <ClInclude Include="Engine\VFX.h">
       <Filter>01Engine\ResourceManager</Filter>
     </ClInclude>
-    <ClInclude Include="BackGround.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="Timer.h">
       <Filter>01Engine\ResourceManager</Filter>
@@ -226,6 +225,7 @@
       <Filter>Scene</Filter>
     </ClInclude>
     <ClInclude Include="ValueManager.h" />
+    <ClInclude Include="Ready.h" />
   </ItemGroup>
   <ItemGroup>
     <FxCompile Include="Assets\Shader\Simple2D.hlsl">

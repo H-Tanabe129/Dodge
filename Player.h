@@ -20,7 +20,7 @@ private:
     static const int posiZ = -1;    //プレイヤー表示Z
     static const int textX = 30;    //文字表示X
     static const int textY = 30;    //文字表示Y
-    int score;
+    int score = 1;
 
 public:
     //コンストラクタ

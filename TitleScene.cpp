@@ -14,7 +14,7 @@ void TitleScene::Initialize()
     hPict_ = Image::Load("Dodge.png");
     assert(hPict_ >= 0);
     //画像データのロード
-    hStart_ = Image::Load("Start.png");
+    hStart_ = Image::Load("PStart.png");
     assert(hStart_ >= 0);
 
     Title.position_.y = titlePicturePosiY;

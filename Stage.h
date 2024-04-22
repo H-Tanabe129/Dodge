@@ -8,8 +8,8 @@ enum Wall {
     //LOWERFRONT,
     UPPER,
     LOWER,
-    //UPPERLONG,
-    //LOWERLONG,
+    UPPERLONG,
+    LOWERLONG,
     MAX
 };
 
@@ -21,9 +21,10 @@ private:
     static const int FPS = 60;
     int frame = 0;
     int rd = 0;
-
-    //Transform Upper;
-    //Transform Lower;
+    int SetPosiX = 35.0;
+    int SetPosiUpY = 3.5f;
+    int SetPosiLoY = -2.5f;
+    int SetPosiZ = 0;
 
 public:
     //コンストラクタ

@@ -156,6 +156,7 @@
     <ClCompile Include="Obstacle.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="PlayScene.cpp" />
+    <ClCompile Include="Ready.cpp" />
     <ClCompile Include="Stage.cpp" />
     <ClCompile Include="StageUp.cpp" />
     <ClCompile Include="StageLo.cpp" />
@@ -191,6 +192,7 @@
     <ClInclude Include="Obstacle.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="PlayScene.h" />
+    <ClInclude Include="Ready.h" />
     <ClInclude Include="Stage.h" />
     <ClInclude Include="StageUp.h" />
     <ClInclude Include="StageLo.h" />
