@@ -4,6 +4,7 @@
 #include "Obstacle.h"
 #include "Engine/Camera.h"
 #include "Engine/Audio.h"
+#include "Engine/Input.h"
 
 //コンストラクタ
 PlayScene::PlayScene(GameObject * parent)
@@ -22,7 +23,9 @@ void PlayScene::Initialize()
 	Camera::SetTarget(XMFLOAT3(CTarX, CTarY, CTarZ));
 	
 	Instantiate<Player>(this);
-	Instantiate<Stage>(this);
+	if(Input::IsKeyDown(DIK_SPACE)){
+		Instantiate<Stage>(this);
+	}
 	//Instantiate<Obstacle>(this);
 
 	Audio::Play(hSound_);

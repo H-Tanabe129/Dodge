@@ -1,4 +1,5 @@
 #include "Player.h"
+#include "Ready.h"
 #include "ValueManager.h"
 #include "Engine/Model.h"
 #include "Engine/Input.h"
@@ -36,6 +37,11 @@ void Player::Initialize()
 
 void Player::Update()
 {
+	//Readyしてからstart
+	//Ready* pReady = (Ready*)FindObject("Ready");
+ //	if (pReady != nullptr && !pReady->Finished())
+	//	return;
+
     //スペースキーが押されていたらジャンプ
 	static float velocity = veloIni;
 	if (Input::IsKey(DIK_SPACE))

@@ -4,6 +4,8 @@
 
 class Ready : public GameObject
 {
+private:
+	int hImage_;
 public:
 	Ready(GameObject* parent);
 	~Ready();
