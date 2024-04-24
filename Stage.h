@@ -20,11 +20,11 @@ private:
 
     static const int FPS = 60;
     int frame = 0;
-    int rd = 0;
-    int SetPosiX = 35.0;
-    int SetPosiUpY = 3.5f;
-    int SetPosiLoY = -2.5f;
-    int SetPosiZ = 0;
+    int rd = 0;     //乱数
+    int SetPosiX = 35.0;        //追加StageのX座標
+    int SetPosiUpY = 3.5f;      //上追加StageのY初期座標
+    int SetPosiLoY = -2.5f;     //下追加StageのY初期座標
+    int SetPosiZ = 0;           //追加StageのZ座標
 
 public:
     //コンストラクタ

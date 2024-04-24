@@ -67,6 +67,7 @@ void Player::Update()
 	}
 
 	ValueManager::GetInstance().AddScore(score);
+	ValueManager::GetInstance().AddTime();
 }
 
 void Player::Draw()
@@ -74,7 +75,8 @@ void Player::Draw()
     Model::SetTransform(hModel_, transform_);
     Model::Draw(hModel_);
 
-	pText->Draw(textX, textY, ValueManager::GetInstance().GetScore());
+	pText->Draw(scoreX, scoreY, ValueManager::GetInstance().GetScore());
+	pText->Draw(timeX, timeY, ValueManager::GetInstance().GetTime());
 }
 
 void Player::Release()

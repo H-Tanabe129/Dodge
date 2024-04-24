@@ -18,9 +18,11 @@ private:
     float veloDecre = 0.02f;    //重力減少量
     static const int edge = 12;     //画面端
     static const int posiZ = -1;    //プレイヤー表示Z
-    static const int textX = 30;    //文字表示X
-    static const int textY = 30;    //文字表示Y
-    int score = 1;
+    static const int scoreX = 30;    //時間表示X
+    static const int scoreY = 30;    //時間表示Y
+    static const int timeX = 30;     //スコア表示X
+    static const int timeY = 60;     //スコア表示Y
+    int score = 100;
 
 public:
     //コンストラクタ

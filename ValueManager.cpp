@@ -7,8 +7,9 @@ ValueManager& ValueManager::GetInstance() {
 }
 
 //éûä‘
-void ValueManager::AddTime(int _amount) {
-	time_ += _amount;
+void ValueManager::AddTime() {
+	frame += 1;
+	time_ = frame / FPS;
 }
 
 int ValueManager::GetTime() const {
@@ -21,6 +22,7 @@ void ValueManager::ResetTime() {
 
 //ÉXÉRÉA
 void ValueManager::AddScore(int _amount) {
+	if(frame%FPS == 0)
 	score_ += _amount;
 }
 

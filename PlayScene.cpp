@@ -16,7 +16,7 @@ PlayScene::PlayScene(GameObject * parent)
 void PlayScene::Initialize()
 {
 	//サウンドデータのロード
-	hSound_ = Audio::Load("A2_01003.WAV");
+	hSound_ = Audio::Load("A2_01003.WAV", true);
 	assert(hSound_ >= 0);
 
 	Camera::SetPosition(XMFLOAT3(CPosiX, CPosiY, CPosiZ));  //test == 35, 3, 0    -25
