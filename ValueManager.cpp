@@ -22,7 +22,8 @@ void ValueManager::ResetTime() {
 
 //ÉXÉRÉA
 void ValueManager::AddScore(int _amount) {
-	if(frame%FPS == 0)
+	int scoreInc_ = frame % 15;
+	if(scoreInc_ == 0)
 	score_ += _amount;
 }
 

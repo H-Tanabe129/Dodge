@@ -22,7 +22,7 @@ private:
     static const int scoreY = 30;    //時間表示Y
     static const int timeX = 30;     //スコア表示X
     static const int timeY = 60;     //スコア表示Y
-    int score = 100;
+    int score = 20;
 
 public:
     //コンストラクタ
