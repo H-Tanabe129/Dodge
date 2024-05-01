@@ -2,6 +2,7 @@
 #include "StageUp.h"
 #include "StageLo.h"
 #include "Player.h"
+#include "Item.h"
 #include <time.h>
 
 

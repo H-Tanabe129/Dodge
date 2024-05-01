@@ -114,7 +114,7 @@
     <ClCompile Include="StageUp.cpp">
       <Filter>Gimmick</Filter>
     </ClCompile>
-    <ClCompile Include="Obstacle.cpp">
+    <ClCompile Include="Item.cpp">
       <Filter>Gimmick</Filter>
     </ClCompile>
     <ClCompile Include="PlayScene.cpp">
@@ -212,7 +212,7 @@
     <ClInclude Include="StageUp.h">
       <Filter>Gimmick</Filter>
     </ClInclude>
-    <ClInclude Include="Obstacle.h">
+    <ClInclude Include="Item.h">
       <Filter>Gimmick</Filter>
     </ClInclude>
     <ClInclude Include="PlayScene.h">
