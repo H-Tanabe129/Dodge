@@ -1,6 +1,7 @@
 #include "sceneManager.h"
 
 #include "../TitleScene.h"
+#include "../WaitScene.h"
 #include "../PlayScene.h"
 #include "../GameOverScene.h"
 #include "Model.h"
@@ -41,6 +42,7 @@ void SceneManager::Update()
 		switch (nextSceneID_)
 		{
 		case SCENE_ID_TITLE: Instantiate<TitleScene>(this); break;
+		case SCENE_ID_WAIT: Instantiate<WaitScene>(this); break;
 		case SCENE_ID_PLAY: Instantiate<PlayScene>(this); break;
 		case SCENE_ID_GAMEOVER: Instantiate<GameOverScene>(this); break;
 

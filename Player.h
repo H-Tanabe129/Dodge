@@ -1,13 +1,11 @@
 #pragma once
 #include "Engine/GameObject.h"
-#include "Engine/Text.h"
 
 class Player : public GameObject
 {
 private:
     int hModel_;    //モデル番号
     int hSound_;    //サウンド番号
-    Text* pText;
 
     static const int SColliderX = 1.0f;    //コライダーX軸
     static const int SColliderY = 1.0f;    //コライダーY軸
@@ -22,7 +20,6 @@ private:
     static const int scoreY = 30;    //時間表示Y
     static const int timeX = 30;     //スコア表示X
     static const int timeY = 60;     //スコア表示Y
-    int score = 20;
 
 public:
     //コンストラクタ

@@ -157,12 +157,14 @@
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="PlayScene.cpp" />
     <ClCompile Include="Ready.cpp" />
+    <ClCompile Include="SpeedDown.cpp" />
     <ClCompile Include="Stage.cpp" />
     <ClCompile Include="StageUp.cpp" />
     <ClCompile Include="StageLo.cpp" />
     <ClCompile Include="Timer.cpp" />
     <ClCompile Include="TitleScene.cpp" />
     <ClCompile Include="ValueManager.cpp" />
+    <ClCompile Include="WaitScene.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Engine\Audio.h" />
@@ -193,12 +195,14 @@
     <ClInclude Include="Player.h" />
     <ClInclude Include="PlayScene.h" />
     <ClInclude Include="Ready.h" />
+    <ClInclude Include="SpeedDown.h" />
     <ClInclude Include="Stage.h" />
     <ClInclude Include="StageUp.h" />
     <ClInclude Include="StageLo.h" />
     <ClInclude Include="Timer.h" />
     <ClInclude Include="TitleScene.h" />
     <ClInclude Include="ValueManager.h" />
+    <ClInclude Include="WaitScene.h" />
   </ItemGroup>
   <ItemGroup>
     <FxCompile Include="Assets\Shader\BillBoard.hlsl">

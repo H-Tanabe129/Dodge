@@ -8,6 +8,9 @@ private:
     int hJump_;     //ジャンプ力アップ
     int hScore_;    //スコアアップ
     int rd = 0;
+    static const int FPS = 60;
+    int frame = 0;
+
 public:
     //コンストラクタ
     Item(GameObject* parent);

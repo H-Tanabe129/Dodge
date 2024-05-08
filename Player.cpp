@@ -8,7 +8,7 @@
 #include "Engine/SceneManager.h"
 
 Player::Player(GameObject* parent)
-    :GameObject(parent, "Player"), hModel_(-1), hSound_(-1), pText(nullptr)
+    :GameObject(parent, "Player"), hModel_(-1), hSound_(-1)
 {
 }
 
@@ -30,9 +30,6 @@ void Player::Initialize()
 	SphereCollider* collision = 
 		new SphereCollider(XMFLOAT3(SColliderX, SColliderY, SColliderZ), radius);
 	AddCollider(collision);
-
-	pText = new Text;
-	pText->Initialize();
 }
 
 void Player::Update()
@@ -66,22 +63,16 @@ void Player::Update()
 		pSceneManager->ChangeScene(SCENE_ID_GAMEOVER);
 	}
 
-	ValueManager::GetInstance().AddScore(score);
-	ValueManager::GetInstance().AddTime();
 }
 
 void Player::Draw()
 {
     Model::SetTransform(hModel_, transform_);
     Model::Draw(hModel_);
-
-	pText->Draw(scoreX, scoreY, ValueManager::GetInstance().GetScore());
-	pText->Draw(timeX, timeY, ValueManager::GetInstance().GetTime());
 }
 
 void Player::Release()
 {
-	pText->Release();
 }
 
 //‰½‚©‚É“–‚½‚Á‚½

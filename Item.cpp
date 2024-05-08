@@ -30,11 +30,15 @@ void Item::Initialize()
 
 void Item::Update()
 {
-    frame += 1;
-    if(frame % (FPS * 5) == 0)
+   /* frame += 1;
+    if (frame % (FPS * 5) == 0)
     {
         rd = rand() % 100;
-    }
+        switch (rd) {
+        case 1:
+
+        }
+    }*/
 }
 
 void Item::Draw()
@@ -57,6 +61,6 @@ void Item::OnCollision(GameObject * pTarget)
     //“–‚½‚Á‚½‚Æ‚«
     if (pTarget->GetObjectName() == "Stage")
     {
-        this->KillMe();
+        //this->KillMe();
     }
 }
