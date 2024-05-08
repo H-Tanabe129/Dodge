@@ -1,5 +1,7 @@
 #include "Item.h"
+#include "Stage.h"
 #include "Engine/Model.h"
+#include "Engine/BoxCollider.h"
 
 Item::Item(GameObject* parent)
 	:GameObject(parent, "Item"), hSpeed_(-1), hJump_(-1), hScore_(-1)
@@ -20,10 +22,19 @@ void Item::Initialize()
     hScore_ = Model::Load("Model/ScoreUp.fbx");
     assert(hScore_ >= 0);
 
+    BoxCollider* collision = new BoxCollider(XMFLOAT3(0, 0, 0), XMFLOAT3(1, 1, 1));
+    AddCollider(collision);
+
+    srand((unsigned int)time(nullptr));
 }
 
 void Item::Update()
 {
+    frame += 1;
+    if(frame % (FPS * 5) == 0)
+    {
+        rd = rand() % 100;
+    }
 }
 
 void Item::Draw()
@@ -43,5 +54,9 @@ void Item::Release()
 //‰½‚©‚É“–‚½‚Á‚½
 void Item::OnCollision(GameObject * pTarget)
 {
-    //“–‚½‚Á‚½‚Æ‚«‚Ìˆ—
+    //“–‚½‚Á‚½‚Æ‚«
+    if (pTarget->GetObjectName() == "Stage")
+    {
+        this->KillMe();
+    }
 }

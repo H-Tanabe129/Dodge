@@ -7,6 +7,7 @@ private:
     int hSpeed_;    //スピードダウン
     int hJump_;     //ジャンプ力アップ
     int hScore_;    //スコアアップ
+    int rd = 0;
 public:
     //コンストラクタ
     Item(GameObject* parent);

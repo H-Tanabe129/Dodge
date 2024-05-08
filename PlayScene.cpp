@@ -1,7 +1,7 @@
 #include "PlayScene.h"
 #include "Player.h"
 #include "Stage.h"
-#include "Obstacle.h"
+#include "Item.h"
 #include "Engine/Camera.h"
 #include "Engine/Audio.h"
 #include "Engine/Input.h"
@@ -26,7 +26,7 @@ void PlayScene::Initialize()
 	if(Input::IsKeyDown(DIK_SPACE)){
 		Instantiate<Stage>(this);
 	}
-	//Instantiate<Obstacle>(this);
+	//Instantiate<Item>(this);
 
 	Audio::Play(hSound_);
 }
