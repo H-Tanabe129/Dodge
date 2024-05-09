@@ -16,7 +16,8 @@ private:
     static const int BColliderSizeY = 8;    //コライダーサイズY
     static const int BColliderSizeZ = 1;    //コライダーサイズZ
     
-    float trPosiChangeX = 0.1;
+    static const int LEdge = -10;
+    float trPosiChangeX = 0.1;      //X座標変化量
 
 public:
     //コンストラクタ
