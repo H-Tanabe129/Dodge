@@ -1,17 +1,17 @@
 #pragma once
 #include "Engine/GameObject.h"
 
-class SpeedDown : public GameObject
+class JumpUp : public GameObject
 {
 private:
-    int hSpeed_;    //スピードダウン
+    int hJump_;     //ジャンプ力アップ
 
 public:
     //コンストラクタ
-    SpeedDown(GameObject* parent);
+    JumpUp(GameObject* parent);
 
     //デストラクタ
-    ~SpeedDown();
+    ~JumpUp();
 
     //初期化
     void Initialize() override;

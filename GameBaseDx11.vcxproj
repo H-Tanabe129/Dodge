@@ -154,9 +154,11 @@
     <ClCompile Include="Engine\Transform.cpp" />
     <ClCompile Include="GameOverScene.cpp" />
     <ClCompile Include="Item.cpp" />
+    <ClCompile Include="JumpUp.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="PlayScene.cpp" />
     <ClCompile Include="Ready.cpp" />
+    <ClCompile Include="ScoreUp.cpp" />
     <ClCompile Include="SpeedDown.cpp" />
     <ClCompile Include="Stage.cpp" />
     <ClCompile Include="StageUp.cpp" />
@@ -192,9 +194,11 @@
     <ClInclude Include="Engine\Transform.h" />
     <ClInclude Include="GameOverScene.h" />
     <ClInclude Include="Item.h" />
+    <ClInclude Include="JumpUp.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="PlayScene.h" />
     <ClInclude Include="Ready.h" />
+    <ClInclude Include="ScoreUp.h" />
     <ClInclude Include="SpeedDown.h" />
     <ClInclude Include="Stage.h" />
     <ClInclude Include="StageUp.h" />
