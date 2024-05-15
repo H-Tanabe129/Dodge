@@ -17,7 +17,9 @@ void SpeedDown::Initialize()
     hSpeed_ = Model::Load("Model/SpeedDown.fbx");
     assert(hSpeed_ >= 0);
 
-    BoxCollider* collision = new BoxCollider(XMFLOAT3(0, 0, 0), XMFLOAT3(1, 1, 1));
+    BoxCollider* collision = new BoxCollider
+    (XMFLOAT3(BColliderPosiX, BColliderPosiY, BColliderPosiZ), 
+        XMFLOAT3(BColliderSizeX, BColliderSizeY, BColliderSizeZ));
     AddCollider(collision);
 }
 

@@ -31,6 +31,10 @@ int ValueManager::GetScore() const {
 	return score_;
 }
 
+void ValueManager::ItemScore() {
+
+}
+
 void ValueManager::ResetScore() {
 	score_ = 0;
 }

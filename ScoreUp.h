@@ -13,7 +13,7 @@ private:
     static const int BColliderPosiY = 0;        //コライダーポジションY
     static const int BColliderPosiZ = 0;        //コライダーポジションZ
     static const int BColliderSizeX = 1;    //コライダーサイズX
-    static const int BColliderSizeY = 8;    //コライダーサイズY
+    static const int BColliderSizeY = 1;    //コライダーサイズY
     static const int BColliderSizeZ = 1;    //コライダーサイズZ
 public:
     //コンストラクタ

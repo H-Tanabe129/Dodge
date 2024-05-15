@@ -11,7 +11,7 @@ private:
 	int hSound_;    //サウンド番号
 	Text* pText;
 
-	static const int CPosiX = 15;	//カメラポジションX
+	static const int CPosiX = 15;	//カメラポジションX  //test == 35, 3, 0    -25
 	static const int CPosiY = 3;	//カメラポジションY
 	static const int CPosiZ = -25;	//カメラポジションZ
 	static const int CTarX = 15;	//カメラターゲットX

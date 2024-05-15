@@ -17,7 +17,9 @@ void ScoreUp::Initialize()
     hScore_ = Model::Load("Model/ScoreUp.fbx");
     assert(hScore_ >= 0);
 
-    BoxCollider* collision = new BoxCollider(XMFLOAT3(0, 0, 0), XMFLOAT3(1, 1, 1));
+    BoxCollider* collision = new BoxCollider
+        (XMFLOAT3(BColliderPosiX, BColliderPosiY, BColliderPosiZ),
+            XMFLOAT3(BColliderSizeX, BColliderSizeY, BColliderSizeZ));
     AddCollider(collision);
 }
 

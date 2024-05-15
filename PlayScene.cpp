@@ -20,7 +20,7 @@ void PlayScene::Initialize()
 	hSound_ = Audio::Load("A2_01003.WAV", true);
 	assert(hSound_ >= 0);
 
-	Camera::SetPosition(XMFLOAT3(CPosiX, CPosiY, CPosiZ));  //test == 35, 3, 0    -25
+	Camera::SetPosition(XMFLOAT3(CPosiX, CPosiY, CPosiZ));
 	Camera::SetTarget(XMFLOAT3(CTarX, CTarY, CTarZ));
 	
 	Instantiate<Player>(this);
@@ -42,8 +42,10 @@ void PlayScene::Update()
 //•`‰æ
 void PlayScene::Draw()
 {
-	pText->Draw(scoreX, scoreY, ValueManager::GetInstance().GetScore());
-	pText->Draw(timeX, timeY, ValueManager::GetInstance().GetTime());
+	pText->Draw(scoreX, scoreY, "Score:");
+	pText->Draw(scoreX+100, scoreY, ValueManager::GetInstance().GetScore());
+	pText->Draw(timeX, timeY, "Time: ");
+	pText->Draw(timeX+100, timeY, ValueManager::GetInstance().GetTime());
 }
 
 //ŠJ•ú

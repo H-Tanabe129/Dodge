@@ -16,6 +16,7 @@ public:
 
 	  void AddScore(int _amount);
 	  int GetScore() const;
+	  void ItemScore();
 	  void ResetScore();
 };
 
