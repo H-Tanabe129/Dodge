@@ -21,10 +21,13 @@ void ScoreUp::Initialize()
         (XMFLOAT3(BColliderPosiX, BColliderPosiY, BColliderPosiZ),
             XMFLOAT3(BColliderSizeX, BColliderSizeY, BColliderSizeZ));
     AddCollider(collision);
+
+    srand((unsigned int)time(nullptr));
 }
 
 void ScoreUp::Update()
 {
+    trPosiY = GenerateRand();
 }
 
 void ScoreUp::Draw()
@@ -35,4 +38,10 @@ void ScoreUp::Draw()
 
 void ScoreUp::Release()
 {
+}
+
+float ScoreUp::GenerateRand()
+{
+    geneRand = (rand() % (max - min + 1) + min) / flo;
+    return geneRand;
 }

@@ -21,10 +21,13 @@ void JumpUp::Initialize()
     (XMFLOAT3(BColliderPosiX, BColliderPosiY, BColliderPosiZ), 
         XMFLOAT3(BColliderSizeX, BColliderSizeY, BColliderSizeZ));
     AddCollider(collision);
+
+    srand((unsigned int)time(nullptr));
 }
 
 void JumpUp::Update()
 {
+    trPosiY = GenerateRand();
 }
 
 void JumpUp::Draw()
@@ -35,4 +38,10 @@ void JumpUp::Draw()
 
 void JumpUp::Release()
 {
+}
+
+float JumpUp::GenerateRand()
+{
+    geneRand = (rand() % (max - min + 1) + min) / flo;
+    return geneRand;
 }

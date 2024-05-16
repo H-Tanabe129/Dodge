@@ -22,15 +22,15 @@ void Item::Initialize()
 
 void Item::Update()
 {
-   /* frame += 1;
-    if (frame % (FPS * 5) == 0)
+    frame += 1;
+    if (frame % (FPS * 6) == 0)
     {
         rd = rand() % 100;
         switch (rd) {
         case 1:
-
+            break;
         }
-    }*/
+    }
 }
 
 void Item::Draw()

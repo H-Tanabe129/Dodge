@@ -21,10 +21,13 @@ void SpeedDown::Initialize()
     (XMFLOAT3(BColliderPosiX, BColliderPosiY, BColliderPosiZ), 
         XMFLOAT3(BColliderSizeX, BColliderSizeY, BColliderSizeZ));
     AddCollider(collision);
+
+    srand((unsigned int)time(nullptr));
 }
 
 void SpeedDown::Update()
 {
+    trPosiY = GenerateRand();
 }
 
 void SpeedDown::Draw()
@@ -35,4 +38,10 @@ void SpeedDown::Draw()
 
 void SpeedDown::Release()
 {
+}
+
+float SpeedDown::GenerateRand()
+{
+    geneRand = (rand() % (max - min + 1) + min) / flo;
+    return geneRand;
 }
