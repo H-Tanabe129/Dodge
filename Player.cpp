@@ -26,6 +26,7 @@ void Player::Initialize()
     hModel_ = Model::Load("Model/Player.fbx");
     assert(hModel_ >= 0);
 	transform_.position_.z = posiZ;
+	transform_.position_.y = posiY;
 
 	SphereCollider* collision = 
 		new SphereCollider(XMFLOAT3(SColliderX, SColliderY, SColliderZ), radius);
@@ -36,17 +37,17 @@ void Player::Update()
 {
 	//Readyしてからstart
 	//Ready* pReady = (Ready*)FindObject("Ready");
- //	if (pReady != nullptr && !pReady->Finished())
+	//if (pReady != nullptr && !pReady->Finished())
 	//	return;
 
     //スペースキーが押されていたらジャンプ
-	static float velocity = veloIni;
+	float velocity = veloIni;
 	if (Input::IsKey(DIK_SPACE))
     {
 		velocity = veloIncre;
 		Audio::Play(hSound_);
 	}
-	if (velocity != veloIni)
+	if (Input::IsKeyUp(DIK_SPACE))//velocity != veloIni
 	{
 		// ここが重力で徐々に下げる
 		velocity -= veloDecre;

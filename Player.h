@@ -10,10 +10,20 @@ private:
     static const int SColliderX = 1.0f;    //コライダーX軸
     static const int SColliderY = 1.0f;    //コライダーY軸
     static const int SColliderZ = 1.0f;    //コライダーZ軸
-    static const int radius = 1.02f;            //コライダー半径
+    static const int radius = 1.02f;       //コライダー半径
     float veloIni = 0.0f;       //重力初期値
     float veloIncre = 0.15f;    //重力増加量
-    float veloDecre = 0.02f;    //重力減少量
+    float veloDecre = 0.05f;    //重力減少量
+
+    //const float initialVelocity = 0.0f; // 最初の速度（静止状態）
+    //const float jumpVelocity = 10.0f;   // ジャンプ初期速度
+    //const float gravity = 0.5f;         // 重力加速度
+    //float velocity = initialVelocity;   // 現在の速度
+    //bool isHovering = true;             // 空中にとどまっているかどうかのフラグ
+    //bool hasJumped = false;             // ジャンプしたかどうかのフラグ
+    int posiY = 0.0f;
+
+
     static const int edge = 12;     //画面端
     static const int posiZ = -1;    //プレイヤー表示Z
     static const int scoreX = 30;    //時間表示X
