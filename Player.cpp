@@ -66,33 +66,8 @@ void Player::Update()
 
 }
 
-// ジャンプ処理
 void Player::Jump()
 {
-	if (Input::IsKeyDown(DIK_SPACE))
-	{
-		velocity = jumpVelocity; // ジャンプ初期速度を設定
-		Audio::Play(hSound_);
-	}
-}
-
-// 重力の適用処理
-void Player::ApplyGravity()
-{
-    if (velocity != initialVelocity)
-    {
-        velocity -= gravity; // 重力を適用
-    }
-
-    // キャラクターの位置を更新
-    transform_.position_.y += velocity;
-
-    // 地面に到達したら位置をリセットし速度を初期化（今回は必要ない）
-    if (transform_.position_.y < groundLevel)
-    {
-        transform_.position_.y = hoverHeight;
-        velocity = initialVelocity;
-    }
 }
 
 void Player::Draw()
