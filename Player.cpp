@@ -39,22 +39,7 @@ void Player::Update()
 	//Ready* pReady = (Ready*)FindObject("Ready");
 	//if (pReady != nullptr && !pReady->Finished())
 	//	return;
-
-    //スペースキーが押されていたらジャンプ
-	/*float velocity = veloIni;
-	if (Input::IsKey(DIK_SPACE))
-    {
-		velocity = veloIncre;
-		Audio::Play(hSound_);
-	}
-	if (Input::IsKeyUp(DIK_SPACE))//velocity != veloIni
-	{
-		// ここが重力で徐々に下げる
-		velocity -= veloDecre;
-
-		//キャラクターの場所に値を渡す
-		transform_.position_.y += velocity;
-    }*/
+	/**/
 
 	if (transform_.position_.y >= edge || transform_.position_.y <= -edge)
 	{
@@ -68,6 +53,22 @@ void Player::Update()
 
 void Player::Jump()
 {
+
+    //スペースキーが押されていたらジャンプ
+	float velocity = veloIni;
+	if (Input::IsKey(DIK_SPACE))
+    {
+		velocity = veloIncre;
+		Audio::Play(hSound_);
+	}
+	if (Input::IsKeyUp(DIK_SPACE))//velocity != veloIni
+	{
+		// ここが重力で徐々に下げる
+		velocity -= veloDecre;
+
+		//キャラクターの場所に値を渡す
+		transform_.position_.y += velocity;
+    }
 }
 
 void Player::Draw()
