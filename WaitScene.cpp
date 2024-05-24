@@ -37,7 +37,7 @@ void WaitScene::Update()
 void WaitScene::Draw()
 {
 	pText->Draw(scoreX, scoreY, "Score:0");
-	pText->Draw(timeX, timeY, "Time:0");
+	pText->Draw(timeX, timeY, "Time: 0");
 }
 
 void WaitScene::Release()

@@ -36,10 +36,9 @@ void Player::Initialize()
 void Player::Update()
 {
 	//Ready‚µ‚Ä‚©‚çstart
-	//Ready* pReady = (Ready*)FindObject("Ready");
-	//if (pReady != nullptr && !pReady->Finished())
-	//	return;
-	/**/
+	/*Ready* pReady = (Ready*)FindObject("Ready");
+	if (pReady != nullptr && !pReady->Finished())
+		return;*/
 
 	if (transform_.position_.y >= edge || transform_.position_.y <= -edge)
 	{

@@ -5,6 +5,7 @@
 #include "Stage.h"
 #include "Engine/Model.h"
 #include "Engine/BoxCollider.h"
+#include <random>
 
 Item::Item(GameObject* parent)
 	:GameObject(parent, "Item")
@@ -23,12 +24,12 @@ void Item::Initialize()
 void Item::Update()
 {
     frame += 1;
-    if (frame % (FPS * 6) == 0)
+    // 一定間隔でランダム値を出力する
+    int randomValue = getRandomValue(randMin, randMax);
+    if (frame % (FPS * randomValue) == 0)
     {
-        rd = rand() % 100;
         switch (rd) {
-        case 1:
-            break;
+        case ScoreUp:
         }
     }
 }
@@ -49,4 +50,12 @@ void Item::OnCollision(GameObject * pTarget)
     {
         //this->KillMe();
     }
+}
+
+//ランダムな整数を生成する関数
+int Item::getRandomValue(int min, int max) {
+    std::random_device rd;   // シード生成器
+    std::mt19937 gen(rd());  // メルセンヌ・ツイスタ生成器
+    std::uniform_int_distribution<> dis(min, max); // 一様分布
+    return dis(gen);
 }

@@ -60,6 +60,13 @@ float easeInCubic(float x) {
 void Ready::Update()
 {
 	seq_time += 1.0f / 60.0f; // ŠÔ‚ği‚ß‚é
+
+    if (seq_line < 0) { // ‰‰ñ‚Ì‰Šú‰»
+        seq_line = 0;
+        //currentAction = tbl[seq_line].action;
+        seq_time = 0.0f;
+    }
+    
 	if (seq_time >= tbl[seq_line + 1].time) { // Ÿ‚Ìs‚ğÀs‚·‚é
 		seq_line++;
 		switch (tbl[seq_line].action) {

@@ -25,7 +25,7 @@ void PlayScene::Initialize()
 	
 	Instantiate<Player>(this);
 	Instantiate<Stage>(this);
-	//Instantiate<Item>(this);
+	Instantiate<Item>(this);
 
 	pText = new Text;
 	pText->Initialize();
