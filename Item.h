@@ -12,10 +12,13 @@ class Item : public GameObject
 {
 private:
     int rd = 0;
-    static const int FPS = 60;
     int frame = 0;
-    int randMin = 10;
-    int randMax = 15;
+    int randomValue;
+    const int FPS = 60;
+    const int randMin = 10;
+    const int randMax = 15;
+
+    int getRandomValue(int min, int max);
 
 public:
     //コンストラクタ
@@ -39,6 +42,4 @@ public:
     //何かに当たった
     //引数：pTarget 当たった相手
     void OnCollision(GameObject *pTarget) override;
-
-    int getRandomValue(int min, int max);
 };

@@ -8,7 +8,7 @@
 #include <random>
 
 Item::Item(GameObject* parent)
-	:GameObject(parent, "Item")
+	:GameObject(parent, "Item"), randomValue(getRandomValue(randMin, randMax))
 {
 }
 
@@ -25,12 +25,18 @@ void Item::Update()
 {
     frame += 1;
     // ˆê’èŠÔŠu‚Åƒ‰ƒ“ƒ_ƒ€’l‚ğo—Í‚·‚é
-    int randomValue = getRandomValue(randMin, randMax);
     if (frame % (FPS * randomValue) == 0)
     {
         switch (rd) {
         case ScoreUp:
+
+            break;
+        case JumpUp:
+            break;
+        case SpeedDown:
+            break;
         }
+    randomValue = getRandomValue(randMin, randMax);
     }
 }
 
