@@ -1,4 +1,5 @@
 #include "ScoreUp.h"
+#include "ValueManager.h"
 #include "Engine/Model.h"
 #include "Engine/BoxCollider.h"
 
@@ -44,4 +45,10 @@ float ScoreUp::GenerateRand()
 {
     geneRand = (rand() % (max - min + 1) + min) / flo;
     return geneRand;
+}
+
+void ScoreUp::OnCollision(GameObject* pTarget) {
+    if (pTarget->GetObjectName() == "Player") {
+        ValueManager::ItemScore();
+    }
 }
