@@ -1,5 +1,6 @@
 #pragma once
 #include "Engine/GameObject.h"
+#include <random>
 
 enum {
     ScoreUp = 1,
@@ -11,14 +12,19 @@ enum {
 class Item : public GameObject
 {
 private:
-    int rd = 0;
-    int frame = 0;
-    int randomValue;
-    const int FPS = 60;
-    const int randMin = 10;
-    const int randMax = 15;
+    int rd = 0;              // 現在のランダム値
+    int frame = 0;           // フレームカウンター
+    int randomValue;         // ランダム間隔値
+    const int FPS = 60;      // フレームレート
+    const int randMin = 10;  // ランダム秒数間隔の最小値
+    const int randMax = 15;  // ランダム秒数間隔の最大値
+    const int rdMin = 1;     // ランダムアイテムタイプの最小値
+    const int rdMax = 3;     // ランダムアイテムタイプの最大値
 
     int getRandomValue(int min, int max);
+
+    std::random_device rd_dev; // シード生成器
+    std::mt19937 gen;          // メルセンヌ・ツイスタ生成器
 
 public:
     //コンストラクタ

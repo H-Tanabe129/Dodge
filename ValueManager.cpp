@@ -32,7 +32,7 @@ int ValueManager::GetScore() const {
 }
 
 void ValueManager::ItemScore() {
-
+	score_ = score_ + 100;
 }
 
 void ValueManager::ResetScore() {

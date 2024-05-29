@@ -5,10 +5,9 @@
 #include "Stage.h"
 #include "Engine/Model.h"
 #include "Engine/BoxCollider.h"
-#include <random>
 
 Item::Item(GameObject* parent)
-	:GameObject(parent, "Item"), randomValue(getRandomValue(randMin, randMax))
+	:GameObject(parent, "Item"), frame(0), randomValue(getRandomValue(randMin, randMax))
 {
 }
 
@@ -27,13 +26,16 @@ void Item::Update()
     // 一定間隔でランダム値を出力する
     if (frame % (FPS * randomValue) == 0)
     {
+        rd = getRandomValue(rdMin, rdMax);
         switch (rd) {
         case ScoreUp:
-
+            Instantiate<ScoreUp>(this);
             break;
         case JumpUp:
+            Instantiate<JumpUp>(this);
             break;
         case SpeedDown:
+            Instantiate<SpeedDown>(this);
             break;
         }
     randomValue = getRandomValue(randMin, randMax);
@@ -60,8 +62,6 @@ void Item::OnCollision(GameObject * pTarget)
 
 //ランダムな整数を生成する関数
 int Item::getRandomValue(int min, int max) {
-    std::random_device rd;   // シード生成器
-    std::mt19937 gen(rd());  // メルセンヌ・ツイスタ生成器
     std::uniform_int_distribution<> dis(min, max); // 一様分布
     return dis(gen);
 }

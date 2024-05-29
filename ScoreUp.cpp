@@ -4,7 +4,7 @@
 #include "Engine/BoxCollider.h"
 
 ScoreUp::ScoreUp(GameObject* parent)
-    :GameObject(parent, "Item"), hScore_(-1)
+    :GameObject(parent, "ScoreUp"), hScore_(-1)
 {
 }
 
@@ -49,6 +49,6 @@ float ScoreUp::GenerateRand()
 
 void ScoreUp::OnCollision(GameObject* pTarget) {
     if (pTarget->GetObjectName() == "Player") {
-        ValueManager::ItemScore();
+        ValueManager::GetInstance().ItemScore();
     }
 }
