@@ -179,6 +179,7 @@ private:
 template <class T>
 T* Instantiate(GameObject* pParent)
 {
+	static_assert(std::is_base_of<GameObject, T>::value, "T must be derived from GameObject");
 	T* pNewObject = new T(pParent);
 	if (pParent != nullptr)
 	{

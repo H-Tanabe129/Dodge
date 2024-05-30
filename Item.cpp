@@ -7,7 +7,7 @@
 #include "Engine/BoxCollider.h"
 
 Item::Item(GameObject* parent)
-	:GameObject(parent, "Item"), frame(0), randomValue(getRandomValue(randMin, randMax))
+	:GameObject(parent, "Item"), frame(0), randomValue(getRandomValue(randMin, randMax)), gen(rd_dev())
 {
 }
 
