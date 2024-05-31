@@ -27,7 +27,6 @@ void SpeedDown::Initialize()
 
 void SpeedDown::Update()
 {
-    trPosiY = GenerateRand();
 }
 
 void SpeedDown::Draw()
@@ -38,10 +37,4 @@ void SpeedDown::Draw()
 
 void SpeedDown::Release()
 {
-}
-
-float SpeedDown::GenerateRand()
-{
-    geneRand = (rand() % (max - min + 1) + min) / flo;
-    return geneRand;
 }

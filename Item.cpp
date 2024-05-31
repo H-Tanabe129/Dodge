@@ -3,11 +3,9 @@
 #include "JumpUp.h"
 #include "ScoreUp.h"
 #include "Stage.h"
-#include "Engine/Model.h"
-#include "Engine/BoxCollider.h"
 
 Item::Item(GameObject* parent)
-	:GameObject(parent, "Item"), frame(0), randomValue(getRandomValue(randMin, randMax)), gen(rd_dev())
+	:GameObject(parent, "Item"), frame(0)//, randomValue(getRandomValue(randMin, randMax)), gen(rd_dev())
 {
 }
 
@@ -23,18 +21,26 @@ void Item::Initialize()
 void Item::Update()
 {
     frame += 1;
+    // randomValueが0でないことを確認し、0の場合再生成する
+    if (randomValue == 0)
+    {
+        do {
+            randomValue = getRandomValue(randMin, randMax);
+        } while (randomValue == 0);
+    }
     // 一定間隔でランダム値を出力する
-    if (frame % (FPS * randomValue) == 0)
+    if(frame % (FPS * randomValue) == 0)
     {
         rd = getRandomValue(rdMin, rdMax);
+        trPosiY = GenerateRand();
         switch (rd) {
-        case ScoreUp:
+        case Score:
             Instantiate<ScoreUp>(this);
             break;
-        case JumpUp:
+        case Jump:
             Instantiate<JumpUp>(this);
             break;
-        case SpeedDown:
+        case Speed:
             Instantiate<SpeedDown>(this);
             break;
         }
@@ -58,6 +64,11 @@ void Item::OnCollision(GameObject * pTarget)
     {
         //this->KillMe();
     }
+}
+float Item::GenerateRand()
+{
+    geneRand = (rand() % (max - min + 1) + min) / flo;
+    return geneRand;
 }
 
 //ランダムな整数を生成する関数

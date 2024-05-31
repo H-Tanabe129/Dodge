@@ -27,7 +27,6 @@ void JumpUp::Initialize()
 
 void JumpUp::Update()
 {
-    trPosiY = GenerateRand();
 }
 
 void JumpUp::Draw()
@@ -38,10 +37,4 @@ void JumpUp::Draw()
 
 void JumpUp::Release()
 {
-}
-
-float JumpUp::GenerateRand()
-{
-    geneRand = (rand() % (max - min + 1) + min) / flo;
-    return geneRand;
 }

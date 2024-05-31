@@ -22,6 +22,9 @@ void PlayScene::Initialize()
 
 	Camera::SetPosition(XMFLOAT3(CPosiX, CPosiY, CPosiZ));
 	Camera::SetTarget(XMFLOAT3(CTarX, CTarY, CTarZ));
+
+	// すべての子オブジェクトを削除
+	KillAllChildren();
 	
 	Instantiate<Player>(this);
 	Instantiate<Stage>(this);
@@ -52,4 +55,14 @@ void PlayScene::Draw()
 void PlayScene::Release()
 {
 	pText->Release();
+}
+
+// 子オブジェクトを全て削除
+void PlayScene::KillAllChildren()
+{
+	for (auto& child : *GetChildList())  // ポインタをデリファレンスしてリストを取得
+	{
+		child->KillMe();
+	}
+	GetChildList()->clear();  // ポインタをデリファレンスしてリストをクリア
 }

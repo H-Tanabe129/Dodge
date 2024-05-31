@@ -40,6 +40,8 @@ void Player::Update()
 	if (pReady != nullptr && !pReady->Finished())
 		return;*/
 
+	Jump();
+
 	if (transform_.position_.y >= edge || transform_.position_.y <= -edge)
 	{
 		this->KillMe();
@@ -54,13 +56,13 @@ void Player::Jump()
 {
 
     //スペースキーが押されていたらジャンプ
-	float velocity = veloIni;
+	static float velocity = veloIni;
 	if (Input::IsKey(DIK_SPACE))
     {
 		velocity = veloIncre;
 		Audio::Play(hSound_);
 	}
-	if (Input::IsKeyUp(DIK_SPACE))//velocity != veloIni
+	if (velocity != veloIni)//velocity != veloIni
 	{
 		// ここが重力で徐々に下げる
 		velocity -= veloDecre;

@@ -28,7 +28,6 @@ void ScoreUp::Initialize()
 
 void ScoreUp::Update()
 {
-    trPosiY = GenerateRand();
 }
 
 void ScoreUp::Draw()
@@ -39,12 +38,6 @@ void ScoreUp::Draw()
 
 void ScoreUp::Release()
 {
-}
-
-float ScoreUp::GenerateRand()
-{
-    geneRand = (rand() % (max - min + 1) + min) / flo;
-    return geneRand;
 }
 
 void ScoreUp::OnCollision(GameObject* pTarget) {

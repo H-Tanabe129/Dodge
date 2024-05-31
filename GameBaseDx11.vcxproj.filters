@@ -30,6 +30,12 @@
     <Filter Include="Scene">
       <UniqueIdentifier>{04ac824a-a62e-4729-a4e3-71b0c0b31288}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Gimmick\Stage">
+      <UniqueIdentifier>{5c1e0014-26c9-4a9a-aa9b-65b0b4b1ab4a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Gimmick\Item">
+      <UniqueIdentifier>{867565f9-d48c-4207-acc9-40eb396b33eb}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Engine\BoxCollider.cpp">
@@ -105,18 +111,6 @@
     <ClCompile Include="Timer.cpp">
       <Filter>01Engine\ResourceManager</Filter>
     </ClCompile>
-    <ClCompile Include="Stage.cpp">
-      <Filter>Gimmick</Filter>
-    </ClCompile>
-    <ClCompile Include="StageLo.cpp">
-      <Filter>Gimmick</Filter>
-    </ClCompile>
-    <ClCompile Include="StageUp.cpp">
-      <Filter>Gimmick</Filter>
-    </ClCompile>
-    <ClCompile Include="Item.cpp">
-      <Filter>Gimmick</Filter>
-    </ClCompile>
     <ClCompile Include="PlayScene.cpp">
       <Filter>Scene</Filter>
     </ClCompile>
@@ -128,9 +122,29 @@
     </ClCompile>
     <ClCompile Include="ValueManager.cpp" />
     <ClCompile Include="Ready.cpp" />
-    <ClCompile Include="SpeedDown.cpp" />
     <ClCompile Include="WaitScene.cpp">
       <Filter>Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Stage.cpp">
+      <Filter>Gimmick\Stage</Filter>
+    </ClCompile>
+    <ClCompile Include="StageLo.cpp">
+      <Filter>Gimmick\Stage</Filter>
+    </ClCompile>
+    <ClCompile Include="StageUp.cpp">
+      <Filter>Gimmick\Stage</Filter>
+    </ClCompile>
+    <ClCompile Include="Item.cpp">
+      <Filter>Gimmick\Item</Filter>
+    </ClCompile>
+    <ClCompile Include="JumpUp.cpp">
+      <Filter>Gimmick\Item</Filter>
+    </ClCompile>
+    <ClCompile Include="ScoreUp.cpp">
+      <Filter>Gimmick\Item</Filter>
+    </ClCompile>
+    <ClCompile Include="SpeedDown.cpp">
+      <Filter>Gimmick\Item</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -207,18 +221,6 @@
     <ClInclude Include="Timer.h">
       <Filter>01Engine\ResourceManager</Filter>
     </ClInclude>
-    <ClInclude Include="Stage.h">
-      <Filter>Gimmick</Filter>
-    </ClInclude>
-    <ClInclude Include="StageLo.h">
-      <Filter>Gimmick</Filter>
-    </ClInclude>
-    <ClInclude Include="StageUp.h">
-      <Filter>Gimmick</Filter>
-    </ClInclude>
-    <ClInclude Include="Item.h">
-      <Filter>Gimmick</Filter>
-    </ClInclude>
     <ClInclude Include="PlayScene.h">
       <Filter>Scene</Filter>
     </ClInclude>
@@ -230,9 +232,29 @@
     </ClInclude>
     <ClInclude Include="ValueManager.h" />
     <ClInclude Include="Ready.h" />
-    <ClInclude Include="SpeedDown.h" />
     <ClInclude Include="WaitScene.h">
       <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Stage.h">
+      <Filter>Gimmick\Stage</Filter>
+    </ClInclude>
+    <ClInclude Include="StageLo.h">
+      <Filter>Gimmick\Stage</Filter>
+    </ClInclude>
+    <ClInclude Include="StageUp.h">
+      <Filter>Gimmick\Stage</Filter>
+    </ClInclude>
+    <ClInclude Include="Item.h">
+      <Filter>Gimmick\Item</Filter>
+    </ClInclude>
+    <ClInclude Include="JumpUp.h">
+      <Filter>Gimmick\Item</Filter>
+    </ClInclude>
+    <ClInclude Include="ScoreUp.h">
+      <Filter>Gimmick\Item</Filter>
+    </ClInclude>
+    <ClInclude Include="SpeedDown.h">
+      <Filter>Gimmick\Item</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

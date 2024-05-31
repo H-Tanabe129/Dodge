@@ -3,9 +3,9 @@
 #include <random>
 
 enum {
-    ScoreUp = 1,
-    JumpUp,
-    SpeedDown,
+    Score = 1,
+    Jump,
+    Speed,
     End
 };
 
@@ -19,6 +19,16 @@ private:
     const int randMin = 10;  // ランダム秒数間隔の最小値
     const int randMax = 15;  // ランダム秒数間隔の最大値
     const int rdMin = 1;     // ランダムアイテムタイプの最小値
+
+    int min = -800;     //Y座標乱数範囲の最小値*100
+    int max = 800;      //Y座標乱数範囲の最大値*100
+    int flo = 1000.0f;  //Y座標乱数÷1000する
+    int geneRand = 0;   //Y座標乱数
+
+    int trPosiX = 35;      //モデルポジションX
+    float trPosiY = 0;                  //モデルポジションY
+    static const int trPosiZ = 0;       //モデルポジションZ
+
     const int rdMax = 3;     // ランダムアイテムタイプの最大値
 
     int getRandomValue(int min, int max);
@@ -44,6 +54,9 @@ public:
 
     //開放
     void Release() override;
+
+    //Y座標乱数生成
+    float GenerateRand();
 
     //何かに当たった
     //引数：pTarget 当たった相手

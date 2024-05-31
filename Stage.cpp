@@ -7,7 +7,7 @@
 
 
 Stage::Stage(GameObject* parent)
-    :GameObject(parent, "Stage"), hModel_(-1)
+    :GameObject(parent, "Stage")
 {
 }
 
