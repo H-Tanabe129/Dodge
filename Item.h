@@ -19,6 +19,7 @@ private:
     const int randMin = 10;  // ランダム秒数間隔の最小値
     const int randMax = 15;  // ランダム秒数間隔の最大値
     const int rdMin = 1;     // ランダムアイテムタイプの最小値
+    const int rdMax = 3;     // ランダムアイテムタイプの最大値
 
     int min = -800;     //Y座標乱数範囲の最小値*100
     int max = 800;      //Y座標乱数範囲の最大値*100
@@ -28,8 +29,6 @@ private:
     int trPosiX = 35;      //モデルポジションX
     float trPosiY = 0;                  //モデルポジションY
     static const int trPosiZ = 0;       //モデルポジションZ
-
-    const int rdMax = 3;     // ランダムアイテムタイプの最大値
 
     int getRandomValue(int min, int max);
 

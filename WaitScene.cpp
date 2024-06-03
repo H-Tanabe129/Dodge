@@ -32,6 +32,13 @@ void WaitScene::Update()
 		SceneManager* pSceneManager = (SceneManager*)FindObject("SceneManager");
 		pSceneManager->ChangeScene(SCENE_ID_PLAY);
 	}
+	static float velocity = veloIni;
+	if (Input::IsKey(DIK_SPACE))
+	{
+		velocity = veloIncre;
+		Audio::Play(hSound_);
+	}
+	transform_.position_.y += velocity;
 }
 
 void WaitScene::Draw()
