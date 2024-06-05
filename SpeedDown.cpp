@@ -13,6 +13,8 @@ SpeedDown::~SpeedDown()
 
 void SpeedDown::Initialize()
 {
+    transform_.position_ = XMFLOAT3(trPosiX, trPosiY, trPosiZ);
+
     //モデルデータのロード
     hSpeed_ = Model::Load("Model/SpeedDown.fbx");
     assert(hSpeed_ >= 0);
@@ -27,6 +29,18 @@ void SpeedDown::Initialize()
 
 void SpeedDown::Update()
 {
+    transform_.position_.x -= trPosiChangeX;
+    trPosiY = GenerateRand();
+
+    if (transform_.position_.x <= LEdge) {
+        this->KillMe();
+    }
+}
+
+float SpeedDown::GenerateRand()
+{
+    geneRand = (rand() % (max - min + 1) + min) / flo;
+    return geneRand;
 }
 
 void SpeedDown::Draw()

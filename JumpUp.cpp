@@ -13,6 +13,8 @@ JumpUp::~JumpUp()
 
 void JumpUp::Initialize()
 {
+    transform_.position_ = XMFLOAT3(trPosiX, trPosiY, trPosiZ);
+
     //モデルデータのロード
     hJump_ = Model::Load("Model/JumpUp.fbx");
     assert(hJump_ >= 0);
@@ -27,6 +29,18 @@ void JumpUp::Initialize()
 
 void JumpUp::Update()
 {
+    transform_.position_.x -= trPosiChangeX;
+    trPosiY = GenerateRand();
+
+    if (transform_.position_.x <= LEdge) {
+        this->KillMe();
+    }
+}
+
+float JumpUp::GenerateRand()
+{
+    geneRand = (rand() % (max - min + 1) + min) / flo;
+    return geneRand;
 }
 
 void JumpUp::Draw()

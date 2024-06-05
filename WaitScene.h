@@ -20,6 +20,7 @@ private:
     static const int timeY = 60;     //スコア表示Y
     float veloIni = 0.0f;       //重力初期値
     float veloIncre = 0.15f;    //重力増加量
+    float veloDecre = 0.02f;    //重力減少量
 
 public:
     //コンストラクタ

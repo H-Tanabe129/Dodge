@@ -62,7 +62,7 @@ void Player::Jump()
 		velocity = veloIncre;
 		Audio::Play(hSound_);
 	}
-	if (velocity != veloIni)//velocity != veloIni
+	if (velocity != veloIni)
 	{
 		// Ç±Ç±Ç™èdóÕÇ≈èôÅXÇ…â∫Ç∞ÇÈ
 		velocity -= veloDecre;

@@ -38,7 +38,14 @@ void WaitScene::Update()
 		velocity = veloIncre;
 		Audio::Play(hSound_);
 	}
-	transform_.position_.y += velocity;
+	if (velocity != veloIni)
+	{
+		// ここが重力で徐々に下げる
+		velocity -= veloDecre;
+
+		//キャラクターの場所に値を渡す
+		transform_.position_.y += velocity;
+	}
 }
 
 void WaitScene::Draw()

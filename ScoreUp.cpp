@@ -14,6 +14,8 @@ ScoreUp::~ScoreUp()
 
 void ScoreUp::Initialize()
 {
+    transform_.position_ = XMFLOAT3(trPosiX, trPosiY, trPosiZ);
+
     //モデルデータのロード
     hScore_ = Model::Load("Model/ScoreUp.fbx");
     assert(hScore_ >= 0);
@@ -28,6 +30,18 @@ void ScoreUp::Initialize()
 
 void ScoreUp::Update()
 {
+    transform_.position_.x -= trPosiChangeX;
+    trPosiY = GenerateRand();
+
+    if (transform_.position_.x <= LEdge) {
+        this->KillMe();
+    }
+}
+
+float ScoreUp::GenerateRand()
+{
+    geneRand = (rand() % (max - min + 1) + min) / flo;
+    return geneRand;
 }
 
 void ScoreUp::Draw()

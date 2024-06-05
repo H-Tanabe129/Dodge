@@ -23,6 +23,10 @@ void PlayScene::Initialize()
 	Camera::SetPosition(XMFLOAT3(CPosiX, CPosiY, CPosiZ));
 	Camera::SetTarget(XMFLOAT3(CTarX, CTarY, CTarZ));
 
+	pText = new Text;
+	pText->Initialize();
+	Audio::Play(hSound_);
+
 	// すべての子オブジェクトを削除
 	KillAllChildren();
 	
@@ -30,9 +34,8 @@ void PlayScene::Initialize()
 	Instantiate<Stage>(this);
 	Instantiate<Item>(this);
 
-	pText = new Text;
-	pText->Initialize();
-	Audio::Play(hSound_);
+	ValueManager::GetInstance().ResetScore();
+	ValueManager::GetInstance().ResetTime();
 }
 
 //更新

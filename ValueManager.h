@@ -3,7 +3,7 @@ class ValueManager
 {
 private:
 	static const int FPS = 60;
-	int frame = 0;
+	int frame_ = 0;
 	int time_ = 0;
 	int score_ = 0;
 	ValueManager() : time_(0), score_(0) {}

@@ -21,14 +21,10 @@ private:
     const int rdMin = 1;     // ランダムアイテムタイプの最小値
     const int rdMax = 3;     // ランダムアイテムタイプの最大値
 
-    int min = -800;     //Y座標乱数範囲の最小値*100
-    int max = 800;      //Y座標乱数範囲の最大値*100
-    int flo = 1000.0f;  //Y座標乱数÷1000する
-    int geneRand = 0;   //Y座標乱数
-
-    int trPosiX = 35;      //モデルポジションX
+    int trPosiX = 35;                   //モデルポジションX
     float trPosiY = 0;                  //モデルポジションY
     static const int trPosiZ = 0;       //モデルポジションZ
+    float trPosiChangeX = 0.1;      //X座標変化量
 
     int getRandomValue(int min, int max);
 
@@ -53,9 +49,6 @@ public:
 
     //開放
     void Release() override;
-
-    //Y座標乱数生成
-    float GenerateRand();
 
     //何かに当たった
     //引数：pTarget 当たった相手

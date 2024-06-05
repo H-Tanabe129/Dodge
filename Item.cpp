@@ -21,6 +21,7 @@ void Item::Initialize()
 void Item::Update()
 {
     frame += 1;
+
     // randomValueが0でないことを確認し、0の場合再生成する
     if (randomValue == 0)
     {
@@ -32,7 +33,6 @@ void Item::Update()
     if(frame % (FPS * randomValue) == 0)
     {
         rd = getRandomValue(rdMin, rdMax);
-        trPosiY = GenerateRand();
         switch (rd) {
         case Score:
             Instantiate<ScoreUp>(this);
@@ -64,11 +64,6 @@ void Item::OnCollision(GameObject * pTarget)
     {
         //this->KillMe();
     }
-}
-float Item::GenerateRand()
-{
-    geneRand = (rand() % (max - min + 1) + min) / flo;
-    return geneRand;
 }
 
 //ランダムな整数を生成する関数
