@@ -6,7 +6,7 @@ class StageLo : public GameObject
 private:
     int hModel_;    //モデル番号
 
-    static const int trPosiX = 35;      //モデルポジションX
+    static const int trPosiX = -5;      //モデルポジションX
     static const int trPosiY = -6.5f;   //モデルポジションY
     static const int trPosiZ = 0;       //モデルポジションZ
     static const int BColliderPosiX = 0.1f;     //コライダーポジションX

@@ -5,12 +5,13 @@ class ScoreUp : public GameObject
 {
 private:
     int hScore_;    //スコアアップ
-    static const int trPosiX = 35;      //モデルポジションX
-    int trPosiY = 0;                    //モデルポジションY
-    static const int trPosiZ = 0;       //モデルポジションZ
-    static const int BColliderPosiX = 0.5f;     //コライダーポジションX
-    static const int BColliderPosiY = 0.5f;        //コライダーポジションY
-    static const int BColliderPosiZ = 0;        //コライダーポジションZ
+
+    int trPosiX = 35;      //モデルポジションX
+    int trPosiY = 0;       //モデルポジションY
+    int trPosiZ = 0;       //モデルポジションZ
+    int BColliderPosiX = 0.75f;     //コライダーポジションX
+    int BColliderPosiY = 0.75f;     //コライダーポジションY
+    int BColliderPosiZ = 0;         //コライダーポジションZ
     static const int BColliderSizeX = 1;    //コライダーサイズX
     static const int BColliderSizeY = 1;    //コライダーサイズY
     static const int BColliderSizeZ = 1;    //コライダーサイズZ

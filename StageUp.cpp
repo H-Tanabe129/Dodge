@@ -22,7 +22,6 @@ void StageUp::Initialize()
     BoxCollider* collision =
         new BoxCollider(XMFLOAT3(BColliderPosiX, BColliderPosiY, BColliderPosiZ),
             XMFLOAT3(BColliderSizeX, BColliderSizeY, BColliderSizeZ));
-    //collision -> SetSize(GetScale());
     AddCollider(collision);
 }
 

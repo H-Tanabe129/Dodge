@@ -31,13 +31,12 @@ void Stage::Update()
 	if (frame % (FPS * 2) == 0)
 	{
 		rd = rand() % MAX;
-		//rd = 5;
 
 		//ステージパターン
 		switch(rd) {
 		case TOGETHER:		//一緒
-			Instantiate<StageUp>(this);
-			Instantiate<StageLo>(this);
+			Instantiate<StageUp>(this)->SetPosition(InitPosiX, InitPosiUpY, InitPosiZ);
+			Instantiate<StageLo>(this)->SetPosition(InitPosiX, InitPosiLoY, InitPosiZ);
 			break;
 		//case UPPERFRONT:	//上が手前下が奥
 		//	Instantiate<StageUp>(this) -> SetPosition(33.5f, 7.5f, 0);
@@ -48,18 +47,18 @@ void Stage::Update()
 		//	Instantiate<StageLo>(this) -> SetPosition(33.5f, -6.5f, 0);
 		//	break;
 		case UPPER:			//上だけ
-			Instantiate<StageUp>(this);
+			Instantiate<StageUp>(this)->SetPosition(InitPosiX, InitPosiUpY, InitPosiZ);
 			break;
 		case LOWER:			//下だけ
-			Instantiate<StageLo>(this);
+			Instantiate<StageLo>(this)->SetPosition(InitPosiX, InitPosiLoY, InitPosiZ);
 			break;
 		case UPPERLONG:		//上長め
-			Instantiate<StageUp>(this);
+			Instantiate<StageUp>(this)->SetPosition(InitPosiX, InitPosiUpY, InitPosiZ);
 			Instantiate<StageUp>(this)->SetPosition(SetPosiX, SetPosiUpY, SetPosiZ);
 			GetScale();
 			break;
 		case LOWERLONG:		//下長め
-			Instantiate<StageLo>(this);
+			Instantiate<StageLo>(this)->SetPosition(InitPosiX, InitPosiLoY, InitPosiZ);
 			Instantiate<StageLo>(this)->SetPosition(SetPosiX, SetPosiLoY, SetPosiZ);
 			break;
 		}
