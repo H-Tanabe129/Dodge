@@ -4,7 +4,7 @@
 class SpeedDown : public GameObject
 {
 private:
-    int hSpeed_;    //スピードダウン
+    int hSpeed_;    //スピードダウン　　オレンジ
 
     int trPosiX = 35;      //モデルポジションX
     int trPosiY = 0;       //モデルポジションY
@@ -16,10 +16,6 @@ private:
     const float BColliderSizeY = 1;    //コライダーサイズY
     const float BColliderSizeZ = 1;    //コライダーサイズZ
 
-    int min = -800;     //Y座標乱数範囲の最小値*100
-    int max = 800;      //Y座標乱数範囲の最大値*100
-    int flo = 100;     //Y座標乱数÷1000する
-    int geneRand = 0;   //Y座標乱数
     float trPosiChangeX = 0.1;      //X座標変化量
     static const int LEdge = -10;   //左端
 
@@ -35,9 +31,6 @@ public:
 
     //更新
     void Update() override;
-
-    //Y座標乱数生成
-    int GenerateRand();
 
     //描画
     void Draw() override;

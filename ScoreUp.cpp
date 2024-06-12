@@ -24,25 +24,15 @@ void ScoreUp::Initialize()
         (XMFLOAT3(BColliderPosiX, BColliderPosiY, BColliderPosiZ),
             XMFLOAT3(BColliderSizeX, BColliderSizeY, BColliderSizeZ));
     AddCollider(collision);
-
-    srand((unsigned int)time(nullptr));
 }
 
 void ScoreUp::Update()
 {
     transform_.position_.x -= trPosiChangeX;
-    trPosiY = GenerateRand();
 
     if (transform_.position_.x <= LEdge) {
         this->KillMe();
     }
-
-}
-
-int ScoreUp::GenerateRand()
-{
-    geneRand = (rand() % (max - min + 1) + min) / flo;
-    return geneRand;
 }
 
 void ScoreUp::Draw()

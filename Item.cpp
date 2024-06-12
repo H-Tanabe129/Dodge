@@ -32,16 +32,17 @@ void Item::Update()
     // 一定間隔でランダム値を出力する
     if(frame % (FPS * randomValue) == 0)
     {
+        trPosiY = GenerateRand();
         rd = getRandomValue(rdMin, rdMax);
         switch (rd) {
         case Score:
-            Instantiate<ScoreUp>(this);
+            Instantiate<ScoreUp>(this)->SetPosition(trPosiX, trPosiY, trPosiZ);
             break;
         case Jump:
-            Instantiate<JumpUp>(this);
+            Instantiate<JumpUp>(this)->SetPosition(trPosiX, trPosiY, trPosiZ);
             break;
         case Speed:
-            Instantiate<SpeedDown>(this);
+            Instantiate<SpeedDown>(this)->SetPosition(trPosiX, trPosiY, trPosiZ);
             break;
         }
     randomValue = getRandomValue(randMin, randMax);
@@ -60,4 +61,10 @@ void Item::Release()
 int Item::getRandomValue(int min, int max) {
     std::uniform_int_distribution<> dis(min, max); // 一様分布
     return dis(gen);
+}
+
+int Item::GenerateRand()
+{
+    geneRand = (rand() % (max - min + 1) + min) / flo;
+    return geneRand;
 }
