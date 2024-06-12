@@ -56,16 +56,6 @@ void Item::Release()
 {
 }
 
-//‰½‚©‚É“–‚½‚Á‚½
-void Item::OnCollision(GameObject * pTarget)
-{
-    //“–‚½‚Á‚½‚Æ‚«
-    if (pTarget->GetObjectName() == "Stage")
-    {
-        //this->KillMe();
-    }
-}
-
 //ƒ‰ƒ“ƒ_ƒ€‚È®”‚ğ¶¬‚·‚éŠÖ”
 int Item::getRandomValue(int min, int max) {
     std::uniform_int_distribution<> dis(min, max); // ˆê—l•ª•z

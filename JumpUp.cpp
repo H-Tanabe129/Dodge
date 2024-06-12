@@ -13,7 +13,7 @@ JumpUp::~JumpUp()
 
 void JumpUp::Initialize()
 {
-    transform_.position_ = XMFLOAT3(trPosiX, trPosiY, trPosiZ);
+    transform_.position_.x = trPosiX;
 
     //モデルデータのロード
     hJump_ = Model::Load("Model/JumpUp.fbx");
@@ -30,14 +30,14 @@ void JumpUp::Initialize()
 void JumpUp::Update()
 {
     transform_.position_.x -= trPosiChangeX;
-    trPosiY = GenerateRand();
+     trPosiY = GenerateRand();
 
     if (transform_.position_.x <= LEdge) {
         this->KillMe();
     }
 }
 
-float JumpUp::GenerateRand()
+int JumpUp::GenerateRand()
 {
     geneRand = (rand() % (max - min + 1) + min) / flo;
     return geneRand;
@@ -51,4 +51,13 @@ void JumpUp::Draw()
 
 void JumpUp::Release()
 {
+}
+
+//何かに当たった
+void JumpUp::OnCollision(GameObject* pTarget)
+{
+    if (pTarget->GetObjectName() == "StageUp" || "StageLo")
+    {
+        this->KillMe();
+    }
 }

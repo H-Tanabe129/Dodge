@@ -14,7 +14,7 @@ ScoreUp::~ScoreUp()
 
 void ScoreUp::Initialize()
 {
-    transform_.position_ = XMFLOAT3(trPosiX, trPosiY, trPosiZ);
+    transform_.position_.x = trPosiX;
 
     //モデルデータのロード
     hScore_ = Model::Load("Model/ScoreUp.fbx");
@@ -36,9 +36,10 @@ void ScoreUp::Update()
     if (transform_.position_.x <= LEdge) {
         this->KillMe();
     }
+
 }
 
-float ScoreUp::GenerateRand()
+int ScoreUp::GenerateRand()
 {
     geneRand = (rand() % (max - min + 1) + min) / flo;
     return geneRand;
@@ -57,5 +58,9 @@ void ScoreUp::Release()
 void ScoreUp::OnCollision(GameObject* pTarget) {
     if (pTarget->GetObjectName() == "Player") {
         ValueManager::GetInstance().ItemScore();
+    }
+
+    if (pTarget->GetObjectName() == "StageUp" || "StageLo") {
+        this->KillMe();
     }
 }

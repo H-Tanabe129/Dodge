@@ -9,16 +9,16 @@ private:
     int trPosiX = 35;      //モデルポジションX
     int trPosiY = 0;       //モデルポジションY
     int trPosiZ = 0;       //モデルポジションZ
-    int BColliderPosiX = 0.75f;     //コライダーポジションX
-    int BColliderPosiY = 0.75f;     //コライダーポジションY
-    int BColliderPosiZ = 0;         //コライダーポジションZ
-    static const int BColliderSizeX = 1;    //コライダーサイズX
-    static const int BColliderSizeY = 1;    //コライダーサイズY
-    static const int BColliderSizeZ = 1;    //コライダーサイズZ
+    const float BColliderPosiX = 0.5;     //コライダーポジションX
+    const float BColliderPosiY = 0.5;     //コライダーポジションY
+    const float BColliderPosiZ = 0;         //コライダーポジションZ
+    const float BColliderSizeX = 1;    //コライダーサイズX
+    const float BColliderSizeY = 1;    //コライダーサイズY
+    const float BColliderSizeZ = 1;    //コライダーサイズZ
 
     int min = -800;     //Y座標乱数範囲の最小値*100
     int max = 800;      //Y座標乱数範囲の最大値*100
-    int flo = 1000.0f;  //Y座標乱数÷1000する
+    int flo = 100;     //Y座標乱数÷1000する
     int geneRand = 0;   //Y座標乱数
     float trPosiChangeX = 0.1;      //X座標変化量
     static const int LEdge = -10;   //左端
@@ -37,7 +37,7 @@ public:
     void Update() override;
 
     //Y座標乱数生成
-    float GenerateRand();
+    int GenerateRand();
 
     //描画
     void Draw() override;

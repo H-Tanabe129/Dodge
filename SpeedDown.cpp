@@ -13,7 +13,7 @@ SpeedDown::~SpeedDown()
 
 void SpeedDown::Initialize()
 {
-    transform_.position_ = XMFLOAT3(trPosiX, trPosiY, trPosiZ);
+    transform_.position_.x = trPosiX;
 
     //モデルデータのロード
     hSpeed_ = Model::Load("Model/SpeedDown.fbx");
@@ -37,7 +37,7 @@ void SpeedDown::Update()
     }
 }
 
-float SpeedDown::GenerateRand()
+int SpeedDown::GenerateRand()
 {
     geneRand = (rand() % (max - min + 1) + min) / flo;
     return geneRand;
@@ -51,4 +51,13 @@ void SpeedDown::Draw()
 
 void SpeedDown::Release()
 {
+}
+
+//何かに当たった
+void SpeedDown::OnCollision(GameObject* pTarget)
+{
+    if (pTarget->GetObjectName() == "StageUp" || "StageLo")
+    {
+        this->KillMe();
+    }
 }
