@@ -1,12 +1,14 @@
 #pragma once
 #include "Engine/GameObject.h"
 #include "Engine/Text.h"
+#include "Player.h"
 
 class WaitScene : public GameObject
 {
 private:
     int hSound_;    //画像番号
     Text* pText;
+    Player* pPlayer_; // Player クラスのポインタ
 
     static const int CPosiX = 15;	//カメラポジションX
     static const int CPosiY = 3;	//カメラポジションY
@@ -26,6 +28,7 @@ public:
     //コンストラクタ
     //引数：parent  親オブジェクト（SceneManager）
     WaitScene(GameObject* parent);
+    ~WaitScene();
 
     //初期化
     void Initialize() override;

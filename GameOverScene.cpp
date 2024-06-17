@@ -1,11 +1,12 @@
 #include "GameOverScene.h"
+#include "ValueManager.h"
 #include "Engine/Image.h"
 #include "Engine/Input.h"
 #include "Engine/SceneManager.h"
 //#include "PlayScene.h"
 
 GameOverScene::GameOverScene(GameObject* parent)
-	: GameObject(parent, "TitleScene"), hPict_(-1)
+	: GameObject(parent, "GameOverScene"), hPict_(-1), pText(nullptr)
 {
 }
 
@@ -14,6 +15,9 @@ void GameOverScene::Initialize()
     //画像データのロード
     hPict_ = Image::Load("gameover.png");
     assert(hPict_ >= 0);
+
+    pText = new Text;
+    pText->Initialize();
 }
 
 void GameOverScene::Update()
@@ -37,8 +41,15 @@ void GameOverScene::Draw()
 {
     Image::SetTransform(hPict_, transform_);
     Image::Draw(hPict_);
+
+
+    pText->Draw(scoreX, scoreY, "Score:");
+    pText->Draw(scoreX + 100, scoreY, ValueManager::GetInstance().GetScore());
+    pText->Draw(timeX, timeY, "Time: ");
+    pText->Draw(timeX + 100, timeY, ValueManager::GetInstance().GetTime());
 }
 
 void GameOverScene::Release()
 {
+    pText->Release();
 }

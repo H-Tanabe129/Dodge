@@ -23,7 +23,7 @@ void ValueManager::ResetTime() {
 
 //ÉXÉRÉA
 void ValueManager::AddScore(int _amount) {
-	int scoreInc_ = frame_ % 15;
+	int scoreInc_ = frame_ % frameDiv_;
 	if(scoreInc_ == 0)
 	score_ += _amount;
 }
@@ -33,7 +33,7 @@ int ValueManager::GetScore() const {
 }
 
 void ValueManager::ItemScore() {
-	score_ = score_ + 100;
+	score_ = score_ + scoreUp_;
 }
 
 void ValueManager::ResetScore() {

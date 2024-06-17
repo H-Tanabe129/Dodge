@@ -26,8 +26,8 @@ private:
     static const int trPosiZ = 0;       //モデルポジションZ
     float trPosiChangeX = 0.1;      //X座標変化量
 
-    int min = -800;     //Y座標乱数範囲の最小値*100
-    int max = 800;      //Y座標乱数範囲の最大値*100
+    int min = -700;     //Y座標乱数範囲の最小値*100
+    int max = 700;      //Y座標乱数範囲の最大値*100
     int flo = 100;     //Y座標乱数÷1000する
     int geneRand = 0;   //Y座標乱数
 

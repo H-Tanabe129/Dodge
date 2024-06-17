@@ -6,6 +6,9 @@ private:
 	int frame_ = 0;
 	int time_ = 0;
 	int score_ = 0;
+	int scoreUp_ = 100;
+	int scoreInc_ = 0;
+	int frameDiv_= 18;
 	ValueManager() : time_(0), score_(0) {}
 
 public:

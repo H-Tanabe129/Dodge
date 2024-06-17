@@ -6,8 +6,13 @@
 #include "Engine/SceneManager.h"
 
 WaitScene::WaitScene(GameObject* parent)
-	: GameObject(parent, "WaitScene"), hSound_(-1), pText(nullptr)
+	: GameObject(parent, "WaitScene"), hSound_(-1), pText(nullptr), pPlayer_(nullptr)
 {
+}
+
+WaitScene::~WaitScene()
+{
+    delete pPlayer_;
 }
 
 void WaitScene::Initialize()
@@ -19,7 +24,10 @@ void WaitScene::Initialize()
 	Camera::SetPosition(XMFLOAT3(CPosiX, CPosiY, CPosiZ));  //test == 35, 3, 0    -25
 	Camera::SetTarget(XMFLOAT3(CTarX, CTarY, CTarZ));
 
-	Instantiate<Player>(this);
+	//Instantiate<Player>(this);
+    // Player クラスのインスタンスを生成
+    pPlayer_ = new Player(this);
+    pPlayer_->Initialize();
 
 	pText = new Text;
 	pText->Initialize();
@@ -28,23 +36,13 @@ void WaitScene::Initialize()
 
 void WaitScene::Update()
 {
-	if (Input::IsKeyUp(DIK_SPACE)) {
+	if (Input::IsKey(DIK_SPACE)) {
 		SceneManager* pSceneManager = (SceneManager*)FindObject("SceneManager");
 		pSceneManager->ChangeScene(SCENE_ID_PLAY);
-	}
-	static float velocity = veloIni;
-	if (Input::IsKey(DIK_SPACE))
-	{
-		velocity = veloIncre;
-		Audio::Play(hSound_);
-	}
-	if (velocity != veloIni)
-	{
-		// ここが重力で徐々に下げる
-		velocity -= veloDecre;
 
-		//キャラクターの場所に値を渡す
-		transform_.position_.y += velocity;
+		if (pPlayer_) {
+			pPlayer_->Jump();
+		}
 	}
 }
 
@@ -52,8 +50,17 @@ void WaitScene::Draw()
 {
 	pText->Draw(scoreX, scoreY, "Score:0");
 	pText->Draw(timeX, timeY, "Time: 0");
+
+    if (pPlayer_) {
+        pPlayer_->Draw();
+    }
 }
 
 void WaitScene::Release()
 {
+    if (pPlayer_) {
+        pPlayer_->Release();
+        delete pPlayer_;
+        pPlayer_ = nullptr;
+    }
 }

@@ -85,7 +85,15 @@ void Player::Release()
 //‰½‚©‚É“–‚½‚Á‚½
 void Player::OnCollision(GameObject * pTarget)
 {
-	if (pTarget->GetObjectName() == "StageUp" || "StageLo")
+	if (pTarget->GetObjectName() == "StageUp")
+    {
+		this->KillMe();
+		pTarget->KillMe();
+
+		SceneManager* pSceneManager = (SceneManager*)FindObject("SceneManager");
+		pSceneManager->ChangeScene(SCENE_ID_GAMEOVER);
+    }
+	if (pTarget->GetObjectName() == "StageLo")
     {
 		this->KillMe();
 		pTarget->KillMe();

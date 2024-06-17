@@ -7,10 +7,10 @@ private:
     int hModel_;    //モデル番号
     int hSound_;    //サウンド番号
 
-    static const int SColliderX = 1.0f;    //コライダーX軸
-    static const int SColliderY = 1.0f;    //コライダーY軸
-    static const int SColliderZ = 1.0f;    //コライダーZ軸
-    static const int radius = 1.02f;       //コライダー半径
+    const float SColliderX = 1.0;    //コライダーX軸
+    const float SColliderY = 1.0;    //コライダーY軸
+    const float SColliderZ = 1.0;    //コライダーZ軸
+    const float radius = 1.02;       //コライダー半径
     float veloIni = 0.0f;       //重力初期値
     float veloIncre = 0.15f;    //重力増加量
     float veloDecre = 0.02f;    //重力減少量

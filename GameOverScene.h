@@ -1,10 +1,17 @@
 #pragma once
 #include "Engine/GameObject.h"
+#include "Engine/Text.h"
 
 class GameOverScene : public GameObject
 {
 private:
     int hPict_;    //画像番号
+    Text* pText;
+
+    static const int scoreX = 930;    //時間表示X
+    static const int scoreY = 450;    //時間表示Y
+    static const int timeX = 930;     //スコア表示X
+    static const int timeY = 500;     //スコア表示Y
 public:
     //コンストラクタ
     //引数：parent  親オブジェクト（SceneManager）
