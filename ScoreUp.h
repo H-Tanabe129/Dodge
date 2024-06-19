@@ -12,12 +12,13 @@ private:
     const float BColliderPosiX = 0.5;     //コライダーポジションX
     const float BColliderPosiY = 0.5;     //コライダーポジションY
     const float BColliderPosiZ = 0;         //コライダーポジションZ
-    const float BColliderSizeX = 1;    //コライダーサイズX
-    const float BColliderSizeY = 1;    //コライダーサイズY
-    const float BColliderSizeZ = 1;    //コライダーサイズZ
+    const float BColliderSizeX = 1.1;    //コライダーサイズX
+    const float BColliderSizeY = 1.1;    //コライダーサイズY
+    const float BColliderSizeZ = 1.1;    //コライダーサイズZ
 
     float trPosiChangeX = 0.1;      //X座標変化量
-    static const int LEdge = -10;   //左端
+    float trRoteChangeY = 0.5;      //Y軸回転変化量
+    static const int LEdge = -10;   //世界左端
 
 public:
     //コンストラクタ

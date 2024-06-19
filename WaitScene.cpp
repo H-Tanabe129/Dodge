@@ -12,6 +12,7 @@ WaitScene::WaitScene(GameObject* parent)
 
 WaitScene::~WaitScene()
 {
+    delete pText;
     delete pPlayer_;
 }
 

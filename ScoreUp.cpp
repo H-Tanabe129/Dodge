@@ -29,6 +29,7 @@ void ScoreUp::Initialize()
 void ScoreUp::Update()
 {
     transform_.position_.x -= trPosiChangeX;
+    transform_.rotate_.y += trRoteChangeY;
 
     if (transform_.position_.x <= LEdge) {
         this->KillMe();
@@ -48,9 +49,13 @@ void ScoreUp::Release()
 void ScoreUp::OnCollision(GameObject* pTarget) {
     if (pTarget->GetObjectName() == "Player") {
         ValueManager::GetInstance().ItemScore();
+        this->KillMe();
     }
 
-    if (pTarget->GetObjectName() == "StageUp" || "StageLo") {
+    if (pTarget->GetObjectName() == "StageUp") {
+        this->KillMe();
+    }
+    if (pTarget->GetObjectName() == "StageLo") {
         this->KillMe();
     }
 }

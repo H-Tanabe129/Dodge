@@ -28,6 +28,7 @@ void SpeedDown::Initialize()
 void SpeedDown::Update()
 {
     transform_.position_.x -= trPosiChangeX;
+    transform_.rotate_.y += trRoteChangeY;
 
     if (transform_.position_.x <= LEdge) {
         this->KillMe();
@@ -45,10 +46,16 @@ void SpeedDown::Release()
 }
 
 //‰½‚©‚É“–‚½‚Á‚½
-void SpeedDown::OnCollision(GameObject* pTarget)
-{
-    if (pTarget->GetObjectName() == "StageUp" || "StageLo")
-    {
+void SpeedDown::OnCollision(GameObject* pTarget) {
+    if (pTarget->GetObjectName() == "Player") {
+
+        this->KillMe();
+    }
+
+    if (pTarget->GetObjectName() == "StageUp") {
+        this->KillMe();
+    }
+    if (pTarget->GetObjectName() == "StageLo") {
         this->KillMe();
     }
 }
