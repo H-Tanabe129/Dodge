@@ -8,7 +8,7 @@
 #include "Engine/SceneManager.h"
 
 Player::Player(GameObject* parent)
-    :GameObject(parent, "Player"), hModel_(-1), hSound_(-1)
+    :GameObject(parent, "Player"), hModel_(-1), hBGM_(-1), hSound_(-1)
 {
 }
 
@@ -21,6 +21,10 @@ void Player::Initialize()
     //サウンドデータのロード
     hSound_ = Audio::Load("A1_18278.WAV");
     assert(hSound_ >= 0);
+	//サウンドデータのロード
+	hBGM_ = Audio::Load("A2_01003.WAV", true);
+	assert(hBGM_ >= 0);
+	Audio::Play(hBGM_);
 
     //モデルデータのロード
     hModel_ = Model::Load("Model/Player.fbx");
@@ -35,10 +39,6 @@ void Player::Initialize()
 
 void Player::Update()
 {
-	//Readyしてからstart
-	/*Ready* pReady = (Ready*)FindObject("Ready");
-	if (pReady != nullptr && !pReady->Finished())
-		return;*/
 
 	Jump();
 

@@ -6,6 +6,7 @@ class Player : public GameObject
 private:
     int hModel_;    //モデル番号
     int hSound_;    //サウンド番号
+    int hBGM_;    //サウンド番号
 
     const float SColliderX = 1.0;    //コライダーX軸
     const float SColliderY = 1.0;    //コライダーY軸

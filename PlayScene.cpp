@@ -4,21 +4,17 @@
 #include "Item.h"
 #include "ValueManager.h"
 #include "Engine/Camera.h"
-#include "Engine/Audio.h"
 #include "Engine/Input.h"
 
 //コンストラクタ
 PlayScene::PlayScene(GameObject * parent)
-	: GameObject(parent, "PlayScene"), hSound_(-1), pText(nullptr)
+	: GameObject(parent, "PlayScene"), pText(nullptr)
 {
 }
 
 //初期化
 void PlayScene::Initialize()
 {
-	//サウンドデータのロード
-	hSound_ = Audio::Load("A2_01003.WAV", true);
-	assert(hSound_ >= 0);
 
 	Camera::SetPosition(XMFLOAT3(CPosiX, CPosiY, CPosiZ));
 	Camera::SetTarget(XMFLOAT3(CTarX, CTarY, CTarZ));
@@ -32,7 +28,6 @@ void PlayScene::Initialize()
 
 	pText = new Text;
 	pText->Initialize();
-	Audio::Play(hSound_);
 
 	ValueManager::GetInstance().ResetScore();
 	ValueManager::GetInstance().ResetTime();
