@@ -36,6 +36,18 @@
     <Filter Include="Gimmick\Item">
       <UniqueIdentifier>{867565f9-d48c-4207-acc9-40eb396b33eb}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Scene\GameOver">
+      <UniqueIdentifier>{ebe7794a-dcb4-4ca5-ab53-3f7f479779c1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scene\Play">
+      <UniqueIdentifier>{d8265e1f-137f-4b5d-893c-717107e056e6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scene\Wait">
+      <UniqueIdentifier>{332c55d6-f29f-474f-8108-8c83fcde19c4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scene\Title">
+      <UniqueIdentifier>{f6bd3928-352d-41db-9100-4efec6970695}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Engine\BoxCollider.cpp">
@@ -107,23 +119,8 @@
     <ClCompile Include="Engine\VFX.cpp">
       <Filter>01Engine\ResourceManager</Filter>
     </ClCompile>
-    <ClCompile Include="Player.cpp" />
     <ClCompile Include="Timer.cpp">
       <Filter>01Engine\ResourceManager</Filter>
-    </ClCompile>
-    <ClCompile Include="PlayScene.cpp">
-      <Filter>Scene</Filter>
-    </ClCompile>
-    <ClCompile Include="TitleScene.cpp">
-      <Filter>Scene</Filter>
-    </ClCompile>
-    <ClCompile Include="GameOverScene.cpp">
-      <Filter>Scene</Filter>
-    </ClCompile>
-    <ClCompile Include="ValueManager.cpp" />
-    <ClCompile Include="Ready.cpp" />
-    <ClCompile Include="WaitScene.cpp">
-      <Filter>Scene</Filter>
     </ClCompile>
     <ClCompile Include="Stage.cpp">
       <Filter>Gimmick\Stage</Filter>
@@ -145,6 +142,27 @@
     </ClCompile>
     <ClCompile Include="SpeedDown.cpp">
       <Filter>Gimmick\Item</Filter>
+    </ClCompile>
+    <ClCompile Include="TitleScene.cpp">
+      <Filter>Scene\Title</Filter>
+    </ClCompile>
+    <ClCompile Include="WaitScene.cpp">
+      <Filter>Scene\Wait</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayScene.cpp">
+      <Filter>Scene\Play</Filter>
+    </ClCompile>
+    <ClCompile Include="GameOverScene.cpp">
+      <Filter>Scene\GameOver</Filter>
+    </ClCompile>
+    <ClCompile Include="ValueManager.cpp">
+      <Filter>Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <Filter>Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Ready.cpp">
+      <Filter>Scene</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -217,23 +235,8 @@
     <ClInclude Include="Engine\VFX.h">
       <Filter>01Engine\ResourceManager</Filter>
     </ClInclude>
-    <ClInclude Include="Player.h" />
     <ClInclude Include="Timer.h">
       <Filter>01Engine\ResourceManager</Filter>
-    </ClInclude>
-    <ClInclude Include="PlayScene.h">
-      <Filter>Scene</Filter>
-    </ClInclude>
-    <ClInclude Include="TitleScene.h">
-      <Filter>Scene</Filter>
-    </ClInclude>
-    <ClInclude Include="GameOverScene.h">
-      <Filter>Scene</Filter>
-    </ClInclude>
-    <ClInclude Include="ValueManager.h" />
-    <ClInclude Include="Ready.h" />
-    <ClInclude Include="WaitScene.h">
-      <Filter>Scene</Filter>
     </ClInclude>
     <ClInclude Include="Stage.h">
       <Filter>Gimmick\Stage</Filter>
@@ -255,6 +258,27 @@
     </ClInclude>
     <ClInclude Include="SpeedDown.h">
       <Filter>Gimmick\Item</Filter>
+    </ClInclude>
+    <ClInclude Include="TitleScene.h">
+      <Filter>Scene\Title</Filter>
+    </ClInclude>
+    <ClInclude Include="WaitScene.h">
+      <Filter>Scene\Wait</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayScene.h">
+      <Filter>Scene\Play</Filter>
+    </ClInclude>
+    <ClInclude Include="GameOverScene.h">
+      <Filter>Scene\GameOver</Filter>
+    </ClInclude>
+    <ClInclude Include="ValueManager.h">
+      <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Ready.h">
+      <Filter>Scene</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

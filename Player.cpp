@@ -1,5 +1,4 @@
 #include "Player.h"
-#include "Ready.h"
 #include "ValueManager.h"
 #include "Engine/Model.h"
 #include "Engine/Input.h"
