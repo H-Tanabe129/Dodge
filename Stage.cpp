@@ -26,7 +26,6 @@ void Stage::Initialize()
 void Stage::Update()
 {
 	frame += 1;
-	transform_.position_.x -= trPosiChangeX;
 
 	//ステージをランダムで表示する
 	if (frame % (FPS * 2) == 0)
@@ -68,5 +67,8 @@ void Stage::Release()
 
 void Stage::SpeedChange()
 {
-
+	transform_.position_.x -= trPosiChangeX;
+	if (frame) {
+		transform_.position_.x -= trChangeX;
+	}
 }

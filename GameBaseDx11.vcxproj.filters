@@ -37,16 +37,16 @@
       <UniqueIdentifier>{867565f9-d48c-4207-acc9-40eb396b33eb}</UniqueIdentifier>
     </Filter>
     <Filter Include="Scene\GameOver">
-      <UniqueIdentifier>{ebe7794a-dcb4-4ca5-ab53-3f7f479779c1}</UniqueIdentifier>
+      <UniqueIdentifier>{e102bec6-70c1-40d0-afb4-3bea714d069d}</UniqueIdentifier>
     </Filter>
     <Filter Include="Scene\Play">
-      <UniqueIdentifier>{d8265e1f-137f-4b5d-893c-717107e056e6}</UniqueIdentifier>
+      <UniqueIdentifier>{ede23e70-9f6c-4401-9e53-04d3f57aa3c2}</UniqueIdentifier>
     </Filter>
     <Filter Include="Scene\Wait">
-      <UniqueIdentifier>{332c55d6-f29f-474f-8108-8c83fcde19c4}</UniqueIdentifier>
+      <UniqueIdentifier>{fa412573-3650-4c4e-b572-800583813275}</UniqueIdentifier>
     </Filter>
     <Filter Include="Scene\Title">
-      <UniqueIdentifier>{f6bd3928-352d-41db-9100-4efec6970695}</UniqueIdentifier>
+      <UniqueIdentifier>{8b9130f7-5aa5-400c-ac2f-7a8f1f0c8c0e}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -143,25 +143,25 @@
     <ClCompile Include="SpeedDown.cpp">
       <Filter>Gimmick\Item</Filter>
     </ClCompile>
-    <ClCompile Include="TitleScene.cpp">
-      <Filter>Scene\Title</Filter>
-    </ClCompile>
-    <ClCompile Include="WaitScene.cpp">
-      <Filter>Scene\Wait</Filter>
+    <ClCompile Include="GameOverScene.cpp">
+      <Filter>Scene\GameOver</Filter>
     </ClCompile>
     <ClCompile Include="PlayScene.cpp">
       <Filter>Scene\Play</Filter>
     </ClCompile>
-    <ClCompile Include="GameOverScene.cpp">
-      <Filter>Scene\GameOver</Filter>
+    <ClCompile Include="WaitScene.cpp">
+      <Filter>Scene\Wait</Filter>
     </ClCompile>
-    <ClCompile Include="ValueManager.cpp">
-      <Filter>Scene</Filter>
+    <ClCompile Include="TitleScene.cpp">
+      <Filter>Scene\Title</Filter>
     </ClCompile>
     <ClCompile Include="Player.cpp">
       <Filter>Scene</Filter>
     </ClCompile>
     <ClCompile Include="Ready.cpp">
+      <Filter>Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="ValueManager.cpp">
       <Filter>Scene</Filter>
     </ClCompile>
   </ItemGroup>
@@ -259,25 +259,25 @@
     <ClInclude Include="SpeedDown.h">
       <Filter>Gimmick\Item</Filter>
     </ClInclude>
-    <ClInclude Include="TitleScene.h">
-      <Filter>Scene\Title</Filter>
-    </ClInclude>
-    <ClInclude Include="WaitScene.h">
-      <Filter>Scene\Wait</Filter>
+    <ClInclude Include="GameOverScene.h">
+      <Filter>Scene\GameOver</Filter>
     </ClInclude>
     <ClInclude Include="PlayScene.h">
       <Filter>Scene\Play</Filter>
     </ClInclude>
-    <ClInclude Include="GameOverScene.h">
-      <Filter>Scene\GameOver</Filter>
+    <ClInclude Include="WaitScene.h">
+      <Filter>Scene\Wait</Filter>
     </ClInclude>
-    <ClInclude Include="ValueManager.h">
-      <Filter>Scene</Filter>
+    <ClInclude Include="TitleScene.h">
+      <Filter>Scene\Title</Filter>
     </ClInclude>
     <ClInclude Include="Player.h">
       <Filter>Scene</Filter>
     </ClInclude>
     <ClInclude Include="Ready.h">
+      <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="ValueManager.h">
       <Filter>Scene</Filter>
     </ClInclude>
   </ItemGroup>

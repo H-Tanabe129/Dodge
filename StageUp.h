@@ -36,6 +36,4 @@ public:
 
     //ŠJ•ú
     void Release() override;
-
-    //DirectX::XMFLOAT3 GetScale() override { return GameObject::GetScale(); }
 };
