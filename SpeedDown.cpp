@@ -9,6 +9,7 @@ SpeedDown::SpeedDown(GameObject* parent)
 
 SpeedDown::~SpeedDown()
 {
+    delete pStage_;
 }
 
 void SpeedDown::Initialize()
@@ -20,9 +21,12 @@ void SpeedDown::Initialize()
     assert(hSpeed_ >= 0);
 
     BoxCollider* collision = new BoxCollider
-    (XMFLOAT3(BColliderPosiX, BColliderPosiY, BColliderPosiZ), 
-        XMFLOAT3(BColliderSizeX, BColliderSizeY, BColliderSizeZ));
+    (XMFLOAT3(BCollPosiX, BCollPosiY, BCollPosiZ), 
+        XMFLOAT3(BCollSizeX, BCollSizeY, BCollSizeZ));
     AddCollider(collision);
+
+    //インスタンスを作成
+    pStage_ = new Stage(this);
 }
 
 void SpeedDown::Update()
@@ -43,14 +47,23 @@ void SpeedDown::Draw()
 
 void SpeedDown::Release()
 {
+    if (pStage_) {
+        pStage_->Release();
+        delete pStage_;
+        pStage_ = nullptr;
+    }
 }
 
 //何かに当たった
 void SpeedDown::OnCollision(GameObject* pTarget) {
     if (pTarget->GetObjectName() == "Player") {
-
+        if (pStage_) {
+            pStage_->;
+        }
+    }
         this->KillMe();
     }
+}
 
     if (pTarget->GetObjectName() == "StageUp") {
         this->KillMe();

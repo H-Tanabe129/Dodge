@@ -9,12 +9,12 @@ private:
     int trPosiX = 35;      //モデルポジションX
     int trPosiY = 0;       //モデルポジションY
     int trPosiZ = 0;       //モデルポジションZ
-    const float BColliderPosiX = 0.5;     //コライダーポジションX
-    const float BColliderPosiY = 0.5;     //コライダーポジションY
-    const float BColliderPosiZ = 0;         //コライダーポジションZ
-    const float BColliderSizeX = 1.1;    //コライダーサイズX
-    const float BColliderSizeY = 1.1;    //コライダーサイズY
-    const float BColliderSizeZ = 1.1;    //コライダーサイズZ
+    const float BCollPosiX = 0.5;    //コライダーポジションX
+    const float BCollPosiY = 0.5;    //コライダーポジションY
+    const float BCollPosiZ = 0;      //コライダーポジションZ
+    const float BCollSizeX = 1.1;    //コライダーサイズX
+    const float BCollSizeY = 1.1;    //コライダーサイズY
+    const float BCollSizeZ = 1.1;    //コライダーサイズZ
 
     float trPosiChangeX = 0.1;      //X座標変化量
     float trRoteChangeY = 0.5;      //Y軸回転変化量

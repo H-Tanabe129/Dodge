@@ -9,15 +9,14 @@ private:
     static const int trPosiX = -5;      //モデルポジションX
     static const int trPosiY = -6.5f;   //モデルポジションY
     static const int trPosiZ = 0;       //モデルポジションZ
-    static const int BColliderPosiX = 0.1f;     //コライダーポジションX
-    static const int BColliderPosiY = 0;        //コライダーポジションY
-    static const int BColliderPosiZ = 0;        //コライダーポジションZ
-    static const int BColliderSizeX = 1;    //コライダーサイズX
-    static const int BColliderSizeY = 8;    //コライダーサイズY
-    static const int BColliderSizeZ = 1;    //コライダーサイズZ
+    static const int BCollPosiX = 0.1f;     //コライダーポジションX
+    static const int BCollPosiY = 0;        //コライダーポジションY
+    static const int BCollPosiZ = 0;        //コライダーポジションZ
+    static const int BCollSizeX = 1;    //コライダーサイズX
+    static const int BCollSizeY = 8;    //コライダーサイズY
+    static const int BCollSizeZ = 1;    //コライダーサイズZ
     
     static const int LEdge = -10;
-    float trPosiChangeX = 0.1;      //X座標変化量
 
 public:
     //コンストラクタ

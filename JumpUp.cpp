@@ -20,8 +20,8 @@ void JumpUp::Initialize()
     assert(hJump_ >= 0);
 
     BoxCollider* collision = new BoxCollider
-    (XMFLOAT3(BColliderPosiX, BColliderPosiY, BColliderPosiZ), 
-        XMFLOAT3(BColliderSizeX, BColliderSizeY, BColliderSizeZ));
+    (XMFLOAT3(BCollPosiX, BCollPosiY, BCollPosiZ), 
+        XMFLOAT3(BCollSizeX, BCollSizeY, BCollSizeZ));
     AddCollider(collision);
 }
 
