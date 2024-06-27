@@ -58,12 +58,10 @@ void SpeedDown::Release()
 void SpeedDown::OnCollision(GameObject* pTarget) {
     if (pTarget->GetObjectName() == "Player") {
         if (pStage_) {
-            pStage_->;
+            //pStage_->;
         }
     }
         this->KillMe();
-    }
-}
 
     if (pTarget->GetObjectName() == "StageUp") {
         this->KillMe();

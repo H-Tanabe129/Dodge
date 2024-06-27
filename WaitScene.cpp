@@ -1,12 +1,11 @@
 #include "WaitScene.h"
 #include "Player.h"
 #include "Engine/Camera.h"
-#include "Engine/Audio.h"
 #include "Engine/Input.h"
 #include "Engine/SceneManager.h"
 
 WaitScene::WaitScene(GameObject* parent)
-	: GameObject(parent, "WaitScene"), hSound_(-1), pText(nullptr), pPlayer_(nullptr)
+	: GameObject(parent, "WaitScene"), pText(nullptr), pPlayer_(nullptr)
 {
 }
 
@@ -18,10 +17,6 @@ WaitScene::~WaitScene()
 
 void WaitScene::Initialize()
 {
-	//サウンドデータのロード
-	hSound_ = Audio::Load("A2_01003.WAV", true);
-	assert(hSound_ >= 0);
-
 	Camera::SetPosition(XMFLOAT3(CPosiX, CPosiY, CPosiZ));  //test == 35, 3, 0    -25
 	Camera::SetTarget(XMFLOAT3(CTarX, CTarY, CTarZ));
 
@@ -32,7 +27,6 @@ void WaitScene::Initialize()
 
 	pText = new Text;
 	pText->Initialize();
-	Audio::Play(hSound_);
 }
 
 void WaitScene::Update()

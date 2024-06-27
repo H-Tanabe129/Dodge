@@ -1,10 +1,11 @@
 #include "ScoreUp.h"
 #include "ValueManager.h"
 #include "Engine/Model.h"
+#include "Engine/Audio.h"
 #include "Engine/BoxCollider.h"
 
 ScoreUp::ScoreUp(GameObject* parent)
-    :GameObject(parent, "ScoreUp"), hScore_(-1)
+    :GameObject(parent, "ScoreUp"), hScore_(-1), hSound_(-1)
 {
 }
 
@@ -15,6 +16,10 @@ ScoreUp::~ScoreUp()
 void ScoreUp::Initialize()
 {
     transform_.position_.x = trPosiX;
+
+    //サウンドデータのロード
+    hSound_ = Audio::Load("A1_18278.WAV");
+    assert(hSound_ >= 0);
 
     //モデルデータのロード
     hScore_ = Model::Load("Model/ScoreUp.fbx");
@@ -50,6 +55,7 @@ void ScoreUp::OnCollision(GameObject* pTarget) {
     if (pTarget->GetObjectName() == "Player") {
         ValueManager::GetInstance().ItemScore();
         this->KillMe();
+        Audio::Play(hSound_);
     }
 
     if (pTarget->GetObjectName() == "StageUp") {

@@ -26,8 +26,9 @@ private:
     int SetPosiUpY = 3.5f;      //上追加StageのY初期座標
     int SetPosiLoY = -2.5f;     //下追加StageのY初期座標
     int SetPosiZ = 0;           //追加StageのZ座標
-    const float trChangeX = 0.05f;  //アイテム取得時 X 変化
+
     float trPosiChangeX = 0.1;      //X座標変化量
+    const float trChangeX = 0.05f;  //アイテム取得時 X 変化
 
 public:
     //コンストラクタ

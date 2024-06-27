@@ -6,7 +6,6 @@
 class WaitScene : public GameObject
 {
 private:
-    int hSound_;    //画像番号
     Text* pText;
     Player* pPlayer_; // Player クラスのポインタ
 

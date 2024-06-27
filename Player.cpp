@@ -24,6 +24,7 @@ void Player::Initialize()
 	hBGM_ = Audio::Load("A2_01003.WAV", true);
 	assert(hBGM_ >= 0);
 	Audio::Play(hBGM_);
+	Audio::SetVolume(hBGM_, VSet);
 
     //モデルデータのロード
     hModel_ = Model::Load("Model/Player.fbx");

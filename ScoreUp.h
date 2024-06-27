@@ -5,6 +5,7 @@ class ScoreUp : public GameObject
 {
 private:
     int hScore_;    //スコアアップ  水色
+    int hSound_;
 
     int trPosiX = 35;      //モデルポジションX
     int trPosiY = 0;       //モデルポジションY
