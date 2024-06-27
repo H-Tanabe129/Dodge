@@ -154,6 +154,7 @@
     <ClCompile Include="Engine\Transform.cpp" />
     <ClCompile Include="GameOverScene.cpp" />
     <ClCompile Include="Item.cpp" />
+    <ClCompile Include="ItemBase.cpp" />
     <ClCompile Include="JumpUp.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="PlayScene.cpp" />
@@ -194,6 +195,7 @@
     <ClInclude Include="Engine\Transform.h" />
     <ClInclude Include="GameOverScene.h" />
     <ClInclude Include="Item.h" />
+    <ClInclude Include="ItemBase.h" />
     <ClInclude Include="JumpUp.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="PlayScene.h" />
