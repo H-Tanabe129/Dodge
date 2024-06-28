@@ -41,6 +41,8 @@ private:
     std::random_device rd_dev; // シード生成器
     std::mt19937 gen;          // メルセンヌ・ツイスタ生成器
 
+    void SpawnItem();
+
 public:
     //コンストラクタ
     Item(GameObject* parent);

@@ -4,6 +4,10 @@
 #include "ScoreUp.h"
 #include "Stage.h"
 
+void Item::SpawnItem()
+{
+}
+
 Item::Item(GameObject* parent)
 	:GameObject(parent, "Item"), 
     frame(0), randomValue(getRandomValue(randMin, randMax)), gen(rd_dev())
