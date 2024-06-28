@@ -1,15 +1,15 @@
 #pragma once
 #include "Engine/GameObject.h"
 #include "Engine/Text.h"
+#include "Player.h"
 
 //テストシーンを管理するクラス
 class PlayScene : public GameObject
 {
 private:
-	static const int FPS = 60;
-	int frame = 0;
 	int hSound_;    //サウンド番号
 	Text* pText;
+	Player* pPlayer_; // Player クラスのポインタ
 
 	static const int CPosiX = 15;	//カメラポジションX  //test == 35, 3, 0    -25
 	static const int CPosiY = 3;	//カメラポジションY
@@ -24,10 +24,13 @@ private:
 	static const int timeY = 60;     //スコア表示Y
 	int score = 20;
 
+	void KillAllChildren();
+
 public:
 	//コンストラクタ
 	//引数：parent  親オブジェクト（SceneManager）
 	PlayScene(GameObject* parent);
+	~PlayScene();
 
 	//初期化
 	void Initialize() override;
@@ -40,6 +43,4 @@ public:
 
 	//開放
 	void Release() override;
-
-	void KillAllChildren();
 };

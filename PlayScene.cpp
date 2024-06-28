@@ -1,5 +1,4 @@
 #include "PlayScene.h"
-#include "Player.h"
 #include "Stage.h"
 #include "Item.h"
 #include "ValueManager.h"
@@ -8,8 +7,14 @@
 
 //コンストラクタ
 PlayScene::PlayScene(GameObject * parent)
-	: GameObject(parent, "PlayScene"), pText(nullptr)
+	: GameObject(parent, "PlayScene"), pText(nullptr), pPlayer_(nullptr), hSound_(-1)
 {
+}
+
+PlayScene::~PlayScene()
+{
+	delete pText;
+	delete pPlayer_;
 }
 
 //初期化
@@ -22,9 +27,13 @@ void PlayScene::Initialize()
 	// すべての子オブジェクトを削除
 	KillAllChildren();
 	
-	Instantiate<Player>(this);
+	//Instantiate<Player>(this);
 	Instantiate<Stage>(this);
 	Instantiate<Item>(this);
+
+	// Player クラスのインスタンスを生成
+	pPlayer_ = new Player(this);
+	pPlayer_->Initialize();
 
 	pText = new Text;
 	pText->Initialize();
@@ -36,6 +45,10 @@ void PlayScene::Initialize()
 //更新
 void PlayScene::Update()
 {
+	if (pPlayer_) {
+		pPlayer_->Update();
+	}
+
 	ValueManager::GetInstance().AddScore(score);
 	ValueManager::GetInstance().AddTime();
 }
@@ -47,12 +60,26 @@ void PlayScene::Draw()
 	pText->Draw(scoreX+100, scoreY, ValueManager::GetInstance().GetScore());
 	pText->Draw(timeX, timeY, "Time: ");
 	pText->Draw(timeX+100, timeY, ValueManager::GetInstance().GetTime());
+
+	if (pPlayer_) {
+		pPlayer_->Draw();
+	}
 }
 
 //開放
 void PlayScene::Release()
 {
-	pText->Release();
+	if (pText) {
+		pText->Release(); // リソースを解放
+		delete pText;     // メモリを解放
+		pText = nullptr;  // ポインタを無効化
+	}
+
+	if (pPlayer_) {
+		pPlayer_->Release();
+		delete pPlayer_;
+		pPlayer_ = nullptr;
+	}
 }
 
 // 子オブジェクトを全て削除

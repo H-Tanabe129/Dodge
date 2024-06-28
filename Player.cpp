@@ -39,7 +39,6 @@ void Player::Initialize()
 
 void Player::Update()
 {
-
 	Jump();
 
 	if (transform_.position_.y >= edge || transform_.position_.y <= -edge)
@@ -49,12 +48,10 @@ void Player::Update()
 		SceneManager* pSceneManager = (SceneManager*)FindObject("SceneManager");
 		pSceneManager->ChangeScene(SCENE_ID_GAMEOVER);
 	}
-
 }
 
 void Player::Jump()
 {
-
     //スペースキーが押されていたらジャンプ
 	static float velocity = veloIni;
 	if (Input::IsKey(DIK_SPACE))
