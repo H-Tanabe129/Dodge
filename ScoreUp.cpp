@@ -2,7 +2,7 @@
 #include "ValueManager.h"
 
 ScoreUp::ScoreUp(GameObject* parent)
-    : ItemBase(parent, "ScoreUp"), hScore_(-1)
+    : ItemBase(parent), GameObject(parent, "ScoreUp"), hScore_(-1)
 {
 }
 

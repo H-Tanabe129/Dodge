@@ -37,13 +37,13 @@ void Item::Update()
         rd = getRandomValue(rdMin, rdMax);
         switch (rd) {
         case Score:
-            Instantiate<ScoreUp>(this)->SetPosition(trPosiX, trPosiY, trPosiZ);
+            Instantiate<ScoreUp>(this)/*->SetPosition(trPosiX, trPosiY, trPosiZ)*/;
             break;
         case Jump:
-            Instantiate<JumpUp>(this)->SetPosition(trPosiX, trPosiY, trPosiZ);
+            Instantiate<JumpUp>(this)/*->SetPosition(trPosiX, trPosiY, trPosiZ)*/;
             break;
         case Speed:
-            Instantiate<SpeedDown>(this)->SetPosition(trPosiX, trPosiY, trPosiZ);
+            Instantiate<SpeedDown>(this)/*->SetPosition(trPosiX, trPosiY, trPosiZ)*/;
             break;
         }
     randomValue = getRandomValue(randMin, randMax);

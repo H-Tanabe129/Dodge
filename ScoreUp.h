@@ -1,10 +1,10 @@
 #pragma once
 #include "ItemBase.h"
 
-class ScoreUp : public ItemBase
+class ScoreUp : public ItemBase, public GameObject
 {
 private:
-    int hScore_;
+    int hScore_;        //スコアアップ　青
 
 public:
     ScoreUp(GameObject* parent);
