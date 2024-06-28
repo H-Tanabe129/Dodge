@@ -1,7 +1,7 @@
 #pragma once
 #include "ItemBase.h"
 
-class ScoreUp : public ItemBase, public GameObject
+class ScoreUp : public ItemBase
 {
 private:
     int hScore_;        //スコアアップ　青

@@ -3,8 +3,6 @@
 
 enum Wall {
     TOGETHER = 0,
-    //UPPERFRONT,
-    //LOWERFRONT,
     UPPER,
     LOWER,
     UPPERLONG,
@@ -23,11 +21,11 @@ private:
     int InitPosiLoY = -6;       //下初期StageのY座標
     int InitPosiZ = 0;          //初期StageのＺ座標
     int SetPosiX = 35;          //追加StageのX座標
-    int SetPosiUpY = 3.5f;      //上追加StageのY初期座標
-    int SetPosiLoY = -2.5f;     //下追加StageのY初期座標
+    float SetPosiUpY = 3.5f;      //上追加StageのY初期座標
+    float SetPosiLoY = -2.5f;     //下追加StageのY初期座標
     int SetPosiZ = 0;           //追加StageのZ座標
 
-    float trPosiChangeX = 0.1;      //X座標変化量
+    float trPosiChangeX = 0.1f;      //X座標変化量
     const float trChangeX = 0.05f;  //アイテム取得時 X 変化
 
 public:

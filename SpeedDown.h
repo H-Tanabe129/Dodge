@@ -2,7 +2,7 @@
 #include "ItemBase.h"
 #include "Stage.h"
 
-class SpeedDown : public ItemBase, public GameObject
+class SpeedDown : public ItemBase
 {
 private:
     int hSpeed_;        //スピードダウン　オレンジ

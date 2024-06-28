@@ -1,7 +1,7 @@
 #pragma once
 #include "ItemBase.h"
 
-class JumpUp : public ItemBase, public GameObject
+class JumpUp : public ItemBase
 {
 private:
     int hJump_;         //ジャンプアップ　緑

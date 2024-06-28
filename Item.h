@@ -1,5 +1,10 @@
 #pragma once
 #include "Engine/GameObject.h"
+#include "ItemBase.h"
+#include "ScoreUp.h"
+#include "JumpUp.h"
+#include "SpeedDown.h"
+#include <vector>
 #include <random>
 
 enum {

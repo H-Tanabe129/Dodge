@@ -2,7 +2,7 @@
 #include "ValueManager.h"
 
 SpeedDown::SpeedDown(GameObject* parent)
-    : ItemBase(parent), GameObject(parent, "SpeedDown"), hSpeed_(-1)
+    : ItemBase(parent), hSpeed_(-1), pStage_(nullptr)
 {
 }
 

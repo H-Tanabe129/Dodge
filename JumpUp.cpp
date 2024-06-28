@@ -2,7 +2,7 @@
 #include "ValueManager.h"
 
 JumpUp::JumpUp(GameObject* parent)
-    : ItemBase(parent), GameObject(parent, "JumpUp"), hJump_(-1)
+    : ItemBase(parent), hJump_(-1)
 {
 }
 
