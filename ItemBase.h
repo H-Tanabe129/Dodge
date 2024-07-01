@@ -46,4 +46,6 @@ public:
 
     // Õ“Ëˆ—
     virtual void OnCollision(GameObject* pTarget) override;
+
+    virtual void SetPosition(int x, int y, int z);
 };

@@ -57,3 +57,8 @@ void ItemBase::OnCollision(GameObject* pTarget)
         this->KillMe();
     }
 }
+
+void ItemBase::SetPosition(int x, int y, int z)
+{
+    transform_.position_ = XMFLOAT3(x, y, z);
+}
