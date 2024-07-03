@@ -3,8 +3,6 @@
 
 enum Wall {
     TOGETHER = 0,
-    //UPPERFRONT,
-    //LOWERFRONT,
     UPPER,
     LOWER,
     UPPERLONG,
@@ -48,6 +46,4 @@ public:
 
     //ŠJ•ú
     void Release() override;
-
-    void SpeedChange();
 };

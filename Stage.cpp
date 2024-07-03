@@ -64,11 +64,3 @@ void Stage::Draw()
 void Stage::Release()
 {
 }
-
-void Stage::SpeedChange()
-{
-	transform_.position_.x -= trPosiChangeX;
-	if (frame) {
-		transform_.position_.x -= trChangeX;
-	}
-}

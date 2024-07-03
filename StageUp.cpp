@@ -27,6 +27,7 @@ void StageUp::Initialize()
 
 void StageUp::Update()
 {
+    transform_.position_.x -= trPosiChangeX;
     if (transform_.position_.x <= LEdge) {
         this->KillMe();
     }
@@ -40,4 +41,9 @@ void StageUp::Draw()
 
 void StageUp::Release()
 {
+}
+
+void StageUp::SpeedChange()
+{
+    transform_.position_.x -= spChangeX;
 }

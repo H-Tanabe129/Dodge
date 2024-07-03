@@ -17,6 +17,8 @@ private:
     static const int BCollSizeZ = 1;    //コライダーサイズZ
     
     static const int LEdge = -10;
+    float trPosiChangeX = 0.1;
+    float spChangeX = 0.05;
 
 public:
     //コンストラクタ
@@ -36,4 +38,6 @@ public:
 
     //開放
     void Release() override;
+
+    void SpeedChange();
 };

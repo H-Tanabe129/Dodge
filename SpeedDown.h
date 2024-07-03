@@ -1,12 +1,14 @@
 #pragma once
 #include "Engine/GameObject.h"
-#include "Stage.h"
+#include "StageUp.h"
+#include "StageLO.h"
 
 class SpeedDown : public GameObject
 {
 private:
     int hSpeed_;    //スピードダウン　　オレンジ
-    Stage* pStage_;
+    StageUp* pStageUp_;
+    StageLo* pStageLo_;
 
     int trPosiX = 35;      //モデルポジションX
     int trPosiY = 0;       //モデルポジションY
