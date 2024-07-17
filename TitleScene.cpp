@@ -14,20 +14,20 @@ void TitleScene::Initialize()
     hPict_ = Image::Load("Dodge.png");
     assert(hPict_ >= 0);
     //画像データのロード
-    hStart_ = Image::Load("Start.png");
+    hStart_ = Image::Load("PStart.png");
     assert(hStart_ >= 0);
 
-    Title.position_.y = 0;
-    transform_.position_.y = -0.5;
+    Title.position_.y = titlePicturePosiY;
+    transform_.position_.y = startPicturePosiY;
 }
 
 void TitleScene::Update()
 {
-    //マウスの左ボタンを放した
+    //キーを放した
     if(Input::IsKeyUp(DIK_SPACE))
     {
         SceneManager* pSceneManager = (SceneManager*)FindObject("SceneManager");
-        pSceneManager->ChangeScene(SCENE_ID_PLAY);
+        pSceneManager->ChangeScene(SCENE_ID_WAIT);
     }
 }
 

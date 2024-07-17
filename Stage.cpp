@@ -1,12 +1,13 @@
 #include "Stage.h"
-#include <time.h>
 #include "StageUp.h"
 #include "StageLo.h"
 #include "Player.h"
+#include "Item.h"
+#include <time.h>
 
 
 Stage::Stage(GameObject* parent)
-    :GameObject(parent, "Stage"), hModel_(-1)
+    :GameObject(parent, "Stage")
 {
 }
 
@@ -26,38 +27,32 @@ void Stage::Update()
 {
 	frame += 1;
 
-
-	if (frame % (FPS * 3) == 0)
+	//ステージをランダムで表示する
+	if (frame % (FPS * 2) == 0)
 	{
 		rd = rand() % MAX;
-		//rd = 5;
 
+		//ステージパターン
 		switch(rd) {
 		case TOGETHER:		//一緒
-			Instantiate<StageUp>(this);
-			Instantiate<StageLo>(this);
-			break;
-		case UPPERFRONT:	//上が手前下が奥
-			Instantiate<StageUp>(this) -> SetPosition(32.5f, 7.5f, 0);
-			Instantiate<StageLo>(this) -> SetPosition(38.5f, -6.5f, 0);
-			break;
-		case LOWERFRONT:	//下が手前上が奥
-			Instantiate<StageUp>(this) -> SetPosition(38.5f, 7.5f, 0);
-			Instantiate<StageLo>(this) -> SetPosition(32.5f, -6.5f, 0);
+			Instantiate<StageUp>(this)->SetPosition(InitPosiX, InitPosiUpY, InitPosiZ);
+			Instantiate<StageLo>(this)->SetPosition(InitPosiX, InitPosiLoY, InitPosiZ);
 			break;
 		case UPPER:			//上だけ
-			Instantiate<StageUp>(this);
+			Instantiate<StageUp>(this)->SetPosition(InitPosiX, InitPosiUpY, InitPosiZ);
 			break;
 		case LOWER:			//下だけ
-			Instantiate<StageLo>(this);
+			Instantiate<StageLo>(this)->SetPosition(InitPosiX, InitPosiLoY, InitPosiZ);
 			break;
-		//case UPPERLONG:		//上長め
-		//	Instantiate<StageUp>(this)->SetScale(1, 2.5f, 1);
-		//	GetScale();
-		//	break;
-		//case LOWERLONG:		//下長め
-		//	Instantiate<StageLo>(this)->SetScale(1, 2.5f, 1);
-		//	break;
+		case UPPERLONG:		//上長め
+			Instantiate<StageUp>(this)->SetPosition(InitPosiX, InitPosiUpY, InitPosiZ);
+			Instantiate<StageUp>(this)->SetPosition(SetPosiX, SetPosiUpY, SetPosiZ);
+			GetScale();
+			break;
+		case LOWERLONG:		//下長め
+			Instantiate<StageLo>(this)->SetPosition(InitPosiX, InitPosiLoY, InitPosiZ);
+			Instantiate<StageLo>(this)->SetPosition(SetPosiX, SetPosiLoY, SetPosiZ);
+			break;
 		}
 	}
 }
