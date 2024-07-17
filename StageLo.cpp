@@ -42,8 +42,3 @@ void StageLo::Draw()
 void StageLo::Release()
 {
 }
-
-void StageLo::SpeedChange()
-{
-    transform_.position_.x -= spChangeX;
-}

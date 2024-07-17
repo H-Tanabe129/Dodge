@@ -42,8 +42,3 @@ void StageUp::Draw()
 void StageUp::Release()
 {
 }
-
-void StageUp::SpeedChange()
-{
-    transform_.position_.x -= spChangeX;
-}
