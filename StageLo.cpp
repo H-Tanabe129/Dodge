@@ -14,7 +14,7 @@ StageLo::~StageLo()
 void StageLo::Initialize()
 {
     transform_.position_ = XMFLOAT3(trPosiX, trPosiY, trPosiZ);
-
+     
     //モデルデータのロード
     hModel_ = Model::Load("Model/Stage.fbx");
     assert(hModel_ >= 0);
@@ -41,4 +41,9 @@ void StageLo::Draw()
 
 void StageLo::Release()
 {
+}
+
+void StageLo::SpeedChange()
+{
+    transform_.position_.x -= spChangeX;
 }

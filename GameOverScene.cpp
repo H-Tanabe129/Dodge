@@ -34,13 +34,6 @@ void GameOverScene::Update()
         SceneManager* pSceneManager = (SceneManager*)FindObject("SceneManager");
         pSceneManager->ChangeScene(SCENE_ID_TITLE);
     }
-    ////キーを放した→リトライ
-    //if (Input::IsKeyUp(DIK_R))
-    //{
-    //    SceneManager* pSceneManager = (SceneManager*)FindObject("SceneManager");
-    //    pSceneManager->ChangeScene(SCENE_ID_PLAY);
-    //    Instantiate<PlayScene>(this);
-    //}
 }
 
 void GameOverScene::Draw()
