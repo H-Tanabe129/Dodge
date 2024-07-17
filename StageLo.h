@@ -16,7 +16,8 @@ private:
     static const int BCollSizeY = 8;    //コライダーサイズY
     static const int BCollSizeZ = 1;    //コライダーサイズZ
     
-    static const int LEdge = -10;
+    static const int LEdge = -10;   // 世界左端
+    float trPosiChangeX = 0.1;      // X座標変化量
 
 public:
     //コンストラクタ

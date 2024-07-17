@@ -1,6 +1,4 @@
 #include "Item.h"
-#include "SpeedDown.h"
-#include "JumpUp.h"
 #include "ScoreUp.h"
 #include "Stage.h"
 
@@ -34,19 +32,8 @@ void Item::Update()
     if(frame % (FPS * randomValue) == 0)
     {
         trPosiY = GenerateRand();
-        rd = getRandomValue(rdMin, rdMax);
-        switch (rd) {
-        case Score:
-            Instantiate<ScoreUp>(this)->SetPosition(trPosiX, trPosiY, trPosiZ);
-            break;
-        case Jump:
-            Instantiate<JumpUp>(this)->SetPosition(trPosiX, trPosiY, trPosiZ);
-            break;
-        case Speed:
-            Instantiate<SpeedDown>(this)->SetPosition(trPosiX, trPosiY, trPosiZ);
-            break;
-        }
-    randomValue = getRandomValue(randMin, randMax);
+        Instantiate<ScoreUp>(this)->SetPosition(trPosiX, trPosiY, trPosiZ);
+        randomValue = getRandomValue(randMin, randMax);
     }
 }
 

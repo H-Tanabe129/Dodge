@@ -27,6 +27,7 @@ void StageLo::Initialize()
 
 void StageLo::Update()
 {
+    transform_.position_.x -= trPosiChangeX;
     if (transform_.position_.x <= LEdge) {
         this->KillMe();
     }

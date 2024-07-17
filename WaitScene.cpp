@@ -2,10 +2,11 @@
 #include "Player.h"
 #include "Engine/Camera.h"
 #include "Engine/Input.h"
+#include "Engine/Image.h"
 #include "Engine/SceneManager.h"
 
 WaitScene::WaitScene(GameObject* parent)
-	: GameObject(parent, "WaitScene"), pText(nullptr), pPlayer_(nullptr)
+	: GameObject(parent, "WaitScene"), hPict_(-1), pText(nullptr), pPlayer_(nullptr)
 {
 }
 
@@ -19,6 +20,10 @@ void WaitScene::Initialize()
 {
 	Camera::SetPosition(XMFLOAT3(CPosiX, CPosiY, CPosiZ));  //test == 35, 3, 0    -25
 	Camera::SetTarget(XMFLOAT3(CTarX, CTarY, CTarZ));
+
+    //画像データのロード
+    hPict_ = Image::Load("Ready.png");
+    assert(hPict_ >= 0);
 
 	//Instantiate<Player>(this);
     // Player クラスのインスタンスを生成
@@ -43,6 +48,9 @@ void WaitScene::Update()
 
 void WaitScene::Draw()
 {
+    Image::SetTransform(hPict_, transform_);
+    Image::Draw(hPict_);
+
 	pText->Draw(scoreX, scoreY, "Score:0");
 	pText->Draw(timeX, timeY, "Time: 0");
 
