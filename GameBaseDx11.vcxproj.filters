@@ -134,13 +134,7 @@
     <ClCompile Include="Item.cpp">
       <Filter>Gimmick\Item</Filter>
     </ClCompile>
-    <ClCompile Include="JumpUp.cpp">
-      <Filter>Gimmick\Item</Filter>
-    </ClCompile>
     <ClCompile Include="ScoreUp.cpp">
-      <Filter>Gimmick\Item</Filter>
-    </ClCompile>
-    <ClCompile Include="SpeedDown.cpp">
       <Filter>Gimmick\Item</Filter>
     </ClCompile>
     <ClCompile Include="GameOverScene.cpp">
@@ -244,19 +238,10 @@
     <ClInclude Include="StageLo.h">
       <Filter>Gimmick\Stage</Filter>
     </ClInclude>
-    <ClInclude Include="StageUp.h">
-      <Filter>Gimmick\Stage</Filter>
-    </ClInclude>
     <ClInclude Include="Item.h">
       <Filter>Gimmick\Item</Filter>
     </ClInclude>
-    <ClInclude Include="JumpUp.h">
-      <Filter>Gimmick\Item</Filter>
-    </ClInclude>
     <ClInclude Include="ScoreUp.h">
-      <Filter>Gimmick\Item</Filter>
-    </ClInclude>
-    <ClInclude Include="SpeedDown.h">
       <Filter>Gimmick\Item</Filter>
     </ClInclude>
     <ClInclude Include="GameOverScene.h">
@@ -279,6 +264,9 @@
     </ClInclude>
     <ClInclude Include="ValueManager.h">
       <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="StageUp.h">
+      <Filter>Gimmick\Stage</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
