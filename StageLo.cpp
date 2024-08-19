@@ -16,7 +16,7 @@ void StageLo::Initialize()
     transform_.position_ = XMFLOAT3(trPosiX, trPosiY, trPosiZ);
      
     //モデルデータのロード
-    hModel_ = Model::Load("Model/Stage.fbx");
+    hModel_ = Model::Load("Model/Stage_t.fbx");
     assert(hModel_ >= 0);
 
     BoxCollider* collision =

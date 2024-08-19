@@ -36,6 +36,18 @@ HRESULT Fbx::Load(std::string fileName)
 	fbxImporter->Import(pFbxScene_);
 	fbxImporter->Destroy();
 
+    // 三角形化の処理を追加
+    FbxGeometryConverter geometryConverter(pFbxManager_);
+    if (!geometryConverter.Triangulate(pFbxScene_, true, false))
+    {
+        // 三角形化が失敗した場合
+        return E_FAIL;
+    }
+    //ダメポリゴンを削除
+    geometryConverter.RemoveBadPolygonsFromMeshes(pFbxScene_);
+    //マテリアルごとにサブメッシュに分割（マテリアルごとにメッシュを読み込む）
+    //geometryConverter.SplitMeshesPerMaterial(pFbxScene_, true);
+
 	// アニメーションのタイムモードの取得
 	_frameRate = pFbxScene_->GetGlobalSettings().GetTimeMode();
 
