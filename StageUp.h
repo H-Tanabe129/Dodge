@@ -6,18 +6,18 @@ class StageUp : public GameObject
 private:
     int hModel_;    //モデル番号
 
-    static const int trPosiX = -5;      //モデルポジションX
-    static const int trPosiY = 7.5f;    //モデルポジションY
-    static const int trPosiZ = 0;       //モデルポジションZ
-    static const int trSizeX = 0.01f;    //モデルサイズX
-    static const int trSizeY = 0.01f;    //モデルサイズY
-    static const int trSizeZ = 0.01f;    //モデルサイズZ
-    static const int BCollPosiX = -0.1f;    //コライダーポジションX
-    static const int BCollPosiY = 0;        //コライダーポジションY
-    static const int BCollPosiZ = 0;        //コライダーポジションZ
-    static const int BCollSizeX = 1;    //コライダーサイズX
-    static const int BCollSizeY = 8;    //コライダーサイズY
-    static const int BCollSizeZ = 1;    //コライダーサイズZ
+    const float trPosiX = -5;      //モデルポジションX
+    const float trPosiY = 7.5f;    //モデルポジションY
+    const float trPosiZ = 0;       //モデルポジションZ
+    const float trSizeX = 0.01f;    //モデルサイズX
+    const float trSizeY = 0.02f;    //モデルサイズY
+    const float trSizeZ = 0.01f;    //モデルサイズZ
+    const float BCollPosiX = -0.1f;    //コライダーポジションX
+    const float BCollPosiY = 0;        //コライダーポジションY
+    const float BCollPosiZ = 0;        //コライダーポジションZ
+    const float BCollSizeX = 1.5;   //コライダーサイズX
+    const float BCollSizeY = 8;     //コライダーサイズY
+    const float BCollSizeZ = 1.5;   //コライダーサイズZ
 
     static const int LEdge = -10;   // 世界左端
     float trPosiChangeX = 0.1;      // X座標変化量

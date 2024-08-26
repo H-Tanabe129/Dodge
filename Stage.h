@@ -2,11 +2,11 @@
 #include "Engine/GameObject.h"
 
 enum Wall {
-    TOGETHER = 0,
+    //TOGETHER = 0,
     UPPER,
-    LOWER,
-    UPPERLONG,
-    LOWERLONG,
+    //LOWER,
+    //UPPERLONG,
+    //LOWERLONG,
     MAX
 };
 
@@ -17,13 +17,16 @@ private:
     int frame = 0;
     int rd = 0;     //乱数
     int InitPosiX = 35;         //初期StageのX座標
-    int InitPosiUpY = 7;        //上初期StageのY座標
-    int InitPosiLoY = -6;       //下初期StageのY座標
-    int InitPosiZ = 0;          //初期StageのＺ座標
+    int InitPosiUpY = 1;        //上初期StageのY座標
+    int InitPosiLoY = -10;      //下初期StageのY座標
+    int InitPosiZ = 0;          //初期StageのZ座標
     int SetPosiX = 35;          //追加StageのX座標
-    int SetPosiUpY = 3.5f;      //上追加StageのY初期座標
-    int SetPosiLoY = -2.5f;     //下追加StageのY初期座標
+    int SetPosiUpY = -1;        //上追加StageのY初期座標
+    int SetPosiLoY = -6;        //下追加StageのY初期座標
     int SetPosiZ = 0;           //追加StageのZ座標
+    int SetSizeX = 0.01f;       //追加StageのXサイズ
+    int SetSizeY = 0.01f;       //追加StageのYサイズ
+    int SetSizeZ = 0.01f;       //追加StageのZサイズ
 
 public:
     //コンストラクタ

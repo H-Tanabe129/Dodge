@@ -14,7 +14,8 @@ StageLo::~StageLo()
 void StageLo::Initialize()
 {
     transform_.position_ = XMFLOAT3(trPosiX, trPosiY, trPosiZ);
-    transform_.scale_ = XMFLOAT3(0.01f, 0.01f, 0.01f);
+    //transform_.scale_ = XMFLOAT3(0.01f, 0.02f, 0.01f);
+    transform_.scale_ = XMFLOAT3(trSizeX, trSizeY, trSizeZ);
      
     //モデルデータのロード
     hModel_ = Model::Load("Model/Stage_t.fbx");
