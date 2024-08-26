@@ -3,18 +3,24 @@
 #include "Stage.h"
 #include "Item.h"
 #include "ValueManager.h"
+#include "Engine/Audio.h"
 #include "Engine/Camera.h"
 #include "Engine/Input.h"
 
 //コンストラクタ
 PlayScene::PlayScene(GameObject * parent)
-	: GameObject(parent, "PlayScene"), pText(nullptr)
+	: GameObject(parent, "PlayScene"), pText(nullptr), hBGM_(-1)
 {
 }
 
 //初期化
 void PlayScene::Initialize()
 {
+	//サウンドデータのロード
+	hBGM_ = Audio::Load("A2_01003.WAV", true);
+	assert(hBGM_ >= 0);
+	Audio::Play(hBGM_);
+	Audio::SetVolume(hBGM_, VSet);
 
 	Camera::SetPosition(XMFLOAT3(CPosiX, CPosiY, CPosiZ));
 	Camera::SetTarget(XMFLOAT3(CTarX, CTarY, CTarZ));

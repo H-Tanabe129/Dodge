@@ -3,6 +3,7 @@
 #include "Engine/Model.h"
 #include "Engine/Audio.h"
 #include "Engine/BoxCollider.h"
+#include "Engine/SphereCollider.h"
 
 ScoreUp::ScoreUp(GameObject* parent)
     :GameObject(parent, "ScoreUp"), hScore_(-1), hSound_(-1)
@@ -25,9 +26,8 @@ void ScoreUp::Initialize()
     hScore_ = Model::Load("Model/ScoreUp.fbx");
     assert(hScore_ >= 0);
 
-    BoxCollider* collision = new BoxCollider
-        (XMFLOAT3(BCollPosiX, BCollPosiY, BCollPosiZ),
-            XMFLOAT3(BCollSizeX, BCollSizeY, BCollSizeZ));
+    SphereCollider* collision = 
+        new SphereCollider(XMFLOAT3(SCollPosiX, SCollPosiY, SCollPosiZ), SCollSizeX);
     AddCollider(collision);
 }
 

@@ -34,25 +34,25 @@ void Stage::Update()
 
 		//ステージパターン
 		switch(rd) {
-		//case TOGETHER:		//一緒
-		//	Instantiate<StageUp>(this)->SetPosition(InitPosiX, InitPosiUpY, InitPosiZ);
-		//	Instantiate<StageLo>(this)->SetPosition(InitPosiX, InitPosiLoY, InitPosiZ);
-		//	break;
+		case TOGETHER:		//一緒
+			Instantiate<StageUp>(this)->SetPosition(InitPosiX, InitPosiUpY, InitPosiZ);
+			Instantiate<StageLo>(this)->SetPosition(InitPosiX, InitPosiLoY, InitPosiZ);
+			break;
 		case UPPER:			//上だけ
 			Instantiate<StageUp>(this)->SetPosition(InitPosiX, InitPosiUpY, InitPosiZ);
 			break;
-		//case LOWER:			//下だけ
-		//	Instantiate<StageLo>(this)->SetPosition(InitPosiX, InitPosiLoY, InitPosiZ);
-		//	break;
-		//case UPPERLONG:		//上長め
-		//	Instantiate<StageUp>(this)->SetPosition(SetPosiX, SetPosiUpY, SetPosiZ);
-		//	Instantiate<StageUp>(this)->SetPosition(InitPosiX, InitPosiUpY, InitPosiZ);
-		//	break;
-		//case LOWERLONG:		//下長め
-		//	Instantiate<StageLo>(this)->SetPosition(InitPosiX, InitPosiLoY, InitPosiZ);
- 	//		Instantiate<StageLo>(this)->SetPosition(SetPosiX, SetPosiLoY, SetPosiZ)
-		//		/*, SetScale(SetSizeX, SetSizeY, SetSizeZ)*/;
-		//	break;
+		case LOWER:			//下だけ
+			Instantiate<StageLo>(this)->SetPosition(InitPosiX, InitPosiLoY, InitPosiZ);
+			break;
+		case UPPERLONG:		//上長め
+			Instantiate<StageUp>(this)->SetPosition(SetPosiX, SetPosiUpY, SetPosiZ);
+			Instantiate<StageUp>(this)->SetPosition(InitPosiX, InitPosiUpY, InitPosiZ);
+			break;
+		case LOWERLONG:		//下長め
+ 			Instantiate<StageLo>(this)->SetPosition(SetPosiX, SetPosiLoY, SetPosiZ);
+			Instantiate<StageLo>(this)->SetPosition(InitPosiX, InitPosiLoY, InitPosiZ)
+				/*, SetScale(SetSizeX, SetSizeY, SetSizeZ)*/;
+			break;
 		}
 	}
 }

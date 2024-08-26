@@ -6,18 +6,18 @@ class StageUp : public GameObject
 private:
     int hModel_;    //モデル番号
 
-    const float trPosiX = -5;      //モデルポジションX
-    const float trPosiY = 7.5f;    //モデルポジションY
-    const float trPosiZ = 0;       //モデルポジションZ
+    const float trPosiX = -5;       //モデルポジションX
+    const float trPosiY = 3.0f;     //モデルポジションY
+    const float trPosiZ = 0;        //モデルポジションZ
     const float trSizeX = 0.01f;    //モデルサイズX
-    const float trSizeY = 0.02f;    //モデルサイズY
+    const float trSizeY = 0.017f;   //モデルサイズY
     const float trSizeZ = 0.01f;    //モデルサイズZ
-    const float BCollPosiX = -0.1f;    //コライダーポジションX
-    const float BCollPosiY = 0;        //コライダーポジションY
-    const float BCollPosiZ = 0;        //コライダーポジションZ
-    const float BCollSizeX = 1.5;   //コライダーサイズX
-    const float BCollSizeY = 8;     //コライダーサイズY
-    const float BCollSizeZ = 1.5;   //コライダーサイズZ
+    const float BCollPosiX = 0;     //コライダーポジションX
+    const float BCollPosiY = 3.9f;  //コライダーポジションY
+    const float BCollPosiZ = 0;     //コライダーポジションZ
+    const float BCollSizeX = 1.75f; //コライダーサイズX
+    const float BCollSizeY = 7.8f;  //コライダーサイズY
+    const float BCollSizeZ = 1.7f;  //コライダーサイズZ
 
     static const int LEdge = -10;   // 世界左端
     float trPosiChangeX = 0.1;      // X座標変化量

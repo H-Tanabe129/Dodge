@@ -25,7 +25,6 @@ void WaitScene::Initialize()
     hPict_ = Image::Load("Ready.png");
     assert(hPict_ >= 0);
 
-	//Instantiate<Player>(this);
     // Player クラスのインスタンスを生成
     pPlayer_ = new Player(this);
     pPlayer_->Initialize();

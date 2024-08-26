@@ -8,7 +8,7 @@ class PlayScene : public GameObject
 private:
 	static const int FPS = 60;
 	int frame = 0;
-	int hSound_;    //サウンド番号
+	int hBGM_;      // サウンド番号
 	Text* pText;
 
 	static const int CPosiX = 15;	//カメラポジションX  //test == 35, 3, 0    -25
@@ -18,11 +18,13 @@ private:
 	static const int CTarY = 0;		//カメラターゲットY
 	static const int CTarZ = 10;	//カメラターゲットZ
 
-	static const int scoreX = 30;    //時間表示X
-	static const int scoreY = 30;    //時間表示Y
-	static const int timeX = 30;     //スコア表示X
-	static const int timeY = 60;     //スコア表示Y
-	int score = 20;
+	static const int scoreX = 30;   //時間表示X
+	static const int scoreY = 30;   //時間表示Y
+	static const int timeX = 30;    //スコア表示X
+	static const int timeY = 60;    //スコア表示Y
+	int score = 20;					//スコア増加量
+
+	static const int VSet = 1;         //BGM音量調節
 
 public:
 	//コンストラクタ
