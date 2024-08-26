@@ -9,9 +9,12 @@ private:
     const float trPosiX = -5;       //モデルポジションX
     const float trPosiY = 3.0f;     //モデルポジションY
     const float trPosiZ = 0;        //モデルポジションZ
-    const float trSizeX = 0.01f;    //モデルサイズX
-    const float trSizeY = 0.017f;   //モデルサイズY
-    const float trSizeZ = 0.01f;    //モデルサイズZ
+    const float trSizeX = 1.0f;//モデルサイズX
+    const float trSizeY = 1.0f;//モデルサイズY
+    const float trSizeZ = 1.0f;//モデルサイズZ
+    //const float trSizeX = 0.01f;    //モデルサイズX
+    //const float trSizeY = 0.017f;   //モデルサイズY
+    //const float trSizeZ = 0.01f;    //モデルサイズZ
     const float BCollPosiX = 0;     //コライダーポジションX
     const float BCollPosiY = 3.9f;  //コライダーポジションY
     const float BCollPosiZ = 0;     //コライダーポジションZ
