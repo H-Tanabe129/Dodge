@@ -197,7 +197,10 @@
     <ClInclude Include="Ready.h" />
     <ClInclude Include="ScoreUp.h" />
     <ClInclude Include="Stage.h" />
-    <ClInclude Include="StageLo.h" />
+    <ClInclude Include="StageLo.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+      </ExcludedFromBuild>
+    </ClInclude>
     <ClInclude Include="StageUp.h" />
     <ClInclude Include="Timer.h" />
     <ClInclude Include="TitleScene.h" />
