@@ -14,6 +14,7 @@ StageUp::~StageUp()
 void StageUp::Initialize()
 {
     transform_.position_ = XMFLOAT3(trPosiX, trPosiY, trPosiZ);
+    transform_.scale_ = XMFLOAT3(0.01f, 0.01f, 0.01f);
 
     //モデルデータのロード
     hModel_ = Model::Load("Model/Stage_t.fbx");

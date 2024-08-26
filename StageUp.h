@@ -9,6 +9,9 @@ private:
     static const int trPosiX = -5;      //モデルポジションX
     static const int trPosiY = 7.5f;    //モデルポジションY
     static const int trPosiZ = 0;       //モデルポジションZ
+    static const int trSizeX = 0.01f;    //モデルサイズX
+    static const int trSizeY = 0.01f;    //モデルサイズY
+    static const int trSizeZ = 0.01f;    //モデルサイズZ
     static const int BCollPosiX = -0.1f;    //コライダーポジションX
     static const int BCollPosiY = 0;        //コライダーポジションY
     static const int BCollPosiZ = 0;        //コライダーポジションZ
