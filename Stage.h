@@ -26,10 +26,6 @@ private:
     int SetPosiLoY = -6;        //下追加StageのY初期座標
     int SetPosiZ = 0;           //追加StageのZ座標
 
-    int SetSizeX = 0.01f;       //追加StageのXサイズ
-    int SetSizeY = 0.005f;       //追加StageのYサイズ
-    int SetSizeZ = 0.01f;       //追加StageのZサイズ
-
 public:
     //コンストラクタ
     Stage(GameObject* parent);

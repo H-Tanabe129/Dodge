@@ -44,15 +44,14 @@ void Stage::Update()
 		case LOWER:			//â∫ÇæÇØ
 			Instantiate<StageLo>(this)->SetPosition(InitPosiX, InitPosiLoY, InitPosiZ);
 			break;
-		//case UPPERLONG:		//è„í∑Çﬂ
-		//	Instantiate<StageUp>(this)->SetPosition(SetPosiX, SetPosiUpY, SetPosiZ);
-		//	Instantiate<StageUp>(this)->SetPosition(InitPosiX, InitPosiUpY, InitPosiZ);
-		//	break;
-		//case LOWERLONG:		//â∫í∑Çﬂ
- 	//		Instantiate<StageLo>(this)->SetPosition(SetPosiX, SetPosiLoY, SetPosiZ);
-		//	Instantiate<StageLo>(this)->SetPosition(InitPosiX, InitPosiLoY, InitPosiZ)
-		//		/*, SetScale(SetSizeX, SetSizeY, SetSizeZ)*/;
-		//	break;
+		case UPPERLONG:		//è„í∑Çﬂ
+			Instantiate<StageUp>(this)->SetPosition(SetPosiX, SetPosiUpY, SetPosiZ);
+			Instantiate<StageUp>(this)->SetPosition(InitPosiX, InitPosiUpY, InitPosiZ);
+			break;
+		case LOWERLONG:		//â∫í∑Çﬂ
+ 			Instantiate<StageLo>(this)->SetPosition(SetPosiX, SetPosiLoY, SetPosiZ);
+			Instantiate<StageLo>(this)->SetPosition(InitPosiX, InitPosiLoY, InitPosiZ);
+			break;
 		}
 	}
 }

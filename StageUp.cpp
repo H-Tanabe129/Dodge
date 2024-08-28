@@ -17,7 +17,7 @@ void StageUp::Initialize()
     transform_.scale_ = XMFLOAT3(trSizeX, trSizeY, trSizeZ);
 
     //モデルデータのロード
-      hModel_ = Model::Load("Model/Stage_t2.fbx");
+      hModel_ = Model::Load("Model/Stage_tr.fbx");
     assert(hModel_ >= 0);
 
     BoxCollider* collision =

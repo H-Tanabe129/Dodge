@@ -158,6 +158,9 @@
     <ClCompile Include="ValueManager.cpp">
       <Filter>Scene</Filter>
     </ClCompile>
+    <ClCompile Include="BackGround.cpp">
+      <Filter>Scene\Play</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Engine\BoxCollider.h">
@@ -267,6 +270,9 @@
     </ClInclude>
     <ClInclude Include="StageUp.h">
       <Filter>Gimmick\Stage</Filter>
+    </ClInclude>
+    <ClInclude Include="BackGround.h">
+      <Filter>Scene\Play</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
