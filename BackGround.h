@@ -11,6 +11,10 @@ enum Model {
 class BackGround : public GameObject
 {
 private:
+    static const int FPS = 60;
+    int frame = 0;
+    int rd = 0;     //—”
+
     int hBuilding1_;    //ƒ‚ƒfƒ‹”Ô†
     int hBuilding2_;    //ƒ‚ƒfƒ‹”Ô†
     int hBuilding3_;    //ƒ‚ƒfƒ‹”Ô†

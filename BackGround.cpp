@@ -30,17 +30,35 @@ void BackGround::Initialize()
 //更新
 void BackGround::Update()
 {
+    frame += 1;
+
+    //ランダムで表示する
+    if (frame % (FPS * 2) == 0)
+    {
+        rd = rand() % MAX;
+    }
+
 }
 
 //描画
 void BackGround::Draw()
 {
-    Model::SetTransform(hBuilding1_, transform_);
-    Model::Draw(hBuilding1_);
-    Model::SetTransform(hBuilding2_, transform_);
-    Model::Draw(hBuilding2_);
-    Model::SetTransform(hBuilding3_, transform_);
-    Model::Draw(hBuilding3_);
+    switch (rd) {
+    case BUILDING_1:
+        Model::SetTransform(hBuilding1_, transform_);
+        Model::Draw(hBuilding1_);
+        break;
+    case BUILDING_2:
+        Model::SetTransform(hBuilding2_, transform_);
+        Model::Draw(hBuilding2_);
+        break;
+    case BUILDING_3:
+        Model::SetTransform(hBuilding3_, transform_);
+        Model::Draw(hBuilding3_);
+        break;
+    default:
+        break;
+    }
 }
 
 //開放
