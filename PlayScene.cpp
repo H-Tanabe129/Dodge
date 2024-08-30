@@ -2,6 +2,7 @@
 #include "Player.h"
 #include "Stage.h"
 #include "Item.h"
+#include "BackGround.h"
 #include "ValueManager.h"
 #include "Engine/Audio.h"
 #include "Engine/Camera.h"
@@ -28,6 +29,7 @@ void PlayScene::Initialize()
 	// すべての子オブジェクトを削除
 	KillAllChildren();
 	
+	Instantiate<BackGround>(this);
 	Instantiate<Player>(this);
 	Instantiate<Stage>(this);
 	Instantiate<Item>(this);
