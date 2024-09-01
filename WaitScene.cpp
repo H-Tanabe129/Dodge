@@ -8,7 +8,7 @@
 
 WaitScene::WaitScene(GameObject* parent)
 	: GameObject(parent, "WaitScene"), 
-    hPict_(-1), hBack_(-1), hBuilding1_(-1), hBuilding2_(-1), pText(nullptr), pPlayer_(nullptr)
+    hPict_(-1), hBack_(-1), hPush_(-1), hBuilding1_(-1), hBuilding2_(-1), pText(nullptr), pPlayer_(nullptr)
 {
 }
 
@@ -39,6 +39,11 @@ void WaitScene::Initialize()
     assert(hBack_ >= 0);
     hPict_ = Image::Load("Ready.png");
     assert(hPict_ >= 0);
+    hPush_ = Image::Load("PSTART.png");
+    assert(hPush_ >= 0);
+
+    //‰æ‘œ
+    pushTrans_.position_ = XMFLOAT3(pushPosiX, pushPosiY, pushPosiZ);
 
     //”wŒi
     picTrans_.position_ = XMFLOAT3(picPosiX, picPosiY, picPosiZ);
@@ -73,11 +78,13 @@ void WaitScene::Draw()
     Model::SetTransform(hBuilding2_, buildTrans2_);
     Model::Draw(hBuilding2_);
 
-    // ”wŒi
+    // ‰æ‘œ
     Image::SetTransform(hBack_, picTrans_);
     Image::Draw(hBack_);
     Image::SetTransform(hPict_, transform_);
     Image::Draw(hPict_);
+    Image::SetTransform(hPush_, pushTrans_);
+    Image::Draw(hPush_);
 
     // •¶Žš
 	pText->Draw(scoreX, scoreY, "Score:0");

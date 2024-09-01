@@ -19,7 +19,7 @@ void ScoreUp::Initialize()
     transform_.position_.x = trPosiX;
 
     //サウンドデータのロード
-    hSound_ = Audio::Load("A1_18278.WAV");
+    hSound_ = Audio::Load("A1_18287.WAV");
     assert(hSound_ >= 0);
 
     //モデルデータのロード

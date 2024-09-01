@@ -9,11 +9,13 @@ private:
     Text* pText;
     Player* pPlayer_; // Player クラスのポインタ
     Transform picTrans_;
+    Transform pushTrans_;
     Transform buildTrans1_;
     Transform buildTrans2_;
 
     int hPict_;    //画像番号
     int hBack_;    //画像番号
+    int hPush_;    //画像番号
     int hBuilding1_;    //モデル番号
     int hBuilding2_;    //モデル番号
 
@@ -25,13 +27,17 @@ private:
     static const int CTarZ = 10;	//カメラターゲットZ
 
     const float trPosiX = -16;      //モデルポジションX
-    const float trBackPosiX = 23;  //後モデルポジションX
+    const float trBackPosiX = 23;   //後モデルポジションX
     const float trPosiY = -8.0f;    //モデルポジションY
     const float trPosiZ = 8;        //モデルポジションZ
 
+    static const int pushPosiX = 0;     //画像ポジションX
+    const float pushPosiY = -0.5f;      //画像ポジションY
+    static const int pushPosiZ = 0;     //画像ポジションZ
+
     static const int picPosiX = 0;      //背景ポジションX
     static const int picPosiY = 0;      //背景ポジションY
-    static const int picPosiZ = -3;     //背景ポジションZ
+    static const int picPosiZ = 0;      //背景ポジションZ
     const float picScaleX = 6.0f;       //背景サイズX
     const float picScaleY = 5.0f;       //背景サイズY
     const float picScaleZ = 1.0f;       //背景サイズZ
