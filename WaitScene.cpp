@@ -60,6 +60,8 @@ void WaitScene::Initialize()
 
 void WaitScene::Update()
 {
+    frame++;
+
 	if (Input::IsKey(DIK_SPACE)) {
 		SceneManager* pSceneManager = (SceneManager*)FindObject("SceneManager");
 		pSceneManager->ChangeScene(SCENE_ID_PLAY);
@@ -68,6 +70,22 @@ void WaitScene::Update()
 			pPlayer_->Jump();
 		}
 	}
+
+    if (frame % (flash * FPS) == 0)
+    {
+        isFlashing = !isFlashing;
+    }
+
+    if (isFlashing)
+    {
+        pushAlpha = 0;
+        Image::SetAlpha(hPush_, picAlpha);
+    }
+    else 
+    {
+        pushAlpha = 255;
+        Image::SetAlpha(hPush_, picAlpha);
+    }
 }
 
 void WaitScene::Draw()

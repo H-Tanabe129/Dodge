@@ -19,6 +19,10 @@ private:
     int hBuilding1_;    //モデル番号
     int hBuilding2_;    //モデル番号
 
+    static const int FPS = 60;
+    static const int flash = 5;
+    int frame = 0;
+
     static const int CPosiX = 15;	//カメラポジションX
     static const int CPosiY = 3;	//カメラポジションY
     static const int CPosiZ = -25;	//カメラポジションZ
@@ -34,6 +38,8 @@ private:
     static const int pushPosiX = 0;     //画像ポジションX
     const float pushPosiY = -0.5f;      //画像ポジションY
     static const int pushPosiZ = 0;     //画像ポジションZ
+    int pushAlpha = 255;   //画像透明度
+    bool isFlashing = false;
 
     static const int picPosiX = 0;      //背景ポジションX
     static const int picPosiY = 0;      //背景ポジションY
