@@ -21,15 +21,15 @@ void StageUp::Initialize()
     assert(hModel_ >= 0);
 
     BoxCollider* collision =
-        new BoxCollider(XMFLOAT3(BCollPosiX, BCollPosiY, BCollPosiZ),
-            XMFLOAT3(BCollSizeX, BCollSizeY, BCollSizeZ));
+        new BoxCollider(XMFLOAT3(boxCollPosX, boxCollPosY, boxCollPosZ),
+            XMFLOAT3(boxCollSizeX, boxCollSizeY, boxCollSizeZ));
     AddCollider(collision);
 }
 
 void StageUp::Update()
 {
     transform_.position_.x -= trPosiChangeX;
-    if (transform_.position_.x <= LEdge) {
+    if (transform_.position_.x <= WORLD_EDGE) {
         this->KillMe();
     }
 }

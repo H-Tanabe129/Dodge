@@ -34,9 +34,9 @@ void BackGround::Initialize()
     buildTrans3_.position_ = XMFLOAT3(trBackPosiX, trPosiY, trPosiZ);
 
     // îwåi
-    picTrans_.position_ = XMFLOAT3(picPosiX, picPosiY, picPosiZ);
-    picTrans_.scale_ = XMFLOAT3(picScaleX, picScaleY, picScaleZ);
-    Image::SetAlpha(hBack_, picAlpha);
+    picTrans_.position_ = XMFLOAT3(PIC_POS_X, PIC_POS_Y, PIC_POS_Z);
+    picTrans_.scale_ = XMFLOAT3(PIC_SCALE_X, PIC_SCALE_Y, PIC_SCALE_Z);
+    Image::SetAlpha(hBack_, PIC_ALPHA);
 }
 
 //çXêV
@@ -46,13 +46,13 @@ void BackGround::Update()
     buildTrans2_.position_.x -= trPosiChangeX;
     buildTrans3_.position_.x -= trPosiChangeX;
 
-    if (buildTrans1_.position_.x <= LEdge) {
+    if (buildTrans1_.position_.x <= WORLD_EDGE) {
         buildTrans1_.position_.x = loopPosiX;
     }
-    if (buildTrans2_.position_.x <= LEdge) {
+    if (buildTrans2_.position_.x <= WORLD_EDGE) {
         buildTrans2_.position_.x = loopPosiX;
     }
-    if (buildTrans3_.position_.x <= LEdge) {
+    if (buildTrans3_.position_.x <= WORLD_EDGE) {
         buildTrans3_.position_.x = loopPosiX;
     }
 }

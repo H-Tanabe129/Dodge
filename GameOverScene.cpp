@@ -42,10 +42,10 @@ void GameOverScene::Draw()
     Image::Draw(hPict_);
 
 
-    pText->Draw(scoreX, scoreY, "Score:");
-    pText->Draw(scoreX + 100, scoreY, ValueManager::GetInstance().GetScore());
-    pText->Draw(timeX, timeY, "Time: ");
-    pText->Draw(timeX + 100, timeY, ValueManager::GetInstance().GetTime());
+    pText->Draw(SCORE_POS_X, SCORE_POS_Y, "Score:");
+    pText->Draw(SCORE_POS_X + 100, SCORE_POS_Y, ValueManager::GetInstance().GetScore());
+    pText->Draw(TIME_POS_X, TIME_POS_Y, "Time: ");
+    pText->Draw(TIME_POS_X + 100, TIME_POS_Y, ValueManager::GetInstance().GetTime());
 }
 
 void GameOverScene::Release()

@@ -12,14 +12,14 @@ private:
     const float trSizeX = 1.0f;     //モデルサイズX
     const float trSizeY = 0.9f;     //モデルサイズY
     const float trSizeZ = 1.0f;     //モデルサイズZ
-    const float BCollPosiX = 0;     //コライダーポジションX
-    const float BCollPosiY = 4.1f;  //コライダーポジションY
-    const float BCollPosiZ = 0;     //コライダーポジションZ
-    const float BCollSizeX = 1.75f; //コライダーサイズX
-    const float BCollSizeY = 8.3f;  //コライダーサイズY
-    const float BCollSizeZ = 1.7f;  //コライダーサイズZ
+    const float boxCollPosX = 0;     //コライダーポジションX
+    const float boxCollPosY = 4.1f;  //コライダーポジションY
+    const float boxCollPosZ = 0;     //コライダーポジションZ
+    const float boxCollSizeX = 1.75f; //コライダーサイズX
+    const float boxCollSizeY = 8.3f;  //コライダーサイズY
+    const float boxCollSizeZ = 1.7f;  //コライダーサイズZ
 
-    static const int LEdge = -10;   // 世界左端
+    static const int WORLD_EDGE = -10;   // 世界左端
     float trPosiChangeX = 0.1;      // X座標変化量
 
 public:

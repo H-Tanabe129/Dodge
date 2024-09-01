@@ -24,8 +24,8 @@ void Player::Initialize()
     //モデルデータのロード
     hModel_ = Model::Load("Model/Player.fbx");
     assert(hModel_ >= 0);
-	transform_.position_.z = posiZ;
-	transform_.position_.y = posiY;
+	transform_.position_.z = PLAYER_POS_Z;
+	transform_.position_.y = playerPosY;
 
 	SphereCollider* collision = 
 		new SphereCollider(XMFLOAT3(SColliderX, SColliderY, SColliderZ), radius);
@@ -34,10 +34,9 @@ void Player::Initialize()
 
 void Player::Update()
 {
-
 	Jump();
 
-	if (transform_.position_.y >= edge || transform_.position_.y <= -edge)
+	if (transform_.position_.y >= WORLD_EDGE || transform_.position_.y <= -WORLD_EDGE)
 	{
 		this->KillMe();
 

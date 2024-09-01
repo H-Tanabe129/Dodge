@@ -27,15 +27,15 @@ private:
     const float trPosiZ = 8;        //モデルポジションZ
     const float loopPosiX = 59;   //ループ位置
 
-    static const int picPosiX = 0;      //背景ポジションX
-    static const int picPosiY = 0;      //背景ポジションY
-    static const int picPosiZ = -3;     //背景ポジションZ
-    const float picScaleX = 6.0f;       //背景サイズX
-    const float picScaleY = 5.0f;       //背景サイズY
-    const float picScaleZ = 1.0f;       //背景サイズZ
-    static const int picAlpha = 128;    //背景透明度
+    static const int PIC_POS_X = 0;      //背景ポジションX
+    static const int PIC_POS_Y = 0;      //背景ポジションY
+    static const int PIC_POS_Z = -3;     //背景ポジションZ
+    const float PIC_SCALE_X = 6.0f;       //背景サイズX
+    const float PIC_SCALE_Y = 5.0f;       //背景サイズY
+    const float PIC_SCALE_Z = 1.0f;       //背景サイズZ
+    static const int PIC_ALPHA = 128;    //背景透明度
 
-    static const int LEdge = -58;   // 世界左端
+    static const int WORLD_EDGE = -58;   // 世界左端
     float trPosiChangeX = 0.1;      // X座標変化量
 
 public:

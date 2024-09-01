@@ -8,7 +8,7 @@
 
 WaitScene::WaitScene(GameObject* parent)
 	: GameObject(parent, "WaitScene"), 
-    hPict_(-1), hBack_(-1), hPush_(-1), hBuilding1_(-1), hBuilding2_(-1), pText(nullptr), pPlayer_(nullptr)
+    hReady_(-1), hBack_(-1), hPush_(-1), hBuilding1_(-1), hBuilding2_(-1), pText(nullptr), pPlayer_(nullptr)
 {
 }
 
@@ -21,8 +21,8 @@ WaitScene::~WaitScene()
 void WaitScene::Initialize()
 {
     //カメラ
-	Camera::SetPosition(XMFLOAT3(CPosiX, CPosiY, CPosiZ));  //test == 35, 3, 0    -25
-	Camera::SetTarget(XMFLOAT3(CTarX, CTarY, CTarZ));
+	Camera::SetPosition(XMFLOAT3(CAMERA_POS_X, CAMERA_POS_Y, CAMERA_POS_Z));  //test == 35, 3, 0    -25
+	Camera::SetTarget(XMFLOAT3(CAMERA_TARGET_X, CAMERA_TARGET_Y, CAMERA_TARGET_Z));
 
     //モデルデータのロード
     hBuilding1_ = Model::Load("Model/Back.fbx");
@@ -37,18 +37,18 @@ void WaitScene::Initialize()
     //画像データのロード
     hBack_ = Image::Load("shiro.png");
     assert(hBack_ >= 0);
-    hPict_ = Image::Load("Ready.png");
-    assert(hPict_ >= 0);
+    hReady_ = Image::Load("Ready.png");
+    assert(hReady_ >= 0);
     hPush_ = Image::Load("PSTART.png");
     assert(hPush_ >= 0);
 
     //画像
-    pushTrans_.position_ = XMFLOAT3(pushPosiX, pushPosiY, pushPosiZ);
+    pushTrans_.position_ = XMFLOAT3(PUSH_POSI_X, PUSH_POSI_Y, PUSH_POSI_Z);
 
     //背景
-    picTrans_.position_ = XMFLOAT3(picPosiX, picPosiY, picPosiZ);
-    picTrans_.scale_ = XMFLOAT3(picScaleX, picScaleY, picScaleZ);
-    Image::SetAlpha(hBack_, picAlpha);
+    picTrans_.position_ = XMFLOAT3(PIC_POS_X, PIC_POS_Y, PIC_POS_Z);
+    picTrans_.scale_ = XMFLOAT3(PIC_SCALE_X, PIC_SCALE_Y, PIC_SCALE_Z);
+    Image::SetAlpha(hBack_, PIC_ALPHA);
 
     // Player クラスのインスタンスを生成
     pPlayer_ = new Player(this);
@@ -71,7 +71,7 @@ void WaitScene::Update()
 		}
 	}
 
-    if (frame % (flash * FPS) == 0)
+    if (frame % (FLASH_INTERVAL * FPS) == 0)
     {
         isFlashing = !isFlashing;
     }
@@ -79,12 +79,12 @@ void WaitScene::Update()
     if (isFlashing)
     {
         pushAlpha = 0;
-        Image::SetAlpha(hPush_, picAlpha);
+        Image::SetAlpha(hPush_, pushAlpha);
     }
     else 
     {
         pushAlpha = 255;
-        Image::SetAlpha(hPush_, picAlpha);
+        Image::SetAlpha(hPush_, pushAlpha);
     }
 }
 
@@ -99,14 +99,14 @@ void WaitScene::Draw()
     // 画像
     Image::SetTransform(hBack_, picTrans_);
     Image::Draw(hBack_);
-    Image::SetTransform(hPict_, transform_);
-    Image::Draw(hPict_);
+    Image::SetTransform(hReady_, transform_);
+    Image::Draw(hReady_);
     Image::SetTransform(hPush_, pushTrans_);
     Image::Draw(hPush_);
 
     // 文字
-	pText->Draw(scoreX, scoreY, "Score:0");
-	pText->Draw(timeX, timeY, "Time: 0");
+	pText->Draw(SCORE_POS_X, SCORE_POS_Y, "Score:0");
+	pText->Draw(TIME_POS_X, TIME_POS_Y, "Time: 0");
 
     if (pPlayer_) {
         pPlayer_->Draw();

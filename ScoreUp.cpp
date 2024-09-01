@@ -16,7 +16,7 @@ ScoreUp::~ScoreUp()
 
 void ScoreUp::Initialize()
 {
-    transform_.position_.x = trPosiX;
+    transform_.position_.x = scoreUpPosX;
 
     //サウンドデータのロード
     hSound_ = Audio::Load("A1_18287.WAV");
@@ -27,7 +27,7 @@ void ScoreUp::Initialize()
     assert(hScore_ >= 0);
 
     SphereCollider* collision = 
-        new SphereCollider(XMFLOAT3(SCollPosiX, SCollPosiY, SCollPosiZ), SCollSizeX);
+        new SphereCollider(XMFLOAT3(sphCollPosX, sphCollPosY, sphCollPosZ), sphCollSizeX);
     AddCollider(collision);
 }
 
@@ -36,7 +36,7 @@ void ScoreUp::Update()
     transform_.position_.x -= trPosiChangeX;
     transform_.rotate_.y += trRoteChangeY;
 
-    if (transform_.position_.x <= LEdge) {
+    if (transform_.position_.x <= WORLD_EDGE) {
         this->KillMe();
     }
 }
@@ -52,15 +52,17 @@ void ScoreUp::Release()
 }
 
 void ScoreUp::OnCollision(GameObject* pTarget) {
+    //プレイヤーに当たったら
     if (pTarget->GetObjectName() == "Player") {
         ValueManager::GetInstance().ItemScore();
         this->KillMe();
         Audio::Play(hSound_);
     }
-
+    //上の壁に当たったら
     if (pTarget->GetObjectName() == "StageUp") {
         this->KillMe();
     }
+    //下の壁に当たったら
     if (pTarget->GetObjectName() == "StageLo") {
         this->KillMe();
     }

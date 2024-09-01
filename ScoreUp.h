@@ -5,19 +5,19 @@ class ScoreUp : public GameObject
 {
 private:
     int hScore_;    //スコアアップ  水色
-    int hSound_;
+    int hSound_;    //獲得音
 
-    int trPosiX = 35;      //モデルポジションX
-    int trPosiY = 0;       //モデルポジションY
-    int trPosiZ = 0;       //モデルポジションZ
-    const float SCollPosiX = 0.0f;    //コライダーポジションX
-    const float SCollPosiY = 0.5f;    //コライダーポジションY
-    const float SCollPosiZ = 0.0f;    //コライダーポジションZ
-    const float SCollSizeX = 0.7f;    //コライダーサイズ
+    int scoreUpPosX = 35;                       //モデルポジションX
+    int scoreUpPosY = 0;                        //モデルポジションY
+    static const int SCORE_UP_POS_Z = 0;        //モデルポジションZ
+    const float sphCollPosX = 0.0f;    //コライダーポジションX
+    const float sphCollPosY = 0.5f;    //コライダーポジションY
+    const float sphCollPosZ = 0.0f;    //コライダーポジションZ
+    const float sphCollSizeX = 0.7f;   //コライダーサイズ
 
-    float trPosiChangeX = 0.1;      //X座標変化量
-    float trRoteChangeY = 0.5;      //Y軸回転変化量
-    static const int LEdge = -10;   //世界左端
+    const float trPosiChangeX = 0.1f;       //X座標変化量
+    const float trRoteChangeY = 0.5f;       //Y軸回転変化量
+    static const int WORLD_EDGE = -10;      //世界左端
 
 public:
     //コンストラクタ

@@ -4,7 +4,7 @@
 
 Item::Item(GameObject* parent)
 	:GameObject(parent, "Item"), 
-    frame(0), randomValue(getRandomValue(randMin, randMax)), gen(rd_dev())
+    frame(0), randomValue(getRandomValue(RANDOM_MIN, RANDOM_MAX)), gen(rd_dev())
 {
 }
 
@@ -25,15 +25,15 @@ void Item::Update()
     if (randomValue == 0)
     {
         do {
-            randomValue = getRandomValue(randMin, randMax);
+            randomValue = getRandomValue(RANDOM_MIN, RANDOM_MAX);
         } while (randomValue == 0);
     }
     // àÍíËä‘äuÇ≈ÉâÉìÉ_ÉÄílÇèoóÕÇ∑ÇÈ
     if(frame % (FPS * randomValue) == 0)
     {
-        trPosiY = GenerateRand();
-        Instantiate<ScoreUp>(this)->SetPosition(trPosiX, trPosiY, trPosiZ);
-        randomValue = getRandomValue(randMin, randMax);
+        itemPosY = GenerateRand();
+        Instantiate<ScoreUp>(this)->SetPosition(itemPosX, itemPosY, ITEM_POS_Z);
+        randomValue = getRandomValue(RANDOM_MIN, RANDOM_MAX);
     }
 }
 
@@ -53,6 +53,6 @@ int Item::getRandomValue(int min, int max) {
 
 int Item::GenerateRand()
 {
-    geneRand = (rand() % (max - min + 1) + min) / flo;
+    geneRand = (rand() % (RANDOM_Y_MAX - RANDOM_Y_MIN + 1) + RANDOM_Y_MIN) / RANDOM_Y_SEPAR;
     return geneRand;
 }

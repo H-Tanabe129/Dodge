@@ -4,12 +4,13 @@
 class TitleScene : public GameObject
 {
 private:
-    int hPict_;    //画像番号
-    int hStart_;    //画像番号
-    Transform Title;
+    Transform titleTransform;
+    Transform startTransform;
+    int hTitle_;    //画像番号(タイトル)
+    int hStart_;    //画像番号(スタート)
 
-    static const int titlePicturePosiY = 0;
-    float startPicturePosiY = -0.5;
+    static const int TITLE_POS_Y = 0;   //Title画像ポジションY
+    const float startPosY = -0.5f;      //START画像ポジションY
 
 public:
  //コンストラクタ

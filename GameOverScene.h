@@ -9,10 +9,10 @@ private:
     int hSound_;    //サウンド
     Text* pText;
 
-    static const int scoreX = 930;    //時間表示X
-    static const int scoreY = 450;    //時間表示Y
-    static const int timeX = 930;     //スコア表示X
-    static const int timeY = 500;     //スコア表示Y
+    static const int SCORE_POS_X = 930;    //時間表示X
+    static const int SCORE_POS_Y = 450;    //時間表示Y
+    static const int TIME_POS_X = 930;     //スコア表示X
+    static const int TIME_POS_Y = 500;     //スコア表示Y
 public:
     //コンストラクタ
     //引数：parent  親オブジェクト（SceneManager）

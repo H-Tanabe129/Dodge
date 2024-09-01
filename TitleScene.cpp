@@ -4,21 +4,21 @@
 #include "Engine/SceneManager.h"
 
 TitleScene::TitleScene(GameObject* parent)
-  : GameObject(parent, "TitleScene"), hPict_(-1), hStart_(-1)
+  : GameObject(parent, "TitleScene"), hTitle_(-1), hStart_(-1)
 {
 }
 
 void TitleScene::Initialize()
 {
     //画像データのロード
-    hPict_ = Image::Load("Dodge.png");
-    assert(hPict_ >= 0);
+    hTitle_ = Image::Load("Dodge.png");
+    assert(hTitle_ >= 0);
     //画像データのロード
     hStart_ = Image::Load("PStart.png");
     assert(hStart_ >= 0);
 
-    Title.position_.y = titlePicturePosiY;
-    transform_.position_.y = startPicturePosiY;
+    titleTransform.position_.y = TITLE_POS_Y;
+    startTransform.position_.y = startPosY;
 }
 
 void TitleScene::Update()
@@ -33,9 +33,9 @@ void TitleScene::Update()
 
 void TitleScene::Draw()
 {
-    Image::SetTransform(hPict_, Title);
-    Image::Draw(hPict_);
-    Image::SetTransform(hStart_, transform_);
+    Image::SetTransform(hTitle_, titleTransform);
+    Image::Draw(hTitle_);
+    Image::SetTransform(hStart_, startTransform);
     Image::Draw(hStart_);
 }
 
