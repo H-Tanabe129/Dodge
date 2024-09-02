@@ -33,7 +33,7 @@ void ScoreUp::Initialize()
 
 void ScoreUp::Update()
 {
-    transform_.position_.x -= trPosiChangeX;
+    transform_.position_.x -= posChangeX;
     transform_.rotate_.y += trRoteChangeY;
 
     if (transform_.position_.x <= WORLD_EDGE) {

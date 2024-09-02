@@ -3,7 +3,7 @@
 #include "Engine/BoxCollider.h"
 
 StageUp::StageUp(GameObject* parent)
-    :GameObject(parent, "StageUp"), hModel_(-1)
+    :GameObject(parent, "StageUp"), hStageUp_(-1)
 {
 }
 
@@ -17,8 +17,8 @@ void StageUp::Initialize()
     transform_.scale_ = XMFLOAT3(trSizeX, trSizeY, trSizeZ);
 
     //モデルデータのロード
-      hModel_ = Model::Load("Model/Stage_tr.fbx");
-    assert(hModel_ >= 0);
+      hStageUp_ = Model::Load("Model/Stage_tr.fbx");
+    assert(hStageUp_ >= 0);
 
     BoxCollider* collision =
         new BoxCollider(XMFLOAT3(boxCollPosX, boxCollPosY, boxCollPosZ),
@@ -28,7 +28,7 @@ void StageUp::Initialize()
 
 void StageUp::Update()
 {
-    transform_.position_.x -= trPosiChangeX;
+    transform_.position_.x -= posChangeX;
     if (transform_.position_.x <= WORLD_EDGE) {
         this->KillMe();
     }
@@ -36,8 +36,8 @@ void StageUp::Update()
 
 void StageUp::Draw()
 {
-    Model::SetTransform(hModel_, transform_);
-    Model::Draw(hModel_);
+    Model::SetTransform(hStageUp_, transform_);
+    Model::Draw(hStageUp_);
 }
 
 void StageUp::Release()

@@ -2,40 +2,40 @@
 
 ValueManager& ValueManager::GetInstance() {
 	// TODO: return ステートメントをここに挿入します
-	static ValueManager instance;
-	return instance;
+	static ValueManager instance_;
+	return instance_;
 }
 
 //時間
 void ValueManager::AddTime() {
 	frame_ += 1;
-	time_ = frame_ / FPS;
+	currentTime_ = frame_ / FPS;
 }
 
 int ValueManager::GetTime() const {
-	return time_;
+	return currentTime_;
 }
 
 void ValueManager::ResetTime() {
 	frame_ = 0;
-	time_ = 0;
+	currentTime_ = 0;
 }
 
 //スコア
 void ValueManager::AddScore(int _amount) {
-	int scoreInc_ = frame_ % frameDiv_;
-	if(scoreInc_ == 0)
-	score_ += _amount;
+	int increIntervalScore_ = frame_ % FRAME_DIV;
+	if(increIntervalScore_ == 0)
+	currentScore_ += _amount;
 }
 
 int ValueManager::GetScore() const {
-	return score_;
+	return currentScore_;
 }
 
 void ValueManager::ItemScore() {
-	score_ = score_ + scoreUp_;
+	currentScore_ = currentScore_ + SCORE_UP_VALUE;
 }
 
 void ValueManager::ResetScore() {
-	score_ = 0;
+	currentScore_ = 0;
 }

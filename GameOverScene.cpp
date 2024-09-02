@@ -4,32 +4,30 @@
 #include "Engine/Input.h"
 #include "Engine/Audio.h"
 #include "Engine/SceneManager.h"
-//#include "PlayScene.h"
 
 GameOverScene::GameOverScene(GameObject* parent)
-	: GameObject(parent, "GameOverScene"), hPict_(-1), pText(nullptr), hSound_(-1)
+	: GameObject(parent, "GameOverScene"), hGameOver_(-1), pText(nullptr), hSound_(-1)
 {
 }
 
 void GameOverScene::Initialize()
 {
+    //画像データのロード
+    hGameOver_ = Image::Load("gameover.png");
+    assert(hGameOver_ >= 0);
+
     //サウンドデータのロード
     hSound_ = Audio::Load("A2_07094.WAV");
-
-
-    //画像データのロード
-    hPict_ = Image::Load("gameover.png");
-    assert(hPict_ >= 0);
+    Audio::Play(hSound_);
 
     pText = new Text;
     pText->Initialize();
-    Audio::Play(hSound_);
 }
 
 void GameOverScene::Update()
 {
     //キーを放した→タイトル
-    if (Input::IsKeyUp(DIK_SPACE))
+    if (Input::IsKeyUp(DIK_T))
     {
         SceneManager* pSceneManager = (SceneManager*)FindObject("SceneManager");
         pSceneManager->ChangeScene(SCENE_ID_TITLE);
@@ -38,10 +36,10 @@ void GameOverScene::Update()
 
 void GameOverScene::Draw()
 {
-    Image::SetTransform(hPict_, transform_);
-    Image::Draw(hPict_);
+    Image::SetTransform(hGameOver_, transform_);
+    Image::Draw(hGameOver_);
 
-
+    //リザルト表示
     pText->Draw(SCORE_POS_X, SCORE_POS_Y, "Score:");
     pText->Draw(SCORE_POS_X + 100, SCORE_POS_Y, ValueManager::GetInstance().GetScore());
     pText->Draw(TIME_POS_X, TIME_POS_Y, "Time: ");

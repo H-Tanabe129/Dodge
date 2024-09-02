@@ -36,7 +36,7 @@ private:
     static const int PIC_ALPHA = 128;    //背景透明度
 
     static const int WORLD_EDGE = -58;   // 世界左端
-    float trPosiChangeX = 0.1;      // X座標変化量
+    float posChangeX = 0.1f;      // X座標変化量
 
 public:
     //コンストラクタ

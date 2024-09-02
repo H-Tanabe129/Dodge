@@ -42,9 +42,9 @@ void BackGround::Initialize()
 //çXêV
 void BackGround::Update()
 {
-    buildTrans1_.position_.x -= trPosiChangeX;
-    buildTrans2_.position_.x -= trPosiChangeX;
-    buildTrans3_.position_.x -= trPosiChangeX;
+    buildTrans1_.position_.x -= posChangeX;
+    buildTrans2_.position_.x -= posChangeX;
+    buildTrans3_.position_.x -= posChangeX;
 
     if (buildTrans1_.position_.x <= WORLD_EDGE) {
         buildTrans1_.position_.x = loopPosiX;

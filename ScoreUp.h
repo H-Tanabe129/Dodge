@@ -15,7 +15,7 @@ private:
     const float sphCollPosZ = 0.0f;    //コライダーポジションZ
     const float sphCollSizeX = 0.7f;   //コライダーサイズ
 
-    const float trPosiChangeX = 0.1f;       //X座標変化量
+    const float posChangeX = 0.1f;       //X座標変化量
     const float trRoteChangeY = 0.5f;       //Y軸回転変化量
     static const int WORLD_EDGE = -10;      //世界左端
 

@@ -5,8 +5,8 @@
 class GameOverScene : public GameObject
 {
 private:
-    int hPict_;     //画像番号
-    int hSound_;    //サウンド
+    int hGameOver_;     //画像番号
+    int hSound_;        //サウンド
     Text* pText;
 
     static const int SCORE_POS_X = 930;    //時間表示X
