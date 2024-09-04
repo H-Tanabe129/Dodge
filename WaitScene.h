@@ -38,7 +38,7 @@ private:
     static const int PUSH_POSI_X = 0;   //画像ポジションX
     const float PUSH_POSI_Y = -0.5f;    //画像ポジションY
     static const int PUSH_POSI_Z = 0;   //画像ポジションZ
-    const float alphaSpeed = 0.1f;   
+    const float alphaSpeed = 5;   
     int pushAlpha = 255;                //画像透明度  
     bool isIncreasingAlpha = false;     //
 
