@@ -71,21 +71,23 @@ void WaitScene::Update()
 		}
 	}
 
-    if (frame % (FLASH_INTERVAL * FPS) == 0)
-    {
-        isFlashing = !isFlashing;
+    // アルファ値を増減させる
+    if (isIncreasingAlpha) {
+        pushAlpha += alphaSpeed;
+        if (pushAlpha >= 255) {
+            pushAlpha = 255;
+            isIncreasingAlpha = false; // アルファ値が最大になったら減少に切り替え
+        }
     }
+    else {
+        pushAlpha -= alphaSpeed;
+        if (pushAlpha <= 0) {
+            pushAlpha = 0;
+            isIncreasingAlpha = true; // アルファ値が最小になったら増加に切り替え
+        }
+    }
+    Image::SetAlpha(hPush_, pushAlpha);
 
-    if (isFlashing)
-    {
-        pushAlpha = 0;
-        Image::SetAlpha(hPush_, pushAlpha);
-    }
-    else 
-    {
-        pushAlpha = 255;
-        Image::SetAlpha(hPush_, pushAlpha);
-    }
 }
 
 void WaitScene::Draw()

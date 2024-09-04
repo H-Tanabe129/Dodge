@@ -21,7 +21,7 @@ private:
 
     static const int FPS = 60;
     int frame = 0;
-    static const int FLASH_INTERVAL = 5;    //点滅の間隔
+    //static const int FLASH_INTERVAL = 5;    //点滅の間隔
 
     static const int CAMERA_POS_X = 15;	    //カメラポジションX
     static const int CAMERA_POS_Y = 3;	    //カメラポジションY
@@ -38,8 +38,9 @@ private:
     static const int PUSH_POSI_X = 0;   //画像ポジションX
     const float PUSH_POSI_Y = -0.5f;    //画像ポジションY
     static const int PUSH_POSI_Z = 0;   //画像ポジションZ
-    int pushAlpha = 255;                //画像透明度
-    bool isFlashing = false;
+    const float alphaSpeed = 0.1f;   
+    int pushAlpha = 255;                //画像透明度  
+    bool isIncreasingAlpha = false;     //
 
     static const int PIC_POS_X = 0;      //背景ポジションX
     static const int PIC_POS_Y = 0;      //背景ポジションY

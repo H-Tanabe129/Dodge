@@ -15,6 +15,10 @@ void GameOverScene::Initialize()
     //画像データのロード
     hGameOver_ = Image::Load("gameover.png");
     assert(hGameOver_ >= 0);
+    hReturnTitle_ = Image::Load("returnTitle.png");
+    assert(hReturnTitle_ >= 0);
+
+    ToTitle.position_.x = TO_TITLE_POS_X;
 
     //サウンドデータのロード
     hSound_ = Audio::Load("A2_07094.WAV");
@@ -38,6 +42,8 @@ void GameOverScene::Draw()
 {
     Image::SetTransform(hGameOver_, transform_);
     Image::Draw(hGameOver_);
+    Image::SetTransform(hReturnTitle_, ToTitle);
+    Image::Draw(hReturnTitle_);
 
     //リザルト表示
     pText->Draw(SCORE_POS_X, SCORE_POS_Y, "Score:");
