@@ -33,7 +33,7 @@ void PlayScene::Initialize()
 	Instantiate<BackGround>(this);
 	Instantiate<Player>(this);
 	Instantiate<Stage>(this);
-	Instantiate<Item>(this);
+ 	Instantiate<Item>(this);
 
 	pText = new Text;
 	pText->Initialize();

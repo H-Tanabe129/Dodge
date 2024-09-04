@@ -4,7 +4,7 @@
 
 Item::Item(GameObject* parent)
 	:GameObject(parent, "Item"), 
-    frame(0), randomValue(getRandomValue(RANDOM_MIN, RANDOM_MAX)), gen(rd_dev())
+    frame(0), randomValue(0)
 {
 }
 
@@ -14,7 +14,9 @@ Item::~Item()
 
 void Item::Initialize()
 {
-    srand((unsigned int)time(nullptr));
+    std::random_device seed_gen;
+    std::mt19937 engine(seed_gen());
+    getRandomValue(RANDOM_MIN, RANDOM_MAX);
 }
 
 void Item::Update()
