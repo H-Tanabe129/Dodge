@@ -15,7 +15,7 @@ private:
     static const int SCORE_POS_Y = 450;    //時間表示Y
     static const int TIME_POS_X = 930;     //スコア表示X
     static const int TIME_POS_Y = 500;     //スコア表示Y
-    static const int TO_TITLE_POS_X = 450; //表示X
+    const float toTitlePosY = -0.6f;       //タイトル戻る表示X
 public:
     //コンストラクタ
     //引数：parent  親オブジェクト（SceneManager）

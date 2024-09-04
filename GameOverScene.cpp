@@ -18,7 +18,7 @@ void GameOverScene::Initialize()
     hReturnTitle_ = Image::Load("returnTitle.png");
     assert(hReturnTitle_ >= 0);
 
-    ToTitle.position_.x = TO_TITLE_POS_X;
+    ToTitle.position_.y = toTitlePosY;
 
     //サウンドデータのロード
     hSound_ = Audio::Load("A2_07094.WAV");
