@@ -6,7 +6,7 @@ class StageUp : public GameObject
 private:
     int hStageUp_;    //モデル番号
 
-    float trPosiX = -5.0f;              //モデルポジションX
+    float trPosiX = -7.0f;              //モデルポジションX
     float trPosiY = 3.0f;               //モデルポジションY
     const float trPosiZ = 0.0f;         //モデルポジションZ
     const float trSizeX = 1.0f;         //モデルサイズX

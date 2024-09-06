@@ -6,7 +6,7 @@ class StageLo : public GameObject
 private:
     int hStageLo_;    //モデル番号
 
-    const float loPosX = -5.0f;         //モデルポジションX
+    const float loPosX = -7.0f;         //モデルポジションX
     const float loPosY = -10.0f;        //モデルポジションY
     const float loPosZ = 0.0f;          //モデルポジションZ
     const float loSizeX = 1.0f;         //モデルサイズX
