@@ -162,6 +162,7 @@
     <ClCompile Include="Stage.cpp" />
     <ClCompile Include="StageUp.cpp" />
     <ClCompile Include="StageLo.cpp" />
+    <ClCompile Include="StageLoMore.cpp" />
     <ClCompile Include="Timer.cpp" />
     <ClCompile Include="TitleScene.cpp" />
     <ClCompile Include="ValueManager.cpp" />
@@ -204,6 +205,7 @@
       </ExcludedFromBuild>
     </ClInclude>
     <ClInclude Include="StageUp.h" />
+    <ClInclude Include="StageLoMore.h" />
     <ClInclude Include="Timer.h" />
     <ClInclude Include="TitleScene.h" />
     <ClInclude Include="ValueManager.h" />

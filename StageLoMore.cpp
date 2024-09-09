@@ -1,24 +1,24 @@
-#include "StageUp.h"
+#include "StageLoMore.h"
 #include "Engine/Model.h"
 #include "Engine/BoxCollider.h"
 
-StageUp::StageUp(GameObject* parent)
-    :GameObject(parent, "StageUp"), hStageUp_(-1)
+StageLoMore::StageLoMore(GameObject* parent)
+    :GameObject(parent, "StageLoMore"), hStageLoMore_(-1)
 {
 }
 
-StageUp::~StageUp()
+StageLoMore::~StageLoMore()
 {
 }
 
-void StageUp::Initialize()
+void StageLoMore::Initialize()
 {
     transform_.position_ = XMFLOAT3(trPosiX, trPosiY, trPosiZ);
     transform_.scale_ = XMFLOAT3(trSizeX, trSizeY, trSizeZ);
 
     //モデルデータのロード
-      hStageUp_ = Model::Load("Model/Stone_Pillar.fbx");
-    assert(hStageUp_ >= 0);
+    hStageLoMore_ = Model::Load("Model/Stage_up.fbx");
+    assert(hStageLoMore_ >= 0);
 
     BoxCollider* collision =
         new BoxCollider(XMFLOAT3(boxCollPosX, boxCollPosY, boxCollPosZ),
@@ -26,7 +26,7 @@ void StageUp::Initialize()
     AddCollider(collision);
 }
 
-void StageUp::Update()
+void StageLoMore::Update()
 {
     transform_.position_.x -= posChangeX;
     if (transform_.position_.x <= WORLD_EDGE) {
@@ -34,12 +34,12 @@ void StageUp::Update()
     }
 }
 
-void StageUp::Draw()
+void StageLoMore::Draw()
 {
-    Model::SetTransform(hStageUp_, transform_);
-    Model::Draw(hStageUp_);
+    Model::SetTransform(hStageLoMore_, transform_);
+    Model::Draw(hStageLoMore_);
 }
 
-void StageUp::Release()
+void StageLoMore::Release()
 {
 }
