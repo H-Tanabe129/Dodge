@@ -52,6 +52,9 @@ HRESULT FbxParts::Init(FbxNode *pNode)
 	//ノードからメッシュの情報を取得
 	FbxMesh* mesh = pNode->GetMesh();
 
+    //メッシュのUVを再編成するなぞコマンドを追加
+    mesh->SplitPoints(FbxLayerElement::eTextureDiffuse);
+
 	//各情報の個数を取得
 	vertexCount_ = mesh->GetControlPointsCount();			//頂点の数
 	polygonCount_ = mesh->GetPolygonCount();				//ポリゴンの数

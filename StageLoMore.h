@@ -1,10 +1,10 @@
 #pragma once
 #include "Engine/GameObject.h"
 
-class StageUp : public GameObject
+class StageLoMore : public GameObject
 {
 private:
-    int hStageUp_;    //モデル番号
+    int hStageLoMore_;    //モデル番号
 
     float trPosiX = -7.0f;              //モデルポジションX
     float trPosiY = 3.0f;               //モデルポジションY
@@ -13,10 +13,10 @@ private:
     const float trSizeY = 0.9f;         //モデルサイズY
     const float trSizeZ = 1.0f;         //モデルサイズZ
     const float boxCollPosX = 0.0f;     //コライダーポジションX
-    const float boxCollPosY = 4.1f;     //コライダーポジションY
+    const float boxCollPosY = 5.7f;     //コライダーポジションY
     const float boxCollPosZ = 0.0f;     //コライダーポジションZ
     const float boxCollSizeX = 1.75f;   //コライダーサイズX
-    const float boxCollSizeY = 8.3f;    //コライダーサイズY
+    const float boxCollSizeY = 10.4f;    //コライダーサイズY
     const float boxCollSizeZ = 1.7f;    //コライダーサイズZ
 
     static const int WORLD_EDGE = -10;  // 世界左端
@@ -24,10 +24,10 @@ private:
 
 public:
     //コンストラクタ
-    StageUp(GameObject * parent);
+    StageLoMore(GameObject* parent);
 
     //デストラクタ
-    ~StageUp();
+    ~StageLoMore();
 
     //初期化
     void Initialize() override;

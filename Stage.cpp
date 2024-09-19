@@ -1,6 +1,7 @@
 #include "Stage.h"
 #include "StageUp.h"
 #include "StageLo.h"
+#include "StageLoMore.h"
 #include "Player.h"
 #include "Item.h"
 #include <time.h>
@@ -19,6 +20,7 @@ void Stage::Initialize()
 {
 	Instantiate<StageUp>(this);
 	Instantiate<StageLo>(this);
+	Instantiate<StageLoMore>(this);
 
 	srand((unsigned int)time(nullptr));
 }
@@ -45,13 +47,11 @@ void Stage::Update()
 			Instantiate<StageLo>(this)->SetPosition(InitPosiX, InitPosiLoY, InitPosiZ);
 			break;
 		case UPPERLONG:		//è„í∑Çﬂ
-			Instantiate<StageUp>(this)->SetPosition(InitPosiX, InitPosiUpY, InitPosiZ);
 			Instantiate<StageUp>(this)->SetPosition(SetPosiX, SetPosiUpY, SetPosiZ);
-			GetScale();
+			Instantiate<StageUp>(this)->SetPosition(InitPosiX, InitPosiUpY, InitPosiZ);
 			break;
 		case LOWERLONG:		//â∫í∑Çﬂ
-			Instantiate<StageLo>(this)->SetPosition(InitPosiX, InitPosiLoY, InitPosiZ);
-			Instantiate<StageLo>(this)->SetPosition(SetPosiX, SetPosiLoY, SetPosiZ);
+			Instantiate<StageLoMore>(this)->SetPosition(InitPosiX, InitPosiLoY, InitPosiZ);
 			break;
 		}
 	}

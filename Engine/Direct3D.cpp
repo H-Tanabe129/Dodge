@@ -390,7 +390,7 @@ namespace Direct3D
 		if (NULL == pSwapChain_) return;
 
 		//”wŒi‚ÌF
-		float clearColor[4] = { 0.9f, 1.0f, 0.85f, 1.0f };//R,G,B,A
+		float clearColor[4] = { 0.67f, 0.84f, 0.95f, 1.0f };//R,G,B,A
 
 		//‰æ–Ê‚ðƒNƒŠƒA
 		pContext_->ClearRenderTargetView(pRenderTargetView_, clearColor);

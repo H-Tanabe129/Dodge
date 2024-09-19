@@ -3,7 +3,7 @@
 #include "Engine/BoxCollider.h"
 
 StageLo::StageLo(GameObject* parent)
-    :GameObject(parent, "StageLo"), hModel_(-1)
+    :GameObject(parent, "StageLo"), hStageLo_(-1)
 {
 }
 
@@ -13,30 +13,31 @@ StageLo::~StageLo()
 
 void StageLo::Initialize()
 {
-    transform_.position_ = XMFLOAT3(trPosiX, trPosiY, trPosiZ);
+    transform_.position_ = XMFLOAT3(loPosX, loPosY, loPosZ);
+    transform_.scale_ = XMFLOAT3(loSizeX, loSizeY, loSizeZ);
      
     //モデルデータのロード
-    hModel_ = Model::Load("Model/Stage.fbx");
-    assert(hModel_ >= 0);
+    hStageLo_ = Model::Load("Model/Stage_tr.fbx");
+    assert(hStageLo_ >= 0);
 
     BoxCollider* collision =
-        new BoxCollider(XMFLOAT3(BCollPosiX, BCollPosiY, BCollPosiZ),
-            XMFLOAT3(BCollSizeX, BCollSizeY, BCollSizeZ));
+        new BoxCollider(XMFLOAT3(boxCollPosX, boxCollPosY, boxCollPosZ),
+            XMFLOAT3(boxCollSizeX, boxCollSizeY, boxCollSizeZ));
     AddCollider(collision);
 }
 
 void StageLo::Update()
 {
-    transform_.position_.x -= trPosiChangeX;
-    if (transform_.position_.x <= LEdge) {
+    transform_.position_.x -= posChangeX;
+    if (transform_.position_.x <= WORLD_EDGE) {
         this->KillMe();
     }
 }
 
 void StageLo::Draw()
 {
-    Model::SetTransform(hModel_, transform_);
-    Model::Draw(hModel_);
+    Model::SetTransform(hStageLo_, transform_);
+    Model::Draw(hStageLo_);
 }
 
 void StageLo::Release()

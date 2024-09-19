@@ -7,7 +7,7 @@
 #include "Engine/SceneManager.h"
 
 Player::Player(GameObject* parent)
-    :GameObject(parent, "Player"), hModel_(-1), hBGM_(-1), hSound_(-1)
+    :GameObject(parent, "Player"), hModel_(-1), hSound_(-1)
 {
 }
 
@@ -20,17 +20,12 @@ void Player::Initialize()
     //サウンドデータのロード
     hSound_ = Audio::Load("A1_18278.WAV");
     assert(hSound_ >= 0);
-	//サウンドデータのロード
-	hBGM_ = Audio::Load("A2_01003.WAV", true);
-	assert(hBGM_ >= 0);
-	Audio::Play(hBGM_);
-	Audio::SetVolume(hBGM_, VSet);
 
     //モデルデータのロード
     hModel_ = Model::Load("Model/Player.fbx");
     assert(hModel_ >= 0);
-	transform_.position_.z = posiZ;
-	transform_.position_.y = posiY;
+	transform_.position_.z = PLAYER_POS_Z;
+	transform_.position_.y = playerPosY;
 
 	SphereCollider* collision = 
 		new SphereCollider(XMFLOAT3(SColliderX, SColliderY, SColliderZ), radius);
@@ -39,10 +34,9 @@ void Player::Initialize()
 
 void Player::Update()
 {
-
 	Jump();
 
-	if (transform_.position_.y >= edge || transform_.position_.y <= -edge)
+	if (transform_.position_.y >= WORLD_EDGE || transform_.position_.y <= -WORLD_EDGE)
 	{
 		this->KillMe();
 
