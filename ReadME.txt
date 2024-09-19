@@ -1,18 +1,30 @@
 https://github.com/H-Tanabe129/Dodge
 
-◯操作方法
-Spaceキー　→　ジャンプ
+〇ゲーム名
+Dodge！
+
+〇ゲーム概要
+作者	：東北電子専門学校 ゲームエンジニア科 3年　田邊ひなの
+ジャンル：ジャンプ横スクロールゲーム
+概要　　：DirectXのエンジンを使用したFlappy Bird風のゲームです。
+	シンプルなキー操作で誰でも簡単にプレイできます。
+
+〇ビルド環境
+　OS 		   ： Windows10以上
+　開発環境  	   ： Visual Studio 2022
+　必要ライブラリ : FBXSDK、DirectXTex、DirectXToolKit
+
+〇実行環境
+　	OS、DLL
+
+〇操作方法
+Spaceキー　→　スタート、ジャンプ
 T →　（ゲームオーバー時）タイトルに戻る
 (ESC →　強制終了)
 
-◯ゲーム概要
-障害物をジャンプでよける横スクロールゲーム
-
-ゲームエンジンは授業で作成したものです
-ジャンプが終わった時に落ちていく動作
 
 
-◯フォルダ構成
+〇フォルダ構成
 D:.
 ├ Assets
 ｜　├ DebugCollision
@@ -83,36 +95,33 @@ D:.
 ｜　├Transform.cpp  
 ｜　├Transform.h  
 ｜　├VFX.cpp  
-｜　└VFX.h  
-｜
-├ x64
-｜  ｜
-｜
-├ .gitattributes 
-├ .gitignore 
-├ BackGround.cpp 
-├ BackGround.h 
+｜　└VFX.h   
 ├ Dodge.sln 
-├ GameBaseDx11.vcxproj 
-├ GameBaseDx11.vcxproj.filters 
-├ GameBaseDx11.vcxproj.user 
-├ GameOverScene.cpp
+├ BackGround.cpp
+├ BackGround.h
+├ GaneOverScene.cpp
 ├ GameOverScene.h
-├ Obstacle.cpp
-├ Obstacle.h
+├ Item.cpp
+├ Item.h
 ├ Player.cpp 
 ├ Player.h 
 ├ PlayScene.cpp 
 ├ PlayScene.h 
+├ Ready.cpp
+├ Ready.h
+├ ScoreUp.cpp
+├ ScoreUp.h
 ├ Stage.cpp 
 ├ Stage.h 
 ├ StageLo.cpp 
 ├ StageLo.h 
+├ StageLoMore.cpp
+├ StageLoMore.h
 ├ StageUp.cpp 
 ├ StageUp.h 
-├ Timer.cpp
-├ Timer.h
 ├ TitleScene.cpp
-└ TitleScene.h
-
-https://github.com/H-Tanabe129/Dodge/tree/f565fdb55872e257c197d648b4ddcd13a96c003b
+├ TitleScene.h
+├ ValueManager.cpp
+├ ValueManager.h
+├ WaitScene.cpp
+└ WaitScene.h
